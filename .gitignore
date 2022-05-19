@@ -1,0 +1,14 @@
+# add gitignore files here
+# for documentation on gitignore files, see
+#   https://git-scm.com/docs/gitignore
+
+
+# MacOS stuff
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V*
+.Trashes
+
