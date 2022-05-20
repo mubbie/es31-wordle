@@ -2,4 +2,7 @@
  
  ## Ike, Mubbie, Lobna
  
- 
+ ## RESOURCES
+ - Logisim: https://github.com/logisim-evolution/logisim-evolution
+
+
