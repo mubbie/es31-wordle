@@ -8,6 +8,7 @@
   - Notes: 
     - Logisim requires a Java runtime
 - **draw.io**: https://app.diagrams.net/
+  - Update: We could also save draw.io files in other format so that we can easily view them on github, e.g. as an editable vector i.e. SVG
   - Usage (Create New Drawing):
     - If necessary, create a branch and/or directory on the github repo for the new diagram
     - Go to the site for draw.io
