@@ -19,12 +19,17 @@
     -- Critical Score (0-5): 
         -- subjective measure
         -- how important fixing this issue is important to the proper functioning of the system
--- Format: (Name) Date `Critical Score (0-5)`: Notes 
+    -- Ideas for fix: thoughts on how the issue could be fixed 
+-- Format: (Name) Date [Critical Score (0-5)]: Notes [Ideas for fix]
 --=============================================================================
-    -- (Mubbie) 05/25/2022 1:  Baud counter is always running, so there could be delays in the transmission of the data.
+    -- (Mubbie) 05/25/2022 [1]:  Baud counter is always running, so there could be delays in the transmission of the data.
                             -- Delays will barely be noticed outside indepth study of simulation. 
                             -- They just irk me so much and I think we are better of fixing it. 
                             -- Very non critical issue
+                            -- 
+                            -- [Ideas for fix]: add a baud counter enable that only goes high when the RX bit goes low and we start transmitting, otherwise stays low
+                            -- this will tell the baud counter when or when not to run 
+                            -- alternatively, we could clear the counter when new data comes in so that it starts from scratch
 --=============================================================================
 
 
@@ -119,7 +124,6 @@ begin
     next_state <= current_state;
     next_state_bin <= current_state_bin;
     shift_en <= '0';
-    baud_counter_en <= '0';
 
     -- update next state:
     case current_state is 
@@ -189,15 +193,22 @@ end process OutputLogic;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Counter Logic:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-CounterTimerLogic: process(clk, baud_counter_tc, bit_counter_tc)
+CounterLogic: process(clk, baud_counter_tc, bit_counter_tc)
 begin 
     -- count
     if rising_edge(clk) then
         -- BAUD COUNTER: 
+        baud_count <= baud_count + 1;
+
+        -- reset at peak
+        if baud_count = BAUD_COUNTER_TOP - 1 then
+            baud_count <= (others => '0');
+        end if;
+
 
         
     end if; 
-end process TimerLogic;
+end process CounterLogic;
 
 --=============================================================
 --Datapath:
