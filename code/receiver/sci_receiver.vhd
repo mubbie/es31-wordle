@@ -97,7 +97,6 @@ signal current_state_bin, next_state_bin : std_logic_vector(2 downto 0) := "000"
 -- others 
 signal baud_counter_tc : std_logic := '0';
 signal bit_counter_tc : std_logic := '0';
-signal shift_en : std_logic := '0';
 signal baud_count : unsigned(BAUD_COUNTER_LEN - 1 downto 0) := (others => '0');
 signal bit_count : unsigned(BIT_COUNTER_LEN - 1 downto 0) := (others => '0');
 signal shift_register : std_logic_vector(9 downto 0) := (others => '1');
@@ -123,7 +122,6 @@ begin
     -- define defaults: 
     next_state <= current_state;
     next_state_bin <= current_state_bin;
-    shift_en <= '0';
 
     -- update next state:
     case current_state is 
@@ -148,7 +146,6 @@ begin
                 -- shift in the next bit: 
                 next_state <= sLoadBit;
                 next_state_bin <= "011";
-                shift_en <= '1';
             end if;
         when sLoadBit =>
             -- wait to shift in the current bit: 
@@ -193,7 +190,7 @@ end process OutputLogic;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Counter Logic:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-CounterLogic: process(clk, baud_counter_tc, bit_counter_tc)
+CounterLogic: process(clk, baud_count, bit_count)
 begin 
     -- count
     if rising_edge(clk) then
@@ -205,13 +202,44 @@ begin
             baud_count <= (others => '0');
         end if;
 
-
         
+        -- BIT COUNTER
+        if (bit_count < BIT_COUNTER_TOP - 1) then
+            if baud_counter_tc = '1' then
+                bit_count <= bit_count + 1;
+            end if;
+        elsif (bit_count = BIT_COUNTER_TOP - 1) then 
+            bit_count <= (others => '0');
+        end if;
     end if; 
+
+    -- async total count: 
+    -- define the default signals:
+    baud_counter_tc <= '0';
+    bit_counter_tc <= '0';
+
+    -- BAUD COUNTER: 
+    if (baud_count = BAUD_COUNTER_TOP - 1) then
+        baud_counter_tc <= '1';
+    end if; 
+
+    -- BIT COUNTER 
+    if (bit_count = BIT_COUNTER_TOP - 1) then
+        bit_counter_tc <= '1';
+    end if;
 end process CounterLogic;
 
---=============================================================
---Datapath:
---=============================================================
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Datapath: Shift Register Logic (synchronous):
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+datapath : process(clk)
+begin
+	if rising_edge(clk) then        
+        --Shift Register
+        if baud_counter_tc = '1' then
+            shift_register <= RX & shift_register(8 downto 0);
+        end if; 
+    end if;
+end process datapath;
 
 end behavioral_architecture; 
