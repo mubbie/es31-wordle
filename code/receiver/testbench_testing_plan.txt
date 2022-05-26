@@ -1,0 +1,43 @@
+## TEST BENCH TESTING PLAN 
+## FOR SCI_RECEIVER COMPONENT 
+
+ PORT MAP(
+        -- inputs 
+        clk => clk_signal,
+        Rx => Rx_signal,
+
+        -- outputs
+        Rx_Data => Rx_Data_signal,
+        Rx_Done => Rx_Done_signal,
+        Rx_Error => Rx_Error_signal
+    );
+
+-- INITIALLY
+    -- Expect: 
+        -- State machine should be in sWait, or state "000"
+        -- baud_count should be 0
+        -- bit count should be 0 
+        -- baud_tc should be 0 
+        -- bit_tc should be 0
+        -- baud_start_tc should be 0 
+        -- baud_reset should be 1
+        -- bit_reset should be 1
+        -- shift_register should have all 1s i.e. 8 ones or 0xFF
+        -- shift_en should be 0 
+        -- Rx_Done should be 0
+        -- Rx_Error should be 0
+        -- Rx_Data should be should be all 1s i.e. 8 ones or 0xFF
+
+-- TEST 1 (start transmitting data): 
+    -- send Rx signal low for one clock cycle 
+    -- Expect: 
+        -- Initially: 
+            -- State machine: transition from sWait to sSampleStartBitCounter
+            -- baud_reset should be 0 
+            -- baud_count should count from 0 to BAUD_COUNTER_TOP
+        -- Eventually:
+            -- baud_start_tc should go high and then state machine transitions from sSampleStartBitCounter to sShiftBit
+            -- bit_reset should be 0 
+            -- bit_count should increase by 1
+            -- shift_en should be 1
+            -- shift register should get the start bit and become: 01111111 or 0x7F

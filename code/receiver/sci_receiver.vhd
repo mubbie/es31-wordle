@@ -11,7 +11,7 @@
 -- UPDATE LOG: 
 -- Format: (Name) Date: Notes
 --=============================================================================
-    -- (Mubbie) 05/25/2022: Created the file, implemented all functionality
+    -- (Mubbie) 05/25/2022: Created the file, implemented all receiver functionality
 --=============================================================================
 
 -- KNOWN ISSUES: 
