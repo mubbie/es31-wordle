@@ -20,16 +20,17 @@
         -- subjective measure
         -- how important fixing this issue is important to the proper functioning of the system
     -- Ideas for fix: thoughts on how the issue could be fixed 
--- Format: (Name) Date [Critical Score (0-5)]: Notes [Ideas for fix]
+-- Format: (Name) Date [Critical Score (0-5)]: Notes [Ideas for fix] {Updates}
 --=============================================================================
     -- (Mubbie) 05/25/2022 [1]:  Baud counter is always running, so there could be delays in the transmission of the data.
                             -- Delays will barely be noticed outside indepth study of simulation. 
                             -- They just irk me so much and I think we are better of fixing it. 
                             -- Very non critical issue
                             -- 
-                            -- [Ideas for fix]: add a baud counter enable that only goes high when the RX bit goes low and we start transmitting, otherwise stays low
+                            -- [Ideas for fix]: add a baud counter enable that only goes high when the Rx bit goes low and we start transmitting, otherwise stays low
                             -- this will tell the baud counter when or when not to run 
                             -- alternatively, we could clear the counter when new data comes in so that it starts from scratch
+                            -- {Updates}: Implemented the baud and bit counter reset that enables/resets the counters. I believe that fixes the problem. 
 --=============================================================================
 
 
@@ -55,7 +56,7 @@ entity SCI_RECEIVER is
     port (
         -- inputs 
         clk : in std_logic;
-        RX: in std_logic;
+        Rx: in std_logic;
 
         -- outputs
         Rx_Data : out std_logic_vector(7 downto 0);
@@ -77,7 +78,7 @@ type state is (sWait, sLoadStart, sShiftBit, sLoadBit, sParallelOut);
 --=============================================================================
 --Signal Declarations: 
 --=============================================================================
--- constants
+-- constants: counter periods 
 constant BAUD_COUNTER_LEN : integer := integer(ceil(log2(real(BAUD_COUNTER_TOP))));
 constant BIT_COUNTER_LEN : integer := integer(ceil(log2(real(BIT_COUNTER_TOP))));
 
@@ -95,11 +96,24 @@ signal current_state_bin, next_state_bin : std_logic_vector(2 downto 0) := "000"
         -- sParallelOut -> 100
 
 -- others 
+-- total count monopulse signals: 
 signal baud_counter_tc : std_logic := '0';
+signal baud_counter_load_start_tc : std_logic := '0';
 signal bit_counter_tc : std_logic := '0';
+
+-- counter reset/control signals: 
+signal baud_counter_reset : std_logic := '1';
+signal bit_counter_reset : std_logic := '1';
+
+-- counter variables: 
 signal baud_count : unsigned(BAUD_COUNTER_LEN - 1 downto 0) := (others => '0');
 signal bit_count : unsigned(BIT_COUNTER_LEN - 1 downto 0) := (others => '0');
+
+-- shift register: 
 signal shift_register : std_logic_vector(9 downto 0) := (others => '1');
+
+-- shift register control: 
+signal shift_en : std_logic := '0';
 
 begin 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -117,39 +131,55 @@ end process StateUpdate;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Next State Logic (asynchronous):
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-NextStateLogic: process(current_state, RX, baud_counter_tc, bit_counter_tc)
+NextStateLogic: process(current_state, Rx, baud_counter_tc, bit_counter_tc)
 begin
     -- define defaults: 
     next_state <= current_state;
     next_state_bin <= current_state_bin;
+    bit_counter_reset <= '1';
+    baud_counter_reset <= '1';
+    shift_en <= '0';
 
     -- update next state:
     case current_state is 
         when sWait =>
             -- wait for start bit: 
-            if RX = '0' then
+            if Rx = '0' then
                 next_state <= sLoadStart;
                 next_state_bin <= "001";
             end if;
         when sLoadStart =>
             -- wait to shift in the current bit: 
-            if baud_counter_tc = '1' then
+            if baud_counter_load_start_tc = '0' then
+                -- keep baud counter counting while waiting for half the period: 
+                baud_counter_reset <= '0';
+            else 
+                -- transition to bit shift state: 
                 next_state <= sShiftBit;
                 next_state_bin <= "010";
             end if;
         when sShiftBit =>
             -- wait to parrallel the data out 
-            if bit_counter_tc = '1' then
-                next_state <= sParallelOut;
-                next_state_bin <= "100";
-            else 
-                -- shift in the next bit: 
+            if bit_counter_tc = '0' then
+                -- keep bit counter counting while we wait to shift in all the bits: 
+                bit_counter_reset <= '0';
+
+                -- shift the next bit: 
                 next_state <= sLoadBit;
                 next_state_bin <= "011";
+            else 
+                -- transition to parallel out state (i.e. we have shifted in all the bits):): 
+                next_state <= sParallelOut;
+                next_state_bin <= "100";
             end if;
         when sLoadBit =>
             -- wait to shift in the current bit: 
-            if baud_counter_tc = '1' then
+            if baud_counter_tc = '0' then
+                -- keep baud counter counting while waiting for full period: 
+                baud_counter_reset <= '0';
+            else 
+                -- transition to bit shift state to shift in the next bit: 
+                shift_en <= '1';
                 next_state <= sShiftBit;
                 next_state_bin <= "010";
             end if;
@@ -195,20 +225,21 @@ begin
     -- count
     if rising_edge(clk) then
         -- BAUD COUNTER: 
-        baud_count <= baud_count + 1;
-
-        -- reset at peak
-        if baud_count = BAUD_COUNTER_TOP - 1 then
+        -- count only when we are supposed to 
+        if baud_counter_reset = '0' then
+            baud_count <= baud_count + 1;
+        else 
             baud_count <= (others => '0');
         end if;
-
         
         -- BIT COUNTER
-        if (bit_count < BIT_COUNTER_TOP - 1) then
-            if baud_counter_tc = '1' then
+        -- count only when we are supposed to 
+        if bit_counter_reset = '0' then
+            if shift_en = '1' then
+                -- if we shift in a bit, count it:
                 bit_count <= bit_count + 1;
             end if;
-        elsif (bit_count = BIT_COUNTER_TOP - 1) then 
+        else 
             bit_count <= (others => '0');
         end if;
     end if; 
@@ -216,9 +247,16 @@ begin
     -- async total count: 
     -- define the default signals:
     baud_counter_tc <= '0';
+    baud_counter_load_start_tc <= '0'; 
     bit_counter_tc <= '0';
 
     -- BAUD COUNTER: 
+    -- load start:
+    if (baud_count = (BAUD_COUNTER_TOP/2) - 1) then
+        baud_counter_load_start_tc <= '1';
+    end if; 
+
+    -- load bit: 
     if (baud_count = BAUD_COUNTER_TOP - 1) then
         baud_counter_tc <= '1';
     end if; 
@@ -235,9 +273,10 @@ end process CounterLogic;
 datapath : process(clk)
 begin
 	if rising_edge(clk) then        
-        --Shift Register
-        if baud_counter_tc = '1' then
-            shift_register <= RX & shift_register(8 downto 0);
+        -- Shift Register
+        -- shift when we have the signal to do so:
+        if shift_en = '1' then
+            shift_register <= Rx & shift_register(8 downto 0);
         end if; 
     end if;
 end process datapath;
