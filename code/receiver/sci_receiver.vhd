@@ -301,13 +301,13 @@ end process CounterLogic;
 datapath : process(clk)
 begin
 	if rising_edge(clk) then        
-        -- Shift Register
-        -- shift when we have the signal to do so:
-        if register_reset = '1' then 
-            shift_register <= (others => '1'); 
-        elsif shift_en = '1' then
-            shift_register <= Rx & shift_register(9 downto 1);
-        end if; 
+            -- Shift Register
+            if register_reset = '1' then 
+                shift_register <= (others => '1'); 
+            elsif shift_en = '1' then
+                -- shift when we have the signal to do so:
+                shift_register <= Rx & shift_register(9 downto 1);
+            end if; 
     end if;
 end process datapath;
 
