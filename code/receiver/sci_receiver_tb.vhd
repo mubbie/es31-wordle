@@ -88,8 +88,23 @@ constant clock_period : time := 10 ns; -- 100 MHz clock
 
 -- BAUD AND BIT COUNTER TOP 
 -- TODO: Modify as necessary for test
-constant BAUD_COUNTER_TOP_constant : integer := 39; -- 2e6 Baud Rate
+constant BAUD_COUNTER_TOP_constant : integer := 10; -- 10e6 Baud Rate
 constant BIT_COUNTER_TOP_constant : integer := 10; -- shift in 10 bits: 1 start bit, 8 data bits, 1 stop bit
+
+--=============================================================================
+--Test Signal Declarations:
+--=============================================================================
+type RegisterFile is array (0 to 6) of std_logic_vector(9 downto 0);
+signal TestCharactersArray : RegisterFile := 
+    (
+        "0100000101", 
+        "0010000101",
+        "0100111101",
+        "0010111101",  
+        "0100000100", 
+        "0110011010",
+        "0001011010"
+    );
 
 -- TESTBENCH
 begin 
@@ -126,11 +141,46 @@ END PROCESS clk_proc;
 --=============================================================================
 --Stimulus Process: 
 --=============================================================================
-stimulus_proc : process
+stimulus_process: process
 begin 
-    -- see testbench_testing_plan.txt for details
-
-
+    -- iteratively set Rx to the next character in the array chose and wait for the sampling to complete
+    -- then send the next character
+    -- this is done without using a loop
+    wait for clock_period*10;
+    
+    -- SEND DATA PACKETS FOR TEST
+    -- FIRST 7 are valid 
+    -- LAST 3 are not
+    
+    -- send the valid data packets 
+    for j in 0 to 3 loop
+        for i in 0 to 9 loop
+            -- send the bits for the packet
+            Rx_signal <= TestCharactersArray(j)(9-i);
+            wait for clock_period*10; -- wait for the baud time 
+        end loop;
+        wait for clock_period*10;
+    end loop; 
+    
+    -- send the invalid data packets
+    Rx_signal <= '1'; 
+    wait for clock_period*20; 
+    for j in 4 to 6 loop
+        for i in 0 to 9 loop
+            -- send the bits for the packet
+            Rx_signal <= TestCharactersArray(j)(9-i);
+            if i = 9 then 
+                wait for clock_period*7; -- wait for less than the baud time to prevent confusion with start bit 
+            else
+                wait for clock_period*10; -- wait for the baud time
+            end if; 
+        end loop;
+        Rx_signal <= '1'; 
+        wait for clock_period*10;
+    end loop; 
+    
+    -- wait
+    wait; 
 end process stimulus_process; 
 
 end testbench;

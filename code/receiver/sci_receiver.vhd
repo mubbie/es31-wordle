@@ -116,6 +116,7 @@ signal shift_register : std_logic_vector(9 downto 0) := (others => '1');
 
 -- shift register control: 
 signal shift_en : std_logic := '0';
+signal register_reset : std_logic := '0'; 
 
 begin 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -173,7 +174,7 @@ begin
             end if;
         when sParallelOut =>
             -- validate the data that was received
-            if shift_register(9) = '0' and shift_register(0) = '1' then 
+            if shift_register(0) = '0' and shift_register(9) = '1' then 
                 -- data is valid: 
                 next_state <= sRxSuccess;
                 next_state_bin <= "101";
@@ -205,9 +206,12 @@ begin
     baud_reset <= '1';
     bit_reset <= '1';
     shift_en <= '0';
+    register_reset <= '0'; 
     
     -- define outputs based on state 
     case current_state is 
+        when sWait => 
+            register_reset <= '1'; 
         when sSampleStartBitCounter =>
             -- enable baud counter:
             baud_reset <= '0';
@@ -252,9 +256,13 @@ begin
         -- BIT COUNTER
         -- count only when we are supposed to 
         if bit_reset = '0' then
-            bit_count <= bit_count + 1;
+            if (bit_count < BIT_COUNTER_TOP - 1) then 
+                bit_count <= bit_count + 1;
+            elsif (bit_count = BIT_COUNTER_TOP - 1) then
+                 bit_count <= (others => '0');
+            end if; 
         else 
-            bit_count <= (others => '0');
+            bit_count <= bit_count;
         end if;
     end if; 
 
@@ -266,12 +274,12 @@ begin
 
     -- BAUD COUNTER: 
     -- load start:
-    if (baud_count = (BAUD_COUNTER_TOP/2) - 1) then
+    if (baud_count = ((BAUD_COUNTER_TOP/2) - 2)) then
         baud_start_tc <= '1';
     end if; 
 
     -- load bit: 
-    if (baud_count = BAUD_COUNTER_TOP - 1) then
+    if (baud_count = (BAUD_COUNTER_TOP - 2)) then
         baud_tc <= '1';
     end if; 
 
@@ -290,8 +298,10 @@ begin
 	if rising_edge(clk) then        
         -- Shift Register
         -- shift when we have the signal to do so:
-        if shift_en = '1' then
-            shift_register <= Rx & shift_register(8 downto 0);
+        if register_reset = '1' then 
+            shift_register <= (others => '1'); 
+        elsif shift_en = '1' then
+            shift_register <= Rx & shift_register(9 downto 1);
         end if; 
     end if;
 end process datapath;

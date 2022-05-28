@@ -28,16 +28,55 @@
         -- Rx_Error should be 0
         -- Rx_Data should be should be all 1s i.e. 8 ones or 0xFF
 
--- TEST 1 (start transmitting data): 
-    -- send Rx signal low for one clock cycle 
-    -- Expect: 
-        -- Initially: 
-            -- State machine: transition from sWait to sSampleStartBitCounter
-            -- baud_reset should be 0 
-            -- baud_count should count from 0 to BAUD_COUNTER_TOP
-        -- Eventually:
-            -- baud_start_tc should go high and then state machine transitions from sSampleStartBitCounter to sShiftBit
-            -- bit_reset should be 0 
-            -- bit_count should increase by 1
-            -- shift_en should be 1
-            -- shift register should get the start bit and become: 01111111 or 0x7F
+-- TESTING: 
+    -- Send some valid characters to the Receiver 
+        -- 'A' i.e. 0x41, "01000001", Rx would go "0100000101" 
+        -- 'B' i.e. 0x42, "01000010", Rx would go "0010000101"
+        -- 'y' i.e. 0x79, "01111001", Rx would go "0100111101"
+        -- 'z' i.e. 0x7A, "01111010", Rx would go "0010111101"
+
+    -- For further testing, we could send some invalid data packets: 
+        -- invalid data Rx would go "0100000100"
+        -- invalid data Rx would go "0110011010"
+        -- invalid data Rx would go "0001011010"
+
+    -- Thus, we are testing with: 
+        -- 7 data packets 
+        -- Each data packet has 8 bits, with start and stop bits, 10 bits 
+
+-- IMPLEMENTATION:
+    -- Store the data packets in a register file: 
+        -- The array will be of size 7
+        -- Each element will be a 10-bit word 
+        -- The first element will be the start bit
+        -- The middle bits will be the data bits
+        -- The last element will be the stop bit
+    -- To make the test work, we set the index of the item in the array that we want to send to the receiver
+    -- This step is necessary as we cannot easily loop into the array with the clock, as that will affect the timing 
+        -- For each word, we send the bits for each character
+        -- One by one, to Rx, to be transmitted to the SCI_Receiver
+
+-- VALIDATION: 
+    -- The receiver is working right if RX_data gets (msb downto lsb): 
+        1 -- 0x41: "01000001", Rx_Done = 1, Rx_Error = 0
+        2 -- 0x42: "01000010", Rx_Done = 1, Rx_Error = 0
+        3 -- 0x79: "01111001", Rx_Done = 1, Rx_Error = 0
+        4 -- 0x7A: "01111010", Rx_Done = 1, Rx_Error = 0
+        
+    -- For the invalid packets 
+        8 -- 0x41: "01000001", Rx_Done = 1, Rx_Error = 1
+        9 -- 0xB3: "10110011", Rx_Done = 1, Rx_Error = 1
+        10 -- 0xB4: "10110100", Rx_Done = 1, Rx_Error = 1
+
+    -- The state machine should go:
+        -- sWait, or state "000", before transition
+        -- sSampleStartBitCounter, or state "001", after the start bit has been sent 
+        -- sSampleDataBits, or state "010", to shift in start bit 
+        -- sSampleBitCounter, or state "011", back and forth with sSampleDataBits to load in all the other bits 
+        -- sParallelOut, or state "100", after all the bits have been sent 
+        -- RxFail, or state "110", or RxSuccess, or state "101" depending on if the data sent had an error or not 
+        -- Finally, back to sWait, or state "000", after the data has been sent
+
+# QUESTIONS FOR BEN 
+    -- The issue with the counter 
+    -- Testing with the invalid bits 
