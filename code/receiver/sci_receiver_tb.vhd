@@ -12,6 +12,7 @@
 -- Format: (Name) Date: Notes
 --=============================================================================
     -- (Mubbie) 05/25/2022: Created the file, implemented testbench functionality 
+    -- (Mubbie) 05/28/2022: Finished implementing testbench functionality
 --=============================================================================
 
 -- KNOWN ISSUES: 

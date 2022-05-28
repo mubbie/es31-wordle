@@ -12,6 +12,7 @@
 -- Format: (Name) Date: Notes
 --=============================================================================
     -- (Mubbie) 05/25/2022: Created the file, implemented all receiver functionality
+    -- (Mubbie) 05/28/2022: Wrote testbench and discovered bug with baud counter
 --=============================================================================
 
 -- KNOWN ISSUES: 
@@ -31,6 +32,10 @@
                             -- this will tell the baud counter when or when not to run 
                             -- alternatively, we could clear the counter when new data comes in so that it starts from scratch
                             -- {Updates}: Implemented the baud and bit counter reset that enables/resets the counters. I believe that fixes the problem. I think I have fixed this.
+    -- (Mubbie) 05/25/2022 [5]:  The baud counter does not work properly.
+                            -- In simulation, using the correct syntax in lines 278-287 i.e. assert the tc's when count reaches count_top - 1
+                            -- The baud counter disregards this instructions and counts up to count_top before stopping and resetting
+                            -- {Update}: One potential fix is just to use the syntax "count_top - 2"  as in the code now but this is not correct and could perhaps cause other issues  
 --=============================================================================
 
 
