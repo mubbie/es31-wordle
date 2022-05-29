@@ -2,3 +2,6 @@ Running: xsim.dir/SCI_RECEIVER_tb_behav/xsimk.exe -simmode gui -wdb SCI_RECEIVER
 Design successfully loaded
 Design Loading Memory Usage: 6688 KB (Peak: 6688 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 7284 KB (Peak: 7284 KB)
+Simulation CPU Usage: 15 ms
