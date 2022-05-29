@@ -16,7 +16,9 @@ ARCHITECTURE behavior of SCI_Tx is
 
 --Datapath elements
 
-constant BAUD_PERIOD : integer := 391; --Number of clock cycles needed to achieve a baud rate of 256,000 given a 100 MHz clock (100 MHz / 256000 = 391)
+-- modified 
+-- 391 -> 87
+constant BAUD_PERIOD : integer := 87; --Number of clock cycles needed to achieve a baud rate of 256,000 given a 100 MHz clock (100 MHz / 256000 = 391)
 
 signal Shift_Reg : std_logic_vector(9 downto 0) := (others => '1');
 signal Baud_Counter : unsigned(8 downto 0) := (others => '0'); -- 9 bits are needed to represent 391.
