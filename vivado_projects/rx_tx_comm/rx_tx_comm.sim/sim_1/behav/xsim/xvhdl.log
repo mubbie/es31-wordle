@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'SCI_RECEIVER'
+INFO: [VRFC 10-163] Analyzing VHDL file "O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SCI_TRANSMITTER_tb'

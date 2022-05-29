@@ -55,7 +55,8 @@ architecture testbench of SCI_TRANSMITTER_tb is
 component SCI_Transmitter IS
     -- constants 
     generic(
-        BAUD_COUNTER_TOP : integer
+        BAUD_COUNTER_TOP : integer; 
+        BIT_COUNTER_TOP : integer
     );
 
     -- ports 
@@ -85,12 +86,14 @@ signal Tx_signal : std_logic := '0';
 -- constants
 constant clock_period : time := 10 ns; -- 100 MHz clock
 constant BAUD_COUNTER_TOP_constant : integer := 10417; -- 9600 Baud Rate
+constant BIT_COUNTER_TOP_constant : integer := 10; -- shift in 10 bits: 1 start bit, 8 data bits, 1 stop bit
 
 begin
 uut : SCI_Transmitter
     GENERIC MAP (
         -- generics
-        BAUD_COUNTER_TOP => BAUD_COUNTER_TOP_constant
+        BAUD_COUNTER_TOP => BAUD_COUNTER_TOP_constant,
+        BIT_COUNTER_TOP => BIT_COUNTER_TOP_constant
     )
     PORT MAP(
         -- inputs 
@@ -127,15 +130,15 @@ begin
     wait for clock_period;    
     New_Data_signal <= '0';
     
-    wait for 5 us;
+    wait for clock_period*100;
     
-	-- send new data after a while
+--	-- send new data after a while
     Parallel_in_signal <= "00100100";
     New_Data_signal <= '1';
     wait for clock_period;    
     New_Data_signal <= '0';
     
-    wait for clock_period * 100; -- 1us
+    wait for clock_period*100; -- 1us
     
     -- fill up the queue
     Parallel_in_signal <= "00000001";
@@ -186,7 +189,7 @@ begin
     wait for clock_period;    
     New_Data_signal <= '0';
     
-    wait for clock_period*5;
+    wait for clock_period;
     
     wait;
 end process stim_proc;

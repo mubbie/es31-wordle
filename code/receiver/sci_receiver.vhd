@@ -117,14 +117,14 @@ signal baud_count : unsigned(BAUD_COUNTER_LEN - 1 downto 0) := (others => '0');
 signal bit_count : unsigned(BIT_COUNTER_LEN - 1 downto 0) := (others => '0');
 
 -- shift register: 
-signal shift_register : std_logic_vector(9 downto 0) := (others => '1');
+signal shift_register : std_logic_vector((BIT_COUNTER_TOP - 1) downto 0) := (others => '1');
 
 -- shift register control: 
 signal shift_en : std_logic := '0';
 signal register_reset : std_logic := '0'; 
 
 -- rx_output_register
-signal Rx_Data_Out : std_logic_vector(7 downto 0) := (others => '1');
+signal Rx_Data_Out : std_logic_vector((BIT_COUNTER_TOP - 3) downto 0) := (others => '1');
 signal send_output : std_logic := '0'; 
 
 begin 

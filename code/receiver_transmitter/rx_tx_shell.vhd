@@ -92,9 +92,9 @@ end component SCI_RECEIVER;
 component SCI_Transmitter IS
     -- constants 
     generic(
-        BAUD_COUNTER_TOP : integer
+        BAUD_COUNTER_TOP : integer; 
+        BIT_COUNTER_TOP : integer
     );
-
     -- ports 
     PORT ( 	
             -- inputs
@@ -151,7 +151,8 @@ receiver : SCI_RECEIVER
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 transmitter : SCI_Transmitter
     generic map (
-        BAUD_COUNTER_TOP => 10417 -- 9600 baud rate
+        BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
+        BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop
     )
     port map (
         clk => clk_ext_port,
