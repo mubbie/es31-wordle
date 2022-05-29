@@ -67,30 +67,30 @@ set_property PACKAGE_PIN W5 [get_ports clk_ext_port]
 ##====================================================================
 ## LED_ports
 ##====================================================================
-## LED 0 (RIGHT MOST LED)
-#set_property PACKAGE_PIN U16 [get_ports {LED_ext_port[0]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[0]}]
-## LED 1
-#set_property PACKAGE_PIN E19 [get_ports {LED_ext_port[1]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[1]}]
-## LED 2
-#set_property PACKAGE_PIN U19 [get_ports {LED_ext_port[2]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[2]}]
-## LED 3
-#set_property PACKAGE_PIN V19 [get_ports {LED_ext_port[3]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[3]}]
-## LED 4
-#set_property PACKAGE_PIN W18 [get_ports {LED_ext_port[4]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[4]}]
-## LED 5
-#set_property PACKAGE_PIN U15 [get_ports {LED_ext_port[5]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[5]}]
-## LED 6
-#set_property PACKAGE_PIN U14 [get_ports {LED_ext_port[6]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[6]}]
-## LED 7
-#set_property PACKAGE_PIN V14 [get_ports {LED_ext_port[7]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[7]}]
+# LED 0 (RIGHT MOST LED)
+set_property PACKAGE_PIN U16 [get_ports {Rx_data_port[0]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[0]}]
+# LED 1
+set_property PACKAGE_PIN E19 [get_ports {Rx_data_port[1]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[1]}]
+# LED 2
+set_property PACKAGE_PIN U19 [get_ports {Rx_data_port[2]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[2]}]
+# LED 3
+set_property PACKAGE_PIN V19 [get_ports {Rx_data_port[3]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[3]}]
+# LED 4
+set_property PACKAGE_PIN W18 [get_ports {Rx_data_port[4]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[4]}]
+# LED 5
+set_property PACKAGE_PIN U15 [get_ports {Rx_data_port[5]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[5]}]
+# LED 6
+set_property PACKAGE_PIN U14 [get_ports {Rx_data_port[6]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[6]}]
+# LED 7
+set_property PACKAGE_PIN V14 [get_ports {Rx_data_port[7]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {Rx_data_port[7]}]
 ## LED 8
 #set_property PACKAGE_PIN V13 [get_ports {LED_ext_port[8]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {LED_ext_port[8]}]

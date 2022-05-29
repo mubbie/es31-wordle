@@ -159,7 +159,7 @@ end process datapath;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Queue Size Logic:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-QueueSizeLogic: process(r_addr, w_addr, queue_reg, empty, full)
+QueueSizeLogic: process(r_addr, w_addr, queue_reg, empty, full, q_size)
 begin
 	Empty <= '0';
     Full <= '0';

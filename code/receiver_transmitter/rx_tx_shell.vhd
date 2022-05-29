@@ -47,7 +47,10 @@ entity rx_tx_shell is
 
         -- Tx and Rx lines 
         RsTx_ext_port : out std_logic;
-        RsRx_ext_port : in std_logic
+        RsRx_ext_port : in std_logic;
+        
+        -- 
+        Rx_data_port : out std_logic_vector(7 downto 0)
     ); 
 end rx_tx_shell;
 
@@ -86,21 +89,27 @@ end component SCI_RECEIVER;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component SCI_Tx IS
-PORT ( 	clk			: 	in 	STD_LOGIC;
-		Parallel_in	: 	in 	STD_LOGIC_VECTOR(7 downto 0);
-        New_data	:	in	STD_LOGIC;
-        Tx			:	out STD_LOGIC);
-end component SCI_Tx;
+component SCI_Transmitter IS
+    -- constants 
+    generic(
+        BAUD_COUNTER_TOP : integer
+    );
+
+    -- ports 
+    PORT ( 	
+            -- inputs
+            clk			: 	in 	STD_LOGIC;
+            Parallel_in	: 	in 	STD_LOGIC_VECTOR(7 downto 0);
+            New_data	:	in	STD_LOGIC;
+
+            -- outputs
+            Tx			:	out STD_LOGIC
+    );
+end component SCI_Transmitter;
 
 --=============================================================================
 --Signal Declarations: 
 --=============================================================================
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---Timing:
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-signal system_clk_sig	:  std_logic := '0';
-
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Receiver:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -126,13 +135,13 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 receiver : SCI_RECEIVER 
     generic map (
-        BAUD_COUNTER_TOP => 87, -- 115200 baud rate
+        BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
         BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop
     )
     port map (
-        clk => system_clk_sig,
+        clk => clk_ext_port,
         Rx => RsRx_ext_port,
-        Rx_Data => Rx_Data_sig,
+        Rx_Data => Rx_data_port,
         Rx_Done => Rx_Done_sig,
         Rx_Error => Rx_Error_sig
     );
@@ -140,11 +149,15 @@ receiver : SCI_RECEIVER
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the transmitter sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-transmitter : SCI_Tx 
+transmitter : SCI_Transmitter
+    generic map (
+        BAUD_COUNTER_TOP => 10417 -- 9600 baud rate
+    )
     port map (
-        clk => system_clk_sig,
+        clk => clk_ext_port,
         Parallel_in => Rx_Data_sig,
         New_data => Rx_Done_sig,
+        
         -- Tx => Tx_sig
         Tx => RsTx_ext_port
     ); 

@@ -84,7 +84,7 @@ signal Tx_signal : std_logic := '0';
 
 -- constants
 constant clock_period : time := 10 ns; -- 100 MHz clock
-constant BAUD_COUNTER_TOP_constant : integer := 87; 
+constant BAUD_COUNTER_TOP_constant : integer := 10417; -- 9600 Baud Rate
 
 begin
 uut : SCI_Transmitter
