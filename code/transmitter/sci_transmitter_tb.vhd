@@ -38,10 +38,10 @@ clk_proc : process
 BEGIN
 
   CLK <= '0';
-  wait for 5ns;   --100 MHz clock
+  wait for 5 ns;   --100 MHz clock
 
   CLK <= '1';
-  wait for 5ns;
+  wait for 5 ns;
 
 END PROCESS clk_proc;
 
