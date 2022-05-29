@@ -1,7 +1,4 @@
-Running: xsim.dir/SCI_RECEIVER_tb_behav/xsimk.exe -simmode gui -wdb SCI_RECEIVER_tb_behav.wdb -simrunnum 0 -socket 53813
+Running: xsim.dir/SCI_RECEIVER_tb_behav/xsimk.exe -simmode gui -wdb SCI_RECEIVER_tb_behav.wdb -simrunnum 0 -socket 55680
 Design successfully loaded
-Design Loading Memory Usage: 6668 KB (Peak: 6668 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 7580 KB (Peak: 7580 KB)
-Simulation CPU Usage: 0 ms
+Design Loading Memory Usage: 6688 KB (Peak: 6688 KB)
+Design Loading CPU Usage: 15 ms
