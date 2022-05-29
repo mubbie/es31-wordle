@@ -2,3 +2,6 @@ Running: xsim.dir/SCI_TRANSMITTER_tb_behav/xsimk.exe -simmode gui -wdb SCI_TRANS
 Design successfully loaded
 Design Loading Memory Usage: 6288 KB (Peak: 6288 KB)
 Design Loading CPU Usage: 93 ms
+Simulation completed
+Simulation Memory Usage: 14988 KB (Peak: 14988 KB)
+Simulation CPU Usage: 1234 ms
