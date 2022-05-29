@@ -1,0 +1,34 @@
+## TEST BENCH TESTING PLAN 
+## FOR SCI_RX_TX COMBO COMPONENT 
+
+port map (
+        clk_ext_port => clk_ext_signal,
+        RsTx_ext_port => RsTx_ext_signal,
+        RsRx_ext_port => RsRx_ext_signal,
+        Rx_data_port => Rx_data_ext_signal
+    );
+
+-- INITIALLY 
+    -- Expect: 
+        -- clk_ext_signal = 0
+        -- RsTx_ext_signal = 1 i.e. nothing is transmitting out of the component 
+        -- RsRx_ext_signal = 1 i.e. nothing is receiving into the component
+        -- Rx_data_ext_signal = "11111111" i.e. nothing sensible has been receiving
+
+-- TESTING 
+    -- Send some valid characters to the Receiver (via RsRx_ext_port): 
+        -- 'A' i.e. 0x41, "01000001", Rx would go "0100000101" 
+
+    -- Expect:
+    -- After the data has been loaded into the receiver, send it into the parallel in for the transmitter: 
+        -- Parallel in to the transmitter should be: 
+            -- "01000001"
+    
+    -- Finally: 
+        -- the transmitter should move out: 0, 0, 1, 0, 0, 0, 0, 0, 1
+        -- via the RsTx_ext_port 
+
+-- VALIDATION  
+    -- Rx_data_port should be "01000001"
+        -- after the data has been loaded into the receiver
+    -- Watch the RsTx_ext_port to see if the data is being transmitted out correctly 
