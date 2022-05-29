@@ -1,125 +1,192 @@
--- Code your testbench here
+--=============================================================================
+--ENGS 31/ CoSc 56 22S
+--Final Project - Wordle
+--B.L. Dobbins, E.W. Hansen, Professor Luke
+--Mubarak Idoko, Ikeoluwa Abioye, Lobna Jbenaini
+    --SCI Receiver Testbench
+
+-- TODO: (DO NOT REMOVE) Write to "Update Log" if you modify the code, document your changes.
+-- TODO: (DO NOT REMOVE) Update known issues to account for fixes of newly discovered bugs.
+
+-- UPDATE LOG: 
+-- Format: (Name) Date: Notes
+--=============================================================================
+    -- (Ike) 05/28/2022: Wrote the code
+    -- (Mubbie) 05/29/2022: Documented the code
+--=============================================================================
+
+-- KNOWN ISSUES: 
+    -- Known issues with implementation that have not been fixes 
+    -- Critical Score (0-5): 
+        -- subjective measure
+        -- how important fixing this issue is important to the proper functioning of the system
+    -- Ideas for fix: thoughts on how the issue could be fixed 
+-- Format: (Name) Date [Critical Score (0-5)]: Notes [Ideas for fix] {Updates (if any)}
+--=============================================================================
+
+--=============================================================================
+
+
+--=============================================================================
+--Library Declarations:
+--=============================================================================
 library IEEE;
 use IEEE.std_logic_1164.all;
-
-entity SCI_Tx_tb is
-end SCI_Tx_tb;
-
-architecture testbench of SCI_Tx_tb is
-
-Component SCI_Tx IS
-PORT ( 	clk			: 	in 	STD_LOGIC;
-		Parallel_in	: 	in 	STD_LOGIC_VECTOR(7 downto 0);
-        New_data	:	in	STD_LOGIC;
-        Tx			:	out STD_LOGIC);
-end component SCI_Tx;
+use IEEE.numeric_std.all;
+use ieee.math_real.all;
 
 
+--=============================================================================
+--Entity Declaration:
+--=============================================================================
+entity SCI_TRANSMITTER_tb is
+    end SCI_TRANSMITTER_tb;
+
+
+--=============================================================================
+--Architecture Type:
+--=============================================================================
+architecture testbench of SCI_TRANSMITTER_tb is
+
+
+--=============================================================================
+--Component Declaration:
+--=============================================================================
+component SCI_Transmitter IS
+    -- constants 
+    generic(
+        BAUD_COUNTER_TOP : integer
+    );
+
+    -- ports 
+    PORT ( 	
+            -- inputs
+            clk			: 	in 	STD_LOGIC;
+            Parallel_in	: 	in 	STD_LOGIC_VECTOR(7 downto 0);
+            New_data	:	in	STD_LOGIC;
+
+            -- outputs
+            Tx			:	out STD_LOGIC
+    );
+end component SCI_Transmitter;
+
+
+--=============================================================================
+--Signal and Constant Declarations: 
+--=============================================================================
 --inputs
-signal CLK : std_logic := '0';
-signal Parallel_in : std_logic_vector(7 downto 0) := "00000000";
-signal New_Data: std_logic := '0';
+signal clk_signal : std_logic := '0';
+signal Parallel_in_signal : std_logic_vector(7 downto 0) := "00000000";
+signal New_Data_signal : std_logic := '0';
 
 --outputs
-signal Tx : std_logic := '0';
+signal Tx_signal : std_logic := '0';
 
-
+-- constants
+constant clock_period : time := 10 ns; -- 100 MHz clock
+constant BAUD_COUNTER_TOP_constant : integer := 87; 
 
 begin
+uut : SCI_Transmitter
+    GENERIC MAP (
+        -- generics
+        BAUD_COUNTER_TOP => BAUD_COUNTER_TOP_constant
+    )
+    PORT MAP(
+        -- inputs 
+		clk  => clk_signal,
+		Parallel_in => Parallel_in_signal,
+        New_data => New_Data_signal,
 
-uut : SCI_Tx PORT MAP(
-		clk  => clk,
-		Parallel_in => Parallel_in,
-        New_data => New_data,
-		Tx => Tx);
+        -- outputs
+		Tx => Tx_signal
+    );
     
     
 clk_proc : process
 BEGIN
+  clk_signal <= '0';
+  wait for clock_period/2;   --100 MHz clock
 
-  CLK <= '0';
-  wait for 5 ns;   --100 MHz clock
-
-  CLK <= '1';
-  wait for 5 ns;
-
+  clk_signal <= '1';
+  wait for clock_period/2;
 END PROCESS clk_proc;
 
 stim_proc : process
 begin
 	-- waveform edited the baud period to 9 in order to show everything on screen
-    Parallel_in <= "10101010";
-    new_data <= '1';
-    wait for 10 ns;
-    new_data <= '0';
-    wait for 50 ns;
+    Parallel_in_signal <= "10101010";
+    New_Data_signal <= '1';
+    wait for clock_period;
+    New_Data_signal <= '0';
+    wait for clock_period*5;
     
 	-- send new data midway through the first one
-    Parallel_in <= "00100100";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
+    Parallel_in_signal <= "00100100";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
     
     wait for 5 us;
     
 	-- send new data after a while
-    Parallel_in <= "00100100";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
+    Parallel_in_signal <= "00100100";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
     
-    wait for 1 us;
+    wait for clock_period * 100; -- 1us
     
     -- fill up the queue
-    Parallel_in <= "00000001";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
-    wait for 10 ns;
+    Parallel_in_signal <= "00000001";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
+    wait for clock_period;
     
-    Parallel_in <= "00000010";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
-    wait for 10 ns;
+    Parallel_in_signal <= "00000010";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
+    wait for clock_period;
     
-    Parallel_in <= "00000011";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
-    wait for 10 ns;
+    Parallel_in_signal <= "00000011";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
+    wait for clock_period;
     
-    Parallel_in <= "00000100";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
-    wait for 10 ns;
+    Parallel_in_signal <= "00000100";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
+    wait for clock_period;
     
-    Parallel_in <= "00000101";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
-    wait for 10 ns;
+    Parallel_in_signal <= "00000101";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
+    wait for clock_period;
     
-    Parallel_in <= "00000110";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
-    wait for 10 ns;
+    Parallel_in_signal <= "00000110";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
+    wait for clock_period;
     
-    Parallel_in <= "00000111";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
-    wait for 10 ns;
+    Parallel_in_signal <= "00000111";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
+    wait for clock_period;
     
     -- should not go in
-    Parallel_in <= "00101111";
-    new_data <= '1';
-    wait for 10 ns;    
-    new_data <= '0';
+    Parallel_in_signal <= "00101111";
+    New_Data_signal <= '1';
+    wait for clock_period;    
+    New_Data_signal <= '0';
     
-    wait for 50 ns;
+    wait for clock_period*5;
     
     wait;
 end process stim_proc;
