@@ -2,11 +2,11 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Sat May 28 22:47:09 2022
-# Process ID: 59604
-# Current directory: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/impl_1
+# Start of session at: Sun May 29 14:59:39 2022
+# Process ID: 15268
+# Current directory: O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/impl_1
 # Command line: vivado.exe -log rx_tx_shell.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source rx_tx_shell.tcl -notrace
-# Log file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/impl_1/rx_tx_shell.vdi
-# Journal file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/impl_1\vivado.jou
+# Log file: O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/impl_1/rx_tx_shell.vdi
+# Journal file: O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source rx_tx_shell.tcl -notrace

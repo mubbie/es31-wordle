@@ -89,7 +89,7 @@ constant clock_period : time := 10 ns; -- 100 MHz clock
 
 -- BAUD AND BIT COUNTER TOP 
 -- TODO: Modify as necessary for test
-constant BAUD_COUNTER_TOP_constant : integer := 10; -- 10e6 Baud Rate
+constant BAUD_COUNTER_TOP_constant : integer := 10417; -- 96 Baud Rate
 constant BIT_COUNTER_TOP_constant : integer := 10; -- shift in 10 bits: 1 start bit, 8 data bits, 1 stop bit
 
 --=============================================================================
@@ -158,28 +158,28 @@ begin
         for i in 0 to 9 loop
             -- send the bits for the packet
             Rx_signal <= TestCharactersArray(j)(9-i);
-            wait for clock_period*10; -- wait for the baud time 
+            wait for clock_period*BAUD_COUNTER_TOP_constant; -- wait for the baud time 
         end loop;
-        wait for clock_period*10;
+        wait for clock_period*BAUD_COUNTER_TOP_constant;
     end loop; 
     
     -- send the invalid data packets
-    Rx_signal <= '1'; 
-    wait for clock_period*20; 
-    for j in 4 to 6 loop
-        for i in 0 to 9 loop
-            -- send the bits for the packet
-            Rx_signal <= TestCharactersArray(j)(9-i);
-            if i = 9 then 
-                wait for clock_period*7; -- wait for less than the baud time to prevent confusion with start bit 
-            else
-                wait for clock_period*10; -- wait for the baud time
-            end if; 
-        end loop;
-        Rx_signal <= '1'; 
-        wait for clock_period*10;
-    end loop; 
-    
+    --    Rx_signal <= '1'; 
+    --    wait for clock_period*20; 
+    --    for j in 4 to 6 loop
+    --        for i in 0 to 9 loop
+    --            -- send the bits for the packet
+    --            Rx_signal <= TestCharactersArray(j)(9-i);
+    --            if i = 9 then 
+    --                wait for clock_period*9000; -- wait for less than the baud time to prevent confusion with start bit 
+    --            else
+    --                wait for clock_period*BAUD_COUNTER_TOP_constant; -- wait for the baud time
+    --            end if; 
+    --        end loop;
+    --        Rx_signal <= '1'; 
+    --        wait for clock_period*BAUD_COUNTER_TOP_constant;
+    --    end loop; 
+        
     -- wait
     wait; 
 end process stimulus_process; 
