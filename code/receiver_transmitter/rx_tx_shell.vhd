@@ -49,7 +49,7 @@ entity rx_tx_shell is
         RsTx_ext_port : out std_logic;
         RsRx_ext_port : in std_logic;
         
-        -- 
+        -- Rx_data_port for testing purposes
         Rx_data_port : out std_logic_vector(7 downto 0)
     ); 
 end rx_tx_shell;
