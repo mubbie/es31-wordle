@@ -2,5 +2,7 @@
 2018.3
 Mar 26 2019
 04:57:32
-O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd,1653850292,vhdl,,,,sci_receiver,,,,,,,,
-O:/ES31_22S/es31-worldle/code/receiver/sci_receiver_tb.vhd,1653846985,vhdl,,,,sci_receiver_tb,,,,,,,,
+O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd,1653854350,vhdl,,,,sci_receiver,,,,,,,,
+O:/ES31_22S/es31-worldle/code/receiver/sci_receiver_tb.vhd,1653855961,vhdl,,,,sci_receiver_tb,,,,,,,,
+O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd,1653861764,vhdl,,,,sci_transmitter,,,,,,,,
+O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter_tb.vhd,1653862023,vhdl,,,,sci_transmitter_tb,,,,,,,,

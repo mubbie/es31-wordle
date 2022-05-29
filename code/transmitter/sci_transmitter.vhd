@@ -49,11 +49,12 @@ use ieee.math_real.all;
 ENTITY SCI_Transmitter IS
     -- constants 
     generic(
-        BAUD_COUNTER_TOP : integer
+        BAUD_COUNTER_TOP : integer; 
+        BIT_COUNTER_TOP : integer
     );
 
     -- ports 
-    PORT ( 	
+    port ( 	
             -- inputs
             clk			: 	in 	STD_LOGIC;
             Parallel_in	: 	in 	STD_LOGIC_VECTOR(7 downto 0);
@@ -76,7 +77,7 @@ ARCHITECTURE behavior of SCI_Transmitter is
 constant BAUD_COUNTER_LEN : integer := integer(ceil(log2(real(BAUD_COUNTER_TOP))));
 
 signal Shift_Reg : std_logic_vector(9 downto 0) := (others => '1');
-signal Baud_Counter : unsigned((BAUD_COUNTER_LEN) - 1 downto 0) := (others => '0'); -- 9 bits are needed to represent 391.
+signal Baud_Counter : unsigned((BAUD_COUNTER_LEN - 1) downto 0) := (others => '0'); -- 9 bits are needed to represent 391.
 
 signal tc : std_logic := '0';
 
@@ -85,7 +86,7 @@ signal block_sent : std_logic := '0';
 signal num_bits_sent : integer := 0;
 
 -- signals for the queue
-type regfile is array(0 to 7) of std_logic_vector(7 downto 0);
+type regfile is array(0 to 7) of std_logic_vector((BIT_COUNTER_TOP - 3) downto 0);
 signal queue_reg : regfile:= ((others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0')); --one way to zero out all the elements.
 
 -- other signals 
@@ -105,6 +106,7 @@ begin
 	if rising_edge(clk) then
         --BAUD COUNTER
         tc <= '0';
+   
         Baud_Counter <= Baud_Counter + 1;
         if (Baud_Counter = BAUD_COUNTER_TOP-1) then
         	tc <= '1';
@@ -127,7 +129,7 @@ begin
         	num_bits_sent <= num_bits_sent + 1;
         end if;
         block_sent <= '0';
-        if num_bits_sent = 10 then
+        if num_bits_sent = BIT_COUNTER_TOP then
         	block_sent <= '1';
             num_bits_sent <= 0; 
         end if;
@@ -164,6 +166,7 @@ begin
 	Empty <= '0';
     Full <= '0';
     
+    -- queue size logic 
 	if (q_size = 0) then
     	Empty <= '1';
   	elsif (q_size = 7) then

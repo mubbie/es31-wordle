@@ -67,6 +67,7 @@
         8 -- 0x41: "01000001", Rx_Done = 1, Rx_Error = 1
         9 -- 0xB3: "10110011", Rx_Done = 1, Rx_Error = 1
         10 -- 0xB4: "10110100", Rx_Done = 1, Rx_Error = 1
+    -- However, because the data packets are invalid, it does not matter want the data output is as long as the error signal is high
 
     -- The state machine should go:
         -- sWait, or state "000", before transition

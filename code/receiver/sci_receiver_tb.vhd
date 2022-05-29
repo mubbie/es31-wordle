@@ -164,21 +164,21 @@ begin
     end loop; 
     
     -- send the invalid data packets
-    --    Rx_signal <= '1'; 
-    --    wait for clock_period*20; 
-    --    for j in 4 to 6 loop
-    --        for i in 0 to 9 loop
-    --            -- send the bits for the packet
-    --            Rx_signal <= TestCharactersArray(j)(9-i);
-    --            if i = 9 then 
-    --                wait for clock_period*9000; -- wait for less than the baud time to prevent confusion with start bit 
-    --            else
-    --                wait for clock_period*BAUD_COUNTER_TOP_constant; -- wait for the baud time
-    --            end if; 
-    --        end loop;
-    --        Rx_signal <= '1'; 
-    --        wait for clock_period*BAUD_COUNTER_TOP_constant;
-    --    end loop; 
+    Rx_signal <= '1'; 
+    wait for clock_period*20; 
+    for j in 4 to 6 loop
+        for i in 0 to 9 loop
+            -- send the bits for the packet
+            Rx_signal <= TestCharactersArray(j)(9-i);
+            if i = 9 then 
+                wait for clock_period*5250; -- wait for less than the baud time to prevent confusion with start bit 
+            else
+                wait for clock_period*BAUD_COUNTER_TOP_constant; -- wait for the baud time
+            end if; 
+        end loop;
+        Rx_signal <= '1'; 
+        wait for clock_period*BAUD_COUNTER_TOP_constant;
+    end loop; 
         
     -- wait
     wait; 
