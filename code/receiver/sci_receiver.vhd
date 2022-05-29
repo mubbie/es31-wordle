@@ -123,6 +123,10 @@ signal shift_register : std_logic_vector(9 downto 0) := (others => '1');
 signal shift_en : std_logic := '0';
 signal register_reset : std_logic := '0'; 
 
+-- rx_output_register
+signal Rx_Data_Out : std_logic_vector(7 downto 0) := (others => '1');
+signal send_output : std_logic := '0'; 
+
 begin 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Update the current state (synchronous):
@@ -139,7 +143,7 @@ end process StateUpdate;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Next State Logic (asynchronous):
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-NextStateLogic: process(current_state, Rx, baud_start_tc, baud_tc, bit_tc, shift_register)
+NextStateLogic: process(current_state, current_state_bin, Rx, baud_start_tc, baud_tc, bit_tc, shift_register)
 begin
     -- define defaults: 
     next_state <= current_state;
@@ -205,7 +209,7 @@ end process NextStateLogic;
 OutputLogic: process(current_state) 
 begin 
     -- define the default outputs: 
-    Rx_Data <= (others => '1');
+    send_output <= '0'; 
     Rx_Done <= '0';
     Rx_Error <= '0';
     baud_reset <= '1';
@@ -231,12 +235,12 @@ begin
             -- output received data and receipt nature signals: 
             Rx_Done <= '1';
             Rx_Error <= '0';
-            Rx_Data <= shift_register(8 downto 1);
+            send_output <= '1'; 
         when sRxFail =>
             -- output received data and receipt nature signals: 
             Rx_Done <= '1';
             Rx_Error <= '1';
-            Rx_Data <= shift_register(8 downto 1);
+            send_output <= '1'; 
         when others => 
             -- do nothing
             -- take default outputs
@@ -308,7 +312,17 @@ begin
                 -- shift when we have the signal to do so:
                 shift_register <= Rx & shift_register(9 downto 1);
             end if; 
+            
+            -- output register 
+            if send_output = '1' then
+                Rx_Data_Out <= shift_register(8 downto 1);
+            end if; 
     end if;
 end process datapath;
+
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Receiver Output Logic:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Rx_Data <= Rx_Data_Out; 
 
 end behavioral_architecture; 
