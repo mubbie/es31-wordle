@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1653850771">
-  <File Type="PA-TCL" Name="rx_tx_shell.tcl"/>
   <File Type="BITSTR-BMM" Name="rx_tx_shell_bd.bmm"/>
-  <File Type="REPORTS-TCL" Name="rx_tx_shell_reports.tcl"/>
+  <File Type="PA-TCL" Name="rx_tx_shell.tcl"/>
   <File Type="OPT-DCP" Name="rx_tx_shell_opt.dcp"/>
+  <File Type="REPORTS-TCL" Name="rx_tx_shell_reports.tcl"/>
   <File Type="OPT-HWDEF" Name="rx_tx_shell.hwdef"/>
+  <File Type="BG-BGN" Name="rx_tx_shell.bgn"/>
   <File Type="PWROPT-DCP" Name="rx_tx_shell_pwropt.dcp"/>
   <File Type="PLACE-DCP" Name="rx_tx_shell_placed.dcp"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="rx_tx_shell_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="rx_tx_shell.bgn"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="rx_tx_shell_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="rx_tx_shell.bin"/>
   <File Type="PHYSOPT-DCP" Name="rx_tx_shell_physopt.dcp"/>
