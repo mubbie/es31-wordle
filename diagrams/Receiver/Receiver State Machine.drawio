@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-05-28T15:18:54.842Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="TBD1SdE7_l0AsQz5nhdN" version="18.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-30T01:58:46.965Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="LHp_s38EbWXaJFlkUCJy" version="18.1.2" type="github">
   <diagram id="x6LJebkulXxpP8k-j8Yy" name="Page-1">
-    <mxGraphModel dx="2844" dy="1508" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="2188" dy="1160" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -193,11 +193,8 @@
         <mxCell id="wVWjdl_f4s-kxVcAb7ZQ-193" style="edgeStyle=none;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Courier New;fontSize=20;fontColor=#6600CC;strokeWidth=5;" parent="1" source="wVWjdl_f4s-kxVcAb7ZQ-70" target="wVWjdl_f4s-kxVcAb7ZQ-101" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="wVWjdl_f4s-kxVcAb7ZQ-194" value="&lt;font color=&quot;#6600cc&quot; size=&quot;1&quot; style=&quot;&quot; face=&quot;Courier New&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Rx_done &amp;lt;= 1&lt;br&gt;Rx_error &amp;lt;= 0&lt;br&gt;Rx_data &amp;lt;= &lt;br&gt;shift_reg(8 downto 1)&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#0000FF;sketch=1;strokeWidth=5;" parent="1" vertex="1">
-          <mxGeometry x="894" y="749.3" width="278" height="115" as="geometry" />
-        </mxCell>
-        <mxCell id="wVWjdl_f4s-kxVcAb7ZQ-197" value="&lt;font color=&quot;#6600cc&quot; size=&quot;1&quot; style=&quot;&quot; face=&quot;Courier New&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Rx_done &amp;lt;= 1&lt;br&gt;Rx_error &amp;lt;= 1&lt;br&gt;Rx_data &amp;lt;= &lt;br&gt;shift_reg(8 downto 1)&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#0000FF;sketch=1;strokeWidth=5;" parent="1" vertex="1">
-          <mxGeometry x="133" y="749.3" width="278" height="115" as="geometry" />
+        <mxCell id="wVWjdl_f4s-kxVcAb7ZQ-197" value="&lt;font color=&quot;#6600cc&quot; size=&quot;1&quot; style=&quot;&quot; face=&quot;Courier New&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Rx_done &amp;lt;= 1&lt;br&gt;Rx_error &amp;lt;= 1&lt;br&gt;Send_outputs &amp;lt;= 1&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#0000FF;sketch=1;strokeWidth=5;" parent="1" vertex="1">
+          <mxGeometry x="133" y="749.3" width="278" height="116.7" as="geometry" />
         </mxCell>
         <mxCell id="wVWjdl_f4s-kxVcAb7ZQ-199" style="edgeStyle=orthogonalEdgeStyle;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Courier New;fontSize=20;fontColor=#6600CC;strokeWidth=5;" parent="1" source="wVWjdl_f4s-kxVcAb7ZQ-70" target="wVWjdl_f4s-kxVcAb7ZQ-97" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -210,6 +207,9 @@
               <mxPoint x="1453" y="512" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="rJ11sCCgZU31rdvZ2XXB-1" value="&lt;font color=&quot;#6600cc&quot; size=&quot;1&quot; style=&quot;&quot; face=&quot;Courier New&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Rx_done &amp;lt;= 1&lt;br&gt;Rx_error &amp;lt;= 0&lt;br&gt;Send_outputs &amp;lt;= 1&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#0000FF;sketch=1;strokeWidth=5;" vertex="1" parent="1">
+          <mxGeometry x="894" y="749.3" width="278" height="116.7" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
