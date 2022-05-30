@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.xpr">
+<Project Version="7" Minor="39" Path="C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="e5ad7dc2426b4cbb945be35845fa2023"/>
@@ -142,6 +142,7 @@
       </Config>
     </FileSet>
     <FileSet Name="tx_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/tx_sim">
+      <Filter Type="Srcs"/>
       <File Path="$PPRDIR/SCI_TRANSMITTER_tb_behav_9600Baud.wcfg">
         <FileInfo>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -158,6 +159,7 @@
       </Config>
     </FileSet>
     <FileSet Name="rx_tx_shell_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/rx_tx_shell_sim">
+      <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../../code/receiver_transmitter/rx_tx_shell_tb.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>

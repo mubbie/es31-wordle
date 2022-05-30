@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm_constraints.xdc rfile:../../../../rx_tx_comm_constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm_constraints.xdc rfile:../../../../rx_tx_comm_constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports clk_ext_port]
 set_property src_info {type:XDC file:1 line:71 export:INPUT save:INPUT read:READ} [current_design]
