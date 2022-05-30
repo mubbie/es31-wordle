@@ -121,9 +121,6 @@ signal Rx_sig           :  std_logic := '0';
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-signal Tx_Parrallel_In_sig		:  std_logic_vector(7 downto 0) := (others => '0');
-signal Tx_sig			        :  std_logic := '0';
-signal Tx_New_Data_sig		    :  std_logic := '0';
 
 
 --=============================================================================
@@ -141,7 +138,7 @@ receiver : SCI_RECEIVER
     port map (
         clk => clk_ext_port,
         Rx => RsRx_ext_port,
-        Rx_Data => Rx_data_port,
+        Rx_Data => Rx_data_sig,
         Rx_Done => Rx_Done_sig,
         Rx_Error => Rx_Error_sig
     );
@@ -162,5 +159,10 @@ transmitter : SCI_Transmitter
         -- Tx => Tx_sig
         Tx => RsTx_ext_port
     ); 
+    
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Output for test with LED's:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Rx_data_port <= Rx_Data_sig; 
 
 end behavioral_architecture;

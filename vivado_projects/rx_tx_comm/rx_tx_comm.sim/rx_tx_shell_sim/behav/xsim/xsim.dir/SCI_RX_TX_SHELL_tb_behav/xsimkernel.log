@@ -1,0 +1,7 @@
+Running: xsim.dir/SCI_RX_TX_SHELL_tb_behav/xsimk.exe -simmode gui -wdb SCI_RX_TX_SHELL_tb_behav.wdb -simrunnum 0 -socket 60669
+Design successfully loaded
+Design Loading Memory Usage: 6328 KB (Peak: 6328 KB)
+Design Loading CPU Usage: 77 ms
+Simulation completed
+Simulation Memory Usage: 14996 KB (Peak: 14996 KB)
+Simulation CPU Usage: 655 ms

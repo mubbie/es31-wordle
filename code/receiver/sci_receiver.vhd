@@ -127,6 +127,9 @@ signal register_reset : std_logic := '0';
 signal Rx_Data_Out : std_logic_vector((BIT_COUNTER_TOP - 3) downto 0) := (others => '1');
 signal send_output : std_logic := '0'; 
 
+signal rx_done_output : std_logic := '0';
+signal rx_error_output : std_logic := '0';
+
 begin 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Update the current state (synchronous):
@@ -210,8 +213,8 @@ OutputLogic: process(current_state)
 begin 
     -- define the default outputs: 
     send_output <= '0'; 
-    Rx_Done <= '0';
-    Rx_Error <= '0';
+    rx_done_output <= '0';
+    rx_error_output <= '0';
     baud_reset <= '1';
     bit_reset <= '1';
     shift_en <= '0';
@@ -233,13 +236,13 @@ begin
             baud_reset <= '0';
         when sRxSuccess =>
             -- output received data and receipt nature signals: 
-            Rx_Done <= '1';
-            Rx_Error <= '0';
+            rx_done_output <= '1';
+            rx_error_output <= '0';
             send_output <= '1'; 
         when sRxFail =>
             -- output received data and receipt nature signals: 
-            Rx_Done <= '1';
-            Rx_Error <= '1';
+            rx_done_output <= '1';
+            rx_error_output <= '1';
             send_output <= '1'; 
         when others => 
             -- do nothing
@@ -305,6 +308,10 @@ end process CounterLogic;
 datapath : process(clk)
 begin
 	if rising_edge(clk) then        
+	        -- default outputs 
+	         Rx_Done <= '0'; 
+             Rx_Error <= '0'; 
+	        
             -- Shift Register
             if register_reset = '1' then 
                 shift_register <= (others => '1'); 
@@ -316,7 +323,14 @@ begin
             -- output register 
             if send_output = '1' then
                 Rx_Data_Out <= shift_register(8 downto 1);
-            end if; 
+            end if;
+            
+            -- output signals 
+            -- rx_done 
+            Rx_Done <=  rx_done_output;
+            
+            -- rx_error
+            Rx_Error <= rx_error_output;
     end if;
 end process datapath;
 

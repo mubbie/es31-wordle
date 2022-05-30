@@ -1,28 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1653850771">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1653873905">
   <File Type="BITSTR-BMM" Name="rx_tx_shell_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="rx_tx_shell_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="rx_tx_shell_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="rx_tx_shell_power_routed.rpt"/>
   <File Type="PA-TCL" Name="rx_tx_shell.tcl"/>
+  <File Type="OPT-TIMING" Name="rx_tx_shell_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="rx_tx_shell_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="rx_tx_shell_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="rx_tx_shell_reports.tcl"/>
+  <File Type="OPT-DRC" Name="rx_tx_shell_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="rx_tx_shell.hwdef"/>
-  <File Type="BG-BGN" Name="rx_tx_shell.bgn"/>
   <File Type="PWROPT-DCP" Name="rx_tx_shell_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="rx_tx_shell_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="rx_tx_shell_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="rx_tx_shell_placed.dcp"/>
+  <File Type="PLACE-IO" Name="rx_tx_shell_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="rx_tx_shell_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="rx_tx_shell_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="rx_tx_shell_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="rx_tx_shell_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="rx_tx_shell_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="rx_tx_shell_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="rx_tx_shell.bgn"/>
+  <File Type="PLACE-TIMING" Name="rx_tx_shell_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="rx_tx_shell_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="rx_tx_shell.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="rx_tx_shell_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="rx_tx_shell_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="rx_tx_shell_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="rx_tx_shell.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="rx_tx_shell_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="rx_tx_shell_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="rx_tx_shell_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="rx_tx_shell_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="rx_tx_shell_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="rx_tx_shell_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="rx_tx_shell.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="rx_tx_shell_drc_routed.rpx"/>
   <File Type="BITSTR-MMI" Name="rx_tx_shell.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="rx_tx_shell_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="rx_tx_shell_methodology_drc_routed.rpx"/>
   <File Type="BITSTR-SYSDEF" Name="rx_tx_shell.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="rx_tx_shell_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="rx_tx_shell_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="rx_tx_shell_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="rx_tx_shell_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="rx_tx_shell_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="rx_tx_shell_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="rx_tx_shell_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="rx_tx_shell_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="rx_tx_shell_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="rx_tx_shell_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="rx_tx_shell_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="rx_tx_shell_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="rx_tx_shell_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="rx_tx_shell_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="rx_tx_shell_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="rx_tx_shell_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="rx_tx_shell_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="rx_tx_shell_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="rx_tx_shell_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="rx_tx_shell.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="rx_tx_shell_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="rx_tx_shell.rbt"/>
   <File Type="BITSTR-NKY" Name="rx_tx_shell.nky"/>
   <File Type="BG-DRC" Name="rx_tx_shell.drc"/>
@@ -48,14 +89,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../code/transmitter/sci_transmitter_tb.vhd">
+    <File Path="$PPRDIR/../../code/receiver/sci_receiver_tb.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../code/receiver/sci_receiver_tb.vhd">
+    <File Path="$PPRDIR/../../code/transmitter/sci_transmitter_tb.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>

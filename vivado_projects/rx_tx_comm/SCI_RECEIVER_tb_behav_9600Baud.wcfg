@@ -3,123 +3,143 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="SCI_TRANSMITTER_tb_behav.wdb" id="1">
+      <db_ref path="SCI_RECEIVER_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="SCI_TRANSMITTER_tb" />
+            <top_module name="SCI_RECEIVER_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="6133004926109fs"></ZoomEndTime>
-      <Cursor1Time time="10000000000000fs"></Cursor1Time>
+      <ZoomEndTime time="10000000000001fs"></ZoomEndTime>
+      <Cursor1Time time="5573415000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="77"></ValueColumnWidth>
+      <ValueColumnWidth column_width="73"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/clk_signal" type="logic">
+   <WVObjectSize size="24" />
+   <wvobject fp_name="/SCI_RECEIVER_tb/clk_signal" type="logic">
       <obj_property name="ElementShortName">clk_signal</obj_property>
       <obj_property name="ObjectShortName">clk_signal</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/New_Data_signal" type="logic">
-      <obj_property name="ElementShortName">New_Data_signal</obj_property>
-      <obj_property name="ObjectShortName">New_Data_signal</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/Parallel_in_signal" type="array">
-      <obj_property name="ElementShortName">Parallel_in_signal[7:0]</obj_property>
-      <obj_property name="ObjectShortName">Parallel_in_signal[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject fp_name="/SCI_RECEIVER_tb/Rx_signal" type="logic">
+      <obj_property name="ElementShortName">Rx_signal</obj_property>
+      <obj_property name="ObjectShortName">Rx_signal</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/Tx_signal" type="logic">
-      <obj_property name="ElementShortName">Tx_signal</obj_property>
-      <obj_property name="ObjectShortName">Tx_signal</obj_property>
+   <wvobject fp_name="/SCI_RECEIVER_tb/Rx_Data_signal" type="array">
+      <obj_property name="ElementShortName">Rx_Data_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Rx_Data_signal[7:0]</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/clock_period" type="other">
+   <wvobject fp_name="/SCI_RECEIVER_tb/Rx_Data_signal" type="array">
+      <obj_property name="ElementShortName">Rx_Data_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Rx_Data_signal[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/Rx_Data" type="array">
+      <obj_property name="ElementShortName">Rx_Data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Rx_Data[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/shift_register" type="array">
+      <obj_property name="ElementShortName">shift_register[9:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_register[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/Rx_Done_signal" type="logic">
+      <obj_property name="ElementShortName">Rx_Done_signal</obj_property>
+      <obj_property name="ObjectShortName">Rx_Done_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/rx_done_output" type="logic">
+      <obj_property name="ElementShortName">rx_done_output</obj_property>
+      <obj_property name="ObjectShortName">rx_done_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/send_output" type="logic">
+      <obj_property name="ElementShortName">send_output</obj_property>
+      <obj_property name="ObjectShortName">send_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/Rx_Error_signal" type="logic">
+      <obj_property name="ElementShortName">Rx_Error_signal</obj_property>
+      <obj_property name="ObjectShortName">Rx_Error_signal</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/rx_error_output" type="logic">
+      <obj_property name="ElementShortName">rx_error_output</obj_property>
+      <obj_property name="ObjectShortName">rx_error_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/TestCharactersArray" type="array">
+      <obj_property name="ElementShortName">TestCharactersArray[0:6][9:0]</obj_property>
+      <obj_property name="ObjectShortName">TestCharactersArray[0:6][9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/clock_period" type="other">
       <obj_property name="ElementShortName">clock_period</obj_property>
       <obj_property name="ObjectShortName">clock_period</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/BAUD_COUNTER_TOP_constant" type="other">
+   <wvobject fp_name="/SCI_RECEIVER_tb/BAUD_COUNTER_TOP_constant" type="other">
       <obj_property name="ElementShortName">BAUD_COUNTER_TOP_constant</obj_property>
       <obj_property name="ObjectShortName">BAUD_COUNTER_TOP_constant</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/BIT_COUNTER_TOP_constant" type="other">
+   <wvobject fp_name="/SCI_RECEIVER_tb/BIT_COUNTER_TOP_constant" type="other">
       <obj_property name="ElementShortName">BIT_COUNTER_TOP_constant</obj_property>
       <obj_property name="ObjectShortName">BIT_COUNTER_TOP_constant</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/Parallel_in" type="array">
-      <obj_property name="ElementShortName">Parallel_in[7:0]</obj_property>
-      <obj_property name="ObjectShortName">Parallel_in[7:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/baud_tc" type="logic">
+      <obj_property name="ElementShortName">baud_tc</obj_property>
+      <obj_property name="ObjectShortName">baud_tc</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/Shift_Reg" type="array">
-      <obj_property name="ElementShortName">Shift_Reg[9:0]</obj_property>
-      <obj_property name="ObjectShortName">Shift_Reg[9:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/tc" type="logic">
-      <obj_property name="ElementShortName">tc</obj_property>
-      <obj_property name="ObjectShortName">tc</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/baud_start_tc" type="logic">
+      <obj_property name="ElementShortName">baud_start_tc</obj_property>
+      <obj_property name="ObjectShortName">baud_start_tc</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/Baud_Counter" type="array">
-      <obj_property name="ElementShortName">Baud_Counter[13:0]</obj_property>
-      <obj_property name="ObjectShortName">Baud_Counter[13:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/BAUD_COUNTER_LEN" type="other">
-      <obj_property name="ElementShortName">BAUD_COUNTER_LEN</obj_property>
-      <obj_property name="ObjectShortName">BAUD_COUNTER_LEN</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/block_sent" type="logic">
-      <obj_property name="ElementShortName">block_sent</obj_property>
-      <obj_property name="ObjectShortName">block_sent</obj_property>
-      <obj_property name="CustomSignalColor">#FFA500</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/queue_reg" type="array">
-      <obj_property name="ElementShortName">queue_reg[0:7][7:0]</obj_property>
-      <obj_property name="ObjectShortName">queue_reg[0:7][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/r_addr" type="other">
-      <obj_property name="ElementShortName">r_addr</obj_property>
-      <obj_property name="ObjectShortName">r_addr</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/w_addr" type="other">
-      <obj_property name="ElementShortName">w_addr</obj_property>
-      <obj_property name="ObjectShortName">w_addr</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/q_size" type="other">
-      <obj_property name="ElementShortName">q_size</obj_property>
-      <obj_property name="ObjectShortName">q_size</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/empty" type="logic">
-      <obj_property name="ElementShortName">empty</obj_property>
-      <obj_property name="ObjectShortName">empty</obj_property>
-      <obj_property name="CustomSignalColor">#FF0000</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/full" type="logic">
-      <obj_property name="ElementShortName">full</obj_property>
-      <obj_property name="ObjectShortName">full</obj_property>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/baud_reset" type="logic">
+      <obj_property name="ElementShortName">baud_reset</obj_property>
+      <obj_property name="ObjectShortName">baud_reset</obj_property>
       <obj_property name="CustomSignalColor">#FFD700</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/SCI_TRANSMITTER_tb/uut/r_data" type="array">
-      <obj_property name="ElementShortName">r_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">r_data[7:0]</obj_property>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/baud_count" type="array">
+      <obj_property name="ElementShortName">baud_count[13:0]</obj_property>
+      <obj_property name="ObjectShortName">baud_count[13:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/bit_tc" type="logic">
+      <obj_property name="ElementShortName">bit_tc</obj_property>
+      <obj_property name="ObjectShortName">bit_tc</obj_property>
+      <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/bit_reset" type="logic">
+      <obj_property name="ElementShortName">bit_reset</obj_property>
+      <obj_property name="ObjectShortName">bit_reset</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/bit_count" type="array">
+      <obj_property name="ElementShortName">bit_count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_count[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/current_state" type="other">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RECEIVER_tb/uut/next_state" type="other">
+      <obj_property name="ElementShortName">next_state</obj_property>
+      <obj_property name="ObjectShortName">next_state</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
 </wave_config>

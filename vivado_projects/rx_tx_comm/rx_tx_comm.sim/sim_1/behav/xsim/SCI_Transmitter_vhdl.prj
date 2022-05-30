@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../../code/transmitter/sci_transmitter.vhd" \
-
-# Do not sort compile order
-nosort

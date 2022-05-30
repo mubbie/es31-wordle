@@ -1,7 +1,0 @@
-Vivado Simulator 2018.3
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto e5ad7dc2426b4cbb945be35845fa2023 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot SCI_RX_TX_SHELL_tb_behav xil_defaultlib.SCI_RX_TX_SHELL_tb -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-ERROR: [VRFC 10-664] expression has 12 elements ; expected 10 [O:/ES31_22S/es31-worldle/code/receiver_transmitter/rx_tx_shell_tb.vhd:80]
-ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit sci_rx_tx_shell_tb in library work failed.

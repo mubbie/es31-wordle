@@ -77,7 +77,7 @@ signal RsTx_ext_signal : std_logic := '1';
 signal Rx_data_ext_signal : std_logic_vector(7 downto 0) := (others => '1');
 
 -- data to be transmitted: including start and stop bit
-signal data_to_transmit_ASCII_A : std_logic_vector(9 downto 0) := "001000001011";
+signal data_to_transmit_ASCII_A : std_logic_vector(9 downto 0) := "0100000101";
 
 -- constants
 constant clock_ext_period : time := 10 ns; -- 100 MHz clock
@@ -114,10 +114,12 @@ begin
 
     -- send the data packet, bit by bit 
     for i in 0 to 9 loop
-        RsRx_ext_signal <= data_to_transmit_ASCII_A(i);
-        wait for clock_ext_period;
+        RsRx_ext_signal <= data_to_transmit_ASCII_A(9-i);
+        wait for clock_ext_period*10417; -- 65000 baudrate
     end loop; 
+    RsRx_ext_signal <= '1'; -- return to idle state
 
+    wait; 
 end process stimulus_process; 
 
 end testbench;
