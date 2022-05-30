@@ -2,8 +2,8 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Sun May 29 14:52:36 2022
-# Process ID: 9768
+# Start of session at: Sun May 29 21:25:08 2022
+# Process ID: 10668
 # Current directory: O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1
 # Command line: vivado.exe -log rx_tx_shell.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rx_tx_shell.tcl
 # Log file: O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1/rx_tx_shell.vds

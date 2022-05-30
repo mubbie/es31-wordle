@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1653850354">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1653873904">
   <File Type="PA-TCL" Name="rx_tx_shell.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="rx_tx_shell_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="rx_tx_shell_reports.tcl"/>
   <File Type="RDS-RDS" Name="rx_tx_shell.vds"/>
+  <File Type="RDS-UTIL" Name="rx_tx_shell_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="rx_tx_shell_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="rx_tx_shell.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="rx_tx_shell_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="rx_tx_shell_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../code/receiver/sci_receiver.vhd">
@@ -24,14 +29,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../code/transmitter/sci_transmitter_tb.vhd">
+    <File Path="$PPRDIR/../../code/receiver/sci_receiver_tb.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../code/receiver/sci_receiver_tb.vhd">
+    <File Path="$PPRDIR/../../code/transmitter/sci_transmitter_tb.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
