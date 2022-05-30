@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../es31-worldle/code/receiver/sci_receiver.vhd" \
+"../../../../../../es31-worldle/code/transmitter/sci_transmitter.vhd" \
+"../../../../../../es31-worldle/code/receiver_transmitter/rx_tx_shell.vhd" \
+
+# Do not sort compile order
+nosort

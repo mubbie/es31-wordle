@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "O:/ES31_22S/WORDLE/sci_tx_proj/sci_tx_proj/design_tx1_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SCI_Tx'
+INFO: [VRFC 10-163] Analyzing VHDL file "O:/ES31_22S/WORDLE/sci_tx_proj/sci_tx_proj/testbench_tx1_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SCI_Tx_tb'

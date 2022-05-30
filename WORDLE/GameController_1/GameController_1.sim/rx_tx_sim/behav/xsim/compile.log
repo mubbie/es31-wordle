@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SCI_RECEIVER'
+INFO: [VRFC 10-163] Analyzing VHDL file "O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SCI_Transmitter'
+INFO: [VRFC 10-163] Analyzing VHDL file "O:/ES31_22S/es31-worldle/code/receiver_transmitter/rx_tx_shell.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'rx_tx_shell'
