@@ -67,16 +67,17 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.cache/wt [current_project]
-  set_property parent.project_path O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.xpr [current_project]
-  set_property ip_output_repo O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.cache/wt [current_project]
+  set_property parent.project_path C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.xpr [current_project]
+  set_property ip_output_repo C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1/rx_tx_shell.dcp
-  read_xdc O:/ES31_22S/es31-worldle/vivado_projects/rx_tx_comm_constraints.xdc
+  add_files -quiet C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1/rx_tx_shell.dcp
+  read_xdc C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm_constraints.xdc
   link_design -top rx_tx_shell -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
