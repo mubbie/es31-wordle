@@ -53,7 +53,7 @@ ENTITY Check_Letter IS
             -- lower case output 
             output_lower_case_letter :	out STD_LOGIC_VECTOR(7 downto 0)
     );
-end Check_Letter;
+end entity Check_Letter;
 
 --=============================================================================
 --Architecture Type:
