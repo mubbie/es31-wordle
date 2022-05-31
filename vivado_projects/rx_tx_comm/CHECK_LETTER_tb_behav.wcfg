@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="CHECK_LETTER_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="CHECK_LETTER_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="288945477fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="265"></NameColumnWidth>
+      <ValueColumnWidth column_width="165"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/CHECK_LETTER_tb/clk_signal" type="logic">
+      <obj_property name="ElementShortName">clk_signal</obj_property>
+      <obj_property name="ObjectShortName">clk_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/letter_signal" type="array">
+      <obj_property name="ElementShortName">letter_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/letter_signal" type="array">
+      <obj_property name="ElementShortName">letter_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter_signal[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/letter_signal" type="array">
+      <obj_property name="ElementShortName">letter_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter_signal[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/is_backspace_signal" type="logic">
+      <obj_property name="ElementShortName">is_backspace_signal</obj_property>
+      <obj_property name="ObjectShortName">is_backspace_signal</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/is_valid_alpha_signal" type="logic">
+      <obj_property name="ElementShortName">is_valid_alpha_signal</obj_property>
+      <obj_property name="ObjectShortName">is_valid_alpha_signal</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/is_enter_signal" type="logic">
+      <obj_property name="ElementShortName">is_enter_signal</obj_property>
+      <obj_property name="ObjectShortName">is_enter_signal</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/output_lower_case_letter_signal" type="array">
+      <obj_property name="ElementShortName">output_lower_case_letter_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output_lower_case_letter_signal[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/output_lower_case_letter_signal" type="array">
+      <obj_property name="ElementShortName">output_lower_case_letter_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output_lower_case_letter_signal[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/output_lower_case_letter_signal" type="array">
+      <obj_property name="ElementShortName">output_lower_case_letter_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output_lower_case_letter_signal[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CHECK_LETTER_tb/clock_period" type="other">
+      <obj_property name="ElementShortName">clock_period</obj_property>
+      <obj_property name="ObjectShortName">clock_period</obj_property>
+   </wvobject>
+</wave_config>

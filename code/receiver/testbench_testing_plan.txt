@@ -77,7 +77,3 @@
         -- sParallelOut, or state "100", after all the bits have been sent 
         -- RxFail, or state "110", or RxSuccess, or state "101" depending on if the data sent had an error or not 
         -- Finally, back to sWait, or state "000", after the data has been sent
-
-# QUESTIONS FOR BEN 
-    -- The issue with the counter 
-    -- Testing with the invalid bits 

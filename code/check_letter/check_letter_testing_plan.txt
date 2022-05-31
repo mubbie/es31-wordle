@@ -1,0 +1,62 @@
+## TEST BENCH TESTING PLAN 
+## FOR CHECK_LETTER COMPONENT 
+
+PORT MAP (
+        -- inputs 
+        letter => letter_signal,
+
+        -- outputs 
+        is_backspace => is_backspace_signal,
+        is_valid_alpha => is_valid_alpha_signal,
+        is_enter => is_enter_signal,
+        output_lower_case_letter => output_lower_case_letter_signal
+    );
+
+-- INITIALLY
+    -- Expect: 
+        -- is_backspace_signal = 0
+        -- is_valid_alpha_signal = 0
+        -- is_enter_signal = 0
+        -- output_lower_case_letter_signal = "11111111"
+
+-- TESTING 
+    -- Send some letters and see the output 
+        -- send uppercase A 
+            -- letter_signal: "01000001"
+            -- expect: 
+                -- is_backspace_signal = 0
+                -- is_valid_alpha_signal = 1
+                -- is_enter_signal = 0
+                -- output_lower_case_letter_signal = "01100001"
+        -- send lowercase z
+            -- letter_signal: "01111010"
+            -- expect: 
+                -- is_backspace_signal = 0
+                -- is_valid_alpha_signal = 1
+                -- is_enter_signal = 0
+                -- output_lower_case_letter_signal = "01111010"
+        -- send backspace 
+            -- letter_signal: "00001000"
+            -- expect: 
+                -- is_backspace_signal = 1
+                -- is_valid_alpha_signal = 0
+                -- is_enter_signal = 0
+                -- output_lower_case_letter_signal = "00001000"
+        -- send enter
+            -- in this case, enter just carriage return, and line feed is implied 
+            -- letter_signal: "00001101"
+            -- expect: 
+                -- is_backspace_signal = 0
+                -- is_valid_alpha_signal = 0
+                -- is_enter_signal = 1
+                -- output_lower_case_letter_signal = "00001101"
+
+-- IMPLEMENTATION
+    -- send the desired to letter to letter_signal
+    -- wait a while and observe the output 
+    -- if the output is not what we expect, then we have a bug
+
+-- VALIDATION 
+    -- the various "expect" flags in the testing section 
+
+
