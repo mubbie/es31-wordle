@@ -121,8 +121,8 @@ begin
     letter_signal <= "01000001";
     wait for clock_period*10;
     
-    -- send lowercase a
-    letter_signal <= "01100001";
+    -- send lowercase z
+    letter_signal <= "01111010";
     wait for clock_period*10;
 
     -- send backspace

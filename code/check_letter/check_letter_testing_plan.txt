@@ -28,13 +28,13 @@ PORT MAP (
                 -- is_valid_alpha_signal = 1
                 -- is_enter_signal = 0
                 -- output_lower_case_letter_signal = "01100001"
-        -- send lowercase a 
-            -- letter_signal: "01100001"
+        -- send lowercase z
+            -- letter_signal: "01111010"
             -- expect: 
                 -- is_backspace_signal = 0
                 -- is_valid_alpha_signal = 1
                 -- is_enter_signal = 0
-                -- output_lower_case_letter_signal = "01100001"
+                -- output_lower_case_letter_signal = "01111010"
         -- send backspace 
             -- letter_signal: "00001000"
             -- expect: 

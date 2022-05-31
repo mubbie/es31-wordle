@@ -71,7 +71,7 @@ signal upper_case_a : unsigned(7 downto 0) := "01000001"; -- ASCII A
 signal upper_case_z : unsigned(7 downto 0) := "01011010"; -- ASCII Z
 signal lower_case_a : unsigned(7 downto 0) := "01100001"; -- ASCII a
 signal lower_case_z : unsigned(7 downto 0) := "01111010"; -- ASCII z
-
+signal upper_case_to_lower_case : unsigned(7 downto 0) := "00100000"; -- this is 32
 
 begin 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -83,7 +83,7 @@ begin
     is_backspace <= '0';
     is_valid_alpha <= '0';
     is_enter <= '0';
-    output_lower_case_letter <= letter;
+    output_lower_case_letter <= letter; 
 
     -- backspace
     if unsigned(letter) = backspace then 
@@ -103,7 +103,8 @@ begin
 
     -- lower case output
     if unsigned(letter) >= upper_case_a and unsigned(letter) <= upper_case_z then 
-        output_lower_case_letter <= std_logic_vector(unsigned(letter) + unsigned(32));
+        -- add 32 to make it lowercase 
+        output_lower_case_letter <= std_logic_vector(unsigned(letter) + upper_case_to_lower_case);
     end if;
 end process Output_Logic; 
 
