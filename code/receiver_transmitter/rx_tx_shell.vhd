@@ -85,6 +85,24 @@ component SCI_RECEIVER is
     );
 end component SCI_RECEIVER;
 
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Check_Letter Sub-Component:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+component Check_Letter IS
+    -- ports 
+    port ( 	
+            -- inputs
+            letter	: 	in 	STD_LOGIC_VECTOR(7 downto 0);
+
+            -- outputs
+            is_backspace			:	out STD_LOGIC;
+            is_valid_alpha          :	out STD_LOGIC;
+            is_enter                :	out STD_LOGIC;
+
+            -- lower case output 
+            output_lower_case_letter :	out STD_LOGIC_VECTOR(7 downto 0)
+    );
+end component Check_Letter;
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter Sub-Component:
@@ -118,10 +136,19 @@ signal Rx_Done_sig		:  std_logic := '0';
 signal Rx_Error_sig		:  std_logic := '0';
 signal Rx_sig           :  std_logic := '0';
 
+
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Check Letter:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+signal CL_output_lower_case_letter : std_logic_vector(7 downto 0) := (others => '1');
+signal CL_is_backspace_signal : std_logic := '0';
+signal CL_is_valid_alpha_signal : std_logic := '0';
+signal CL_is_enter_signal : std_logic := '0';
+
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+signal New_Data_Signal : std_logic := '0'; 
 
 --=============================================================================
 --Port Mapping (wiring the component blocks together): 
@@ -142,6 +169,29 @@ receiver : SCI_RECEIVER
         Rx_Done => Rx_Done_sig,
         Rx_Error => Rx_Error_sig
     );
+    
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Wire the "check_letter" sub-component to the shell:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+checkletter : CHECK_LETTER 
+    PORT MAP (
+        -- inputs 
+        letter => Rx_Data_sig,
+
+        -- outputs 
+        is_backspace => CL_is_backspace_signal,
+        is_valid_alpha => CL_is_valid_alpha_signal,
+        is_enter => CL_is_enter_signal,
+        output_lower_case_letter => CL_output_lower_case_letter
+    );
+    
+--=============================================================================
+--New_Data_Stimulus: Prep new data for the transmitter
+--=============================================================================
+New_Data_Stimulus : process(Rx_Done_sig, CL_is_valid_alpha_signal, CL_is_backspace_signal, CL_is_enter_signal)
+begin 
+    New_Data_Signal <= (Rx_Done_sig and CL_is_valid_alpha_signal) or (Rx_Done_sig and CL_is_backspace_signal) or (Rx_Done_sig and CL_is_enter_signal);
+end process New_Data_Stimulus; 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the transmitter sub-component to the shell:
@@ -153,8 +203,8 @@ transmitter : SCI_Transmitter
     )
     port map (
         clk => clk_ext_port,
-        Parallel_in => Rx_Data_sig,
-        New_data => Rx_Done_sig,
+        Parallel_in => CL_output_lower_case_letter,
+        New_data => New_Data_Signal,
         
         -- Tx => Tx_sig
         Tx => RsTx_ext_port

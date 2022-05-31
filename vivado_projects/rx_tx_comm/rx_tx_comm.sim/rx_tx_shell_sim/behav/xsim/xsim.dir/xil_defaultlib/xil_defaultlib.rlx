@@ -2,7 +2,8 @@
 2018.3
 Mar 26 2019
 04:57:32
-O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd,1653873734,vhdl,,,,sci_receiver,,,,,,,,
-O:/ES31_22S/es31-worldle/code/receiver_transmitter/rx_tx_shell.vhd,1653871572,vhdl,,,,rx_tx_shell,,,,,,,,
-O:/ES31_22S/es31-worldle/code/receiver_transmitter/rx_tx_shell_tb.vhd,1653866199,vhdl,,,,sci_rx_tx_shell_tb,,,,,,,,
-O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd,1653861764,vhdl,,,,sci_transmitter,,,,,,,,
+C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd,1654006649,vhdl,,,,check_letter,,,,,,,,
+C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd,1653874883,vhdl,,,,sci_receiver,,,,,,,,
+C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd,1654007119,vhdl,,,,rx_tx_shell,,,,,,,,
+C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver_transmitter/rx_tx_shell_tb.vhd,1653874883,vhdl,,,,sci_rx_tx_shell_tb,,,,,,,,
+C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd,1653862854,vhdl,,,,sci_transmitter,,,,,,,,

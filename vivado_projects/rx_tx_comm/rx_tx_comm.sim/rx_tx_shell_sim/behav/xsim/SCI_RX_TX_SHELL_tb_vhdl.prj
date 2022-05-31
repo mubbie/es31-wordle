@@ -1,5 +1,6 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
+"../../../../../../code/check_letter/check_letter.vhd" \
 "../../../../../../code/receiver_transmitter/rx_tx_shell.vhd" \
 "../../../../../../code/receiver/sci_receiver.vhd" \
 "../../../../../../code/transmitter/sci_transmitter.vhd" \
