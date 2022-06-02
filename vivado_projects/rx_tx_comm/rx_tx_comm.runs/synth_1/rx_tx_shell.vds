@@ -2,8 +2,8 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Tue May 31 10:30:08 2022
-# Process ID: 17816
+# Start of session at: Thu Jun  2 13:40:50 2022
+# Process ID: 48160
 # Current directory: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1
 # Command line: vivado.exe -log rx_tx_shell.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rx_tx_shell.tcl
 # Log file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1/rx_tx_shell.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4932 
+INFO: Helper process launched with PID 49592 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 389.164 ; gain = 98.750
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 389.320 ; gain = 99.223
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'rx_tx_shell' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd:60]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
@@ -30,13 +30,6 @@ WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was remo
 INFO: [Synth 8-256] done synthesizing module 'SCI_RECEIVER' (1#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd:76]
 INFO: [Synth 8-3491] module 'Check_Letter' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:42' bound to instance 'checkletter' of component 'Check_Letter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd:176]
 INFO: [Synth 8-638] synthesizing module 'Check_Letter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:61]
-WARNING: [Synth 8-614] signal 'backspace' is read in the process but is not in the sensitivity list [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:80]
-WARNING: [Synth 8-614] signal 'enter' is read in the process but is not in the sensitivity list [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:80]
-WARNING: [Synth 8-614] signal 'upper_case_a' is read in the process but is not in the sensitivity list [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:80]
-WARNING: [Synth 8-614] signal 'upper_case_z' is read in the process but is not in the sensitivity list [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:80]
-WARNING: [Synth 8-614] signal 'lower_case_a' is read in the process but is not in the sensitivity list [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:80]
-WARNING: [Synth 8-614] signal 'lower_case_z' is read in the process but is not in the sensitivity list [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:80]
-WARNING: [Synth 8-614] signal 'upper_case_to_lower_case' is read in the process but is not in the sensitivity list [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:80]
 INFO: [Synth 8-256] done synthesizing module 'Check_Letter' (2#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:61]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
 	Parameter BIT_COUNTER_TOP bound to: 10 - type: integer 
@@ -53,7 +46,7 @@ RAM "queue_reg_reg" dissolved into registers
 INFO: [Synth 8-256] done synthesizing module 'SCI_Transmitter' (3#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd:71]
 INFO: [Synth 8-256] done synthesizing module 'rx_tx_shell' (4#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd:60]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 445.879 ; gain = 155.465
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 445.488 ; gain = 155.391
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -66,10 +59,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 445.879 ; gain = 155.465
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 445.488 ; gain = 155.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 445.879 ; gain = 155.465
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 445.488 ; gain = 155.391
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -80,30 +73,30 @@ Parsing XDC File [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx
 Finished Parsing XDC File [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm_constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rx_tx_shell_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/rx_tx_shell_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 773.074 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 773.656 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 773.117 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 773.684 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 773.117 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 773.117 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 773.684 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 773.684 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 773.117 ; gain = 482.703
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 773.684 ; gain = 483.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 773.117 ; gain = 482.703
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 773.684 ; gain = 483.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 773.117 ; gain = 482.703
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 773.684 ; gain = 483.586
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SCI_RECEIVER'
 INFO: [Synth 8-5544] ROM "bit_tc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -140,7 +133,7 @@ INFO: [Synth 8-5545] ROM "block_sent" won't be mapped to RAM because address siz
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'SCI_RECEIVER'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 773.117 ; gain = 482.703
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 773.684 ; gain = 483.586
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -254,7 +247,7 @@ INFO: [Synth 8-5546] ROM "transmitter/tc" won't be mapped to RAM because it is t
 INFO: [Synth 8-5545] ROM "transmitter/w_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "transmitter/r_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 773.117 ; gain = 482.703
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 773.684 ; gain = 483.586
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -266,13 +259,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 773.117 ; gain = 482.703
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 773.684 ; gain = 483.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 839.043 ; gain = 548.629
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 837.777 ; gain = 547.680
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -284,7 +277,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -308,7 +301,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -321,7 +314,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -333,25 +326,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -391,27 +384,27 @@ Report Instance Areas:
 |3     |  transmitter |SCI_Transmitter |   508|
 +------+--------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 838.840 ; gain = 548.742
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 841.445 ; gain = 223.793
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 841.445 ; gain = 551.031
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 838.840 ; gain = 220.547
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 838.840 ; gain = 548.742
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 838.840 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-58 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+58 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:32 . Memory (MB): peak = 841.445 ; gain = 562.922
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.445 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 838.840 ; gain = 560.867
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 838.840 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1/rx_tx_shell.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file rx_tx_shell_utilization_synth.rpt -pb rx_tx_shell_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May 31 10:30:43 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  2 13:41:22 2022...
