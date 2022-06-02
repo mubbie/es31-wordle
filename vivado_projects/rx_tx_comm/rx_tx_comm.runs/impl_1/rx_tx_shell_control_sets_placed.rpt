@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date         : Mon May 30 18:55:21 2022
+| Date         : Thu Jun  2 13:41:59 2022
 | Host         : Mubarak-XPS15 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file rx_tx_shell_control_sets_placed.rpt
 | Design       : rx_tx_shell
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    14 |
-| Unused register locations in slices containing registers |    38 |
+| Number of unique control sets                            |    12 |
+| Unused register locations in slices containing registers |    30 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,7 +34,7 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      1 |            3 |
+|      1 |            1 |
 |      4 |            1 |
 |      8 |            1 |
 |     10 |            1 |
@@ -49,12 +49,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              71 |           29 |
+| No           | No                    | No                     |              73 |           30 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              28 |            7 |
-| Yes          | No                    | No                     |              58 |           20 |
+| Yes          | No                    | No                     |              60 |           18 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             109 |           31 |
+| Yes          | Yes                   | No                     |             105 |           28 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -65,19 +65,17 @@ Table of Contents
 |       Clock Signal      |            Enable Signal           |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
 +-------------------------+------------------------------------+---------------------------------------+------------------+----------------+
 |  clk_ext_port_IBUF_BUFG | transmitter/tc                     | transmitter/Baud_Counter0             |                1 |              1 |
-|  clk_ext_port_IBUF_BUFG | transmitter/Baud_Counter0          |                                       |                1 |              1 |
-|  clk_ext_port_IBUF_BUFG | transmitter/num_bits_sent_0        |                                       |                1 |              1 |
-|  clk_ext_port_IBUF_BUFG | receiver/bit_count[3]_i_2_n_0      | receiver/bit_count[3]_i_1_n_0         |                3 |              4 |
+|  clk_ext_port_IBUF_BUFG | receiver/bit_count[3]_i_1_n_0      |                                       |                1 |              4 |
 |  clk_ext_port_IBUF_BUFG | transmitter/Shift_Reg0_in[0]       |                                       |                4 |              8 |
-|  clk_ext_port_IBUF_BUFG | receiver/shift_register[9]_i_2_n_0 | receiver/register_reset               |                2 |             10 |
-|  clk_ext_port_IBUF_BUFG |                                    | receiver/baud_count[0]_i_1_n_0        |                4 |             14 |
+|  clk_ext_port_IBUF_BUFG | receiver/shift_register[9]_i_2_n_0 | receiver/shift_register[9]_i_1_n_0    |                2 |             10 |
+|  clk_ext_port_IBUF_BUFG |                                    | receiver/baud_reset                   |                4 |             14 |
 |  clk_ext_port_IBUF_BUFG |                                    | transmitter/Baud_Counter0             |                3 |             14 |
-|  clk_ext_port_IBUF_BUFG | receiver/Rx_Data_Out[7]_i_1_n_0    |                                       |                6 |             16 |
+|  clk_ext_port_IBUF_BUFG | receiver/rx_done_output            |                                       |                5 |             16 |
+|  clk_ext_port_IBUF_BUFG | receiver/p_1_out                   | transmitter/w_addr[31]_i_1_n_0        |                8 |             31 |
 |  clk_ext_port_IBUF_BUFG | transmitter/Baud_Counter0          | transmitter/r_addr[31]_i_1_n_0        |                8 |             31 |
-|  clk_ext_port_IBUF_BUFG | transmitter/num_bits_sent_0        | transmitter/num_bits_sent[31]_i_1_n_0 |                8 |             31 |
-|  clk_ext_port_IBUF_BUFG | transmitter/p_1_out                | transmitter/w_addr[31]_i_1_n_0        |                9 |             32 |
-|  clk_ext_port_IBUF_BUFG | transmitter/q_size[0]_i_1_n_0      |                                       |                8 |             32 |
-|  clk_ext_port_IBUF_BUFG |                                    |                                       |               29 |             71 |
+|  clk_ext_port_IBUF_BUFG | transmitter/tc                     | transmitter/num_bits_sent[31]_i_1_n_0 |                9 |             32 |
+|  clk_ext_port_IBUF_BUFG | receiver/Rx_Done_reg_0             |                                       |                8 |             32 |
+|  clk_ext_port_IBUF_BUFG |                                    |                                       |               30 |             73 |
 +-------------------------+------------------------------------+---------------------------------------+------------------+----------------+
 
 

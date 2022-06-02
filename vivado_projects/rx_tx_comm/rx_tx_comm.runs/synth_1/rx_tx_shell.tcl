@@ -33,6 +33,7 @@ set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
+  C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd

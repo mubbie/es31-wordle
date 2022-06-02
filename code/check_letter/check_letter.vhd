@@ -65,13 +65,13 @@ architecture behavioral_architecture of Check_Letter is
 --Signal Declarations: 
 --=============================================================================
 -- constants 
-signal backspace : unsigned(7 downto 0) := "00001000"; -- ASCII backspace 
-signal enter : unsigned(7 downto 0) := "00001101"; -- ASCII carriage return
-signal upper_case_a : unsigned(7 downto 0) := "01000001"; -- ASCII A 
-signal upper_case_z : unsigned(7 downto 0) := "01011010"; -- ASCII Z
-signal lower_case_a : unsigned(7 downto 0) := "01100001"; -- ASCII a
-signal lower_case_z : unsigned(7 downto 0) := "01111010"; -- ASCII z
-signal upper_case_to_lower_case : unsigned(7 downto 0) := "00100000"; -- this is 32
+constant backspace : unsigned(7 downto 0) := "00001000"; -- ASCII backspace 
+constant enter : unsigned(7 downto 0) := "00001101"; -- ASCII carriage return
+constant upper_case_a : unsigned(7 downto 0) := "01000001"; -- ASCII A 
+constant upper_case_z : unsigned(7 downto 0) := "01011010"; -- ASCII Z
+constant lower_case_a : unsigned(7 downto 0) := "01100001"; -- ASCII a
+constant lower_case_z : unsigned(7 downto 0) := "01111010"; -- ASCII z
+constant upper_case_to_lower_case : unsigned(7 downto 0) := "00100000"; -- this is 32
 
 begin 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

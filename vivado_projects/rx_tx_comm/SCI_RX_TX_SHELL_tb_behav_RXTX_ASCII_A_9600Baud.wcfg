@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1861179361180fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomStartTime time="1544402751720fs"></ZoomStartTime>
+      <ZoomEndTime time="3291119449657fs"></ZoomEndTime>
+      <Cursor1Time time="3000000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="73"></ValueColumnWidth>
+      <NameColumnWidth column_width="227"></NameColumnWidth>
+      <ValueColumnWidth column_width="343"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="/SCI_RX_TX_SHELL_tb/clk_ext_signal" type="logic">
       <obj_property name="ElementShortName">clk_ext_signal</obj_property>
       <obj_property name="ObjectShortName">clk_ext_signal</obj_property>
@@ -63,6 +63,26 @@
       <obj_property name="ElementShortName">New_data</obj_property>
       <obj_property name="ObjectShortName">New_data</obj_property>
    </wvobject>
+   <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/checkletter/is_backspace" type="logic">
+      <obj_property name="ElementShortName">is_backspace</obj_property>
+      <obj_property name="ObjectShortName">is_backspace</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/checkletter/is_valid_alpha" type="logic">
+      <obj_property name="ElementShortName">is_valid_alpha</obj_property>
+      <obj_property name="ObjectShortName">is_valid_alpha</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/checkletter/is_enter" type="logic">
+      <obj_property name="ElementShortName">is_enter</obj_property>
+      <obj_property name="ObjectShortName">is_enter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/checkletter/letter" type="array">
+      <obj_property name="ElementShortName">letter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/checkletter/output_lower_case_letter" type="array">
+      <obj_property name="ElementShortName">output_lower_case_letter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output_lower_case_letter[7:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/transmitter/Tx" type="logic">
       <obj_property name="ElementShortName">Tx</obj_property>
       <obj_property name="ObjectShortName">Tx</obj_property>
@@ -84,6 +104,11 @@
    <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/transmitter/Parallel_in" type="array">
       <obj_property name="ElementShortName">Parallel_in[7:0]</obj_property>
       <obj_property name="ObjectShortName">Parallel_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/transmitter/Parallel_in" type="array">
+      <obj_property name="ElementShortName">Parallel_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Parallel_in[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SCI_RX_TX_SHELL_tb/uut/transmitter/r_addr" type="other">
       <obj_property name="ElementShortName">r_addr</obj_property>
