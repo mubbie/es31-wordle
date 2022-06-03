@@ -51,7 +51,7 @@ use ieee.math_real.all;
 --Entity Declaration:
 --=============================================================================
 entity SCI_RECEIVER is
-    -- constants 
+    -- constants
     generic(
         BAUD_COUNTER_TOP : integer; 
         BIT_COUNTER_TOP : integer

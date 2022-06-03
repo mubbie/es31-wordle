@@ -1,0 +1,244 @@
+## TEST BENCH TESTING PLAN 
+## FOR LOAD_WORD COMPONENT 
+
+PORT MAP (
+        -- inputs 
+        clk                 => clk_signal,
+        letter_in           => letter_in_signal,
+        new_letter          => new_letter_signal,
+
+        -- outputs
+        full                => full_signal,
+        char_disp_out       => char_disp_out_signal,
+        char_disp_out_ready => char_disp_out_ready_signal,
+        word_ready          => word_ready_signal,
+
+         -- Output: Word characters (5 letter word)
+        char_0              => char_0_signal,
+        char_1              => char_1_signal,
+        char_2              => char_2_signal,
+        char_3              => char_3_signal,
+        char_4              => char_4_signal
+    )
+
+
+-- INITIALLY
+   -- Expect: 
+    -- full_signal = 0
+    -- char_disp_out_signal = "00000000" i.e. NULL in ASCII
+    -- char_disp_out_ready_signal = 0
+    -- word_ready_signal = 0
+    -- char_0_signal = "00000000"
+    -- char_1_signal = "00000000"
+    -- char_2_signal = "00000000"
+    -- char_3_signal = "00000000"
+    -- char_4_signal = "00000000"
+    -- char write address = 0
+   -- that is all the output are NULL
+
+-- TESTING:
+    -- Send in the characters of the word "ample"
+        -- Send an "A"
+            -- new_letter_signal = 1
+            -- letter_in_signal = "01000001"
+            -- Expect:
+                -- write char to char write address i.e. position 0
+                -- full_signal = 0
+                -- char_disp_out_signal = "01100001" - "a" i.e. normalized "A"
+                -- char_disp_out_ready_signal = 1
+                -- word_ready_signal = 0
+                -- Internal Word Registers: 
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 1
+        -- Send a backspace
+            -- new_letter_signal = 1
+            -- letter_in_signal = "00001000"
+            -- Expect:
+                -- full_signal = 0
+                -- char_disp_out_signal = "00001000" - Back Space (FSM should handle sending delete too)
+                -- char_disp_out_ready_signal = 1
+                -- word_ready_signal = 0
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 0 (decremented from backspace)
+        -- Send an enter 
+            -- new_letter_signal = 1
+            -- letter_in_signal = "00001101"
+            -- Expect:
+                -- full_signal = 0
+                -- char_disp_out_signal = "00001101" - Enter
+                -- char_disp_out_ready_signal = 0 - should not display an enter since we do not have 5 characters yet 
+                -- word_ready_signal = 0
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 0 (no change from enter)
+        -- Send an "A"
+            -- new_letter_signal = 1
+            -- letter_in_signal = "01000001"
+            -- Expect:
+                -- write char to char write address i.e. position 0
+                -- full_signal = 0
+                -- char_disp_out_signal = "01100001" - "a"
+                -- char_disp_out_ready_signal = 1
+                -- word_ready_signal = 0
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 1
+        -- Send a "m" 
+            -- new_letter_signal = 1
+            -- letter_in_signal = "01101101"
+            -- Expect: 
+                -- write char to char write address i.e. position 1
+                -- full_signal = 0
+                -- char_disp_out_signal = "01101101" - "m"
+                -- char_disp_out_ready_signal = 1
+                -- word_ready_signal = 0
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "01101101" i.e. "m"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 2
+        -- Send a "p" 
+            -- new_letter_signal = 1
+            -- letter_in_signal = "01110000"
+            -- Expect: 
+                -- write char to char write address i.e. position 2
+                -- full_signal = 0
+                -- char_disp_out_signal = "01110000" - "p"
+                -- char_disp_out_ready_signal = 1
+                -- word_ready_signal = 0
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "01101101" i.e. "m"
+                    -- char_2_signal = "01110000" i.e. "p"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 3
+        -- Send a "L" 
+            -- new_letter_signal = 1
+            -- letter_in_signal = "01001100" -- uppercase "L"
+            -- Expect: 
+                -- write char to char write address i.e. position 3
+                -- full_signal = 0
+                -- char_disp_out_signal = "01101100" - "l" - normalized to lowercase
+                -- char_disp_out_ready_signal = 1
+                -- word_ready_signal = 0
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "01101101" i.e. "m"
+                    -- char_2_signal = "01110000" i.e. "p"
+                    -- char_3_signal = "01101100" i.e. "l"
+                    -- char_4_signal = "00000000"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 4
+        -- Send a "e"
+            -- new_letter_signal = 1
+            -- letter_in_signal = "01100101"
+            -- Expect: 
+                -- write char to char write address i.e. position 4
+                -- full_signal = 1
+                -- char_disp_out_signal = "01100101" - "e"
+                -- char_disp_out_ready_signal = 1
+                -- word_ready_signal = 0 -- need and enter for the word to be ready 
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "01101101" i.e. "m"
+                    -- char_2_signal = "01110000" i.e. "p"
+                    -- char_3_signal = "01101100" i.e. "l"
+                    -- char_4_signal = "01100101" i.e. "e"
+                -- Output registers: 
+                    -- char_0_signal = "00000000"
+                    -- char_1_signal = "00000000"
+                    -- char_2_signal = "00000000"
+                    -- char_3_signal = "00000000"
+                    -- char_4_signal = "00000000"
+                -- char write address = 5
+        -- Send an enter 
+            -- new_letter_signal = 1
+            -- letter_in_signal = "00001101"
+            -- Expect:
+                -- full_signal = 1
+                -- char_disp_out_signal = "00001101" - Enter
+                -- char_disp_out_ready_signal = 1 - should display the enter since the word is full 
+                -- word_ready_signal = 1 -- we have gotten the enter so the word is ready
+                -- Internal Word Registers:
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "01101101" i.e. "m"
+                    -- char_2_signal = "01110000" i.e. "p"
+                    -- char_3_signal = "01101100" i.e. "l"
+                    -- char_4_signal = "01100101" i.e. "e"
+                -- Output registers: 
+                    -- char_0_signal = "01100001" i.e. "a"
+                    -- char_1_signal = "01101101" i.e. "m"
+                    -- char_2_signal = "01110000" i.e. "p"
+                    -- char_3_signal = "01101100" i.e. "l"
+                    -- char_4_signal = "01100101" i.e. "e"
+                -- char write address = 5 (no change from enter)
+
+ -- IMPLEMENTATION:
+    -- store the data packets in a register file 
+        -- the array size will be 9
+        -- each element will be 8 bits 
+        -- iterate over the array and send each element to the unit under test 
+
+-- VALIDATION: 
+    -- It is working fine if the simulation follow the pattern as specified above 
