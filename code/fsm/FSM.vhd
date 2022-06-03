@@ -130,7 +130,6 @@ end process NextStateLogic;
 OutputLogic: process(current_state)
 begin
 rst_num_tries <= '0';
-all_green = '0';
 
 case current_state is
     when idle => 
@@ -149,7 +148,6 @@ case current_state is
         data_ready <= '1';
         
     when win => 
-        all_green = '1';
         rst_num_tries <= '1';
     when lose => 
         rst_num_tries <= '1';

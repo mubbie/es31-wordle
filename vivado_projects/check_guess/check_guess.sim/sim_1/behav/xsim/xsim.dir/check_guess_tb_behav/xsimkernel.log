@@ -2,3 +2,6 @@ Running: xsim.dir/check_guess_tb_behav/xsimk.exe -simmode gui -wdb check_guess_t
 Design successfully loaded
 Design Loading Memory Usage: 6636 KB (Peak: 6636 KB)
 Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 7232 KB (Peak: 7232 KB)
+Simulation CPU Usage: 46 ms
