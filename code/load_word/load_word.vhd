@@ -102,7 +102,7 @@ signal is_enter_out : std_logic := '0';
 signal normalized_char : std_logic_vector(7 downto 0) := (others => '0');
 
 -- signal declarations for word size 
-signal word_size : unsigned(3 downto 0) := (others => '0'); 
+signal word_size : unsigned(2 downto 0) := (others => '0'); 
 signal word_full : std_logic := '0';
 signal next_char_index : integer := 0;
 
@@ -150,17 +150,20 @@ begin
             if word_size < "101" then 
                 word_size <= word_size + 1;
             end if; 
-        elsif is_backspace_out = '1' then
+        elsif new_letter = '1' and is_backspace_out = '1' then
             -- remove one character to the word size
             -- new character that is backspace 
             word_size <= word_size - 1;
+        elsif word_ready_out = '1' then 
+            word_size <= "000"; 
         end if;
     end if;
 
     -- maximum number of characters 
-    word_full <= '0';
     if word_size = "101" then
         word_full <= '1';  
+    else 
+        word_full <= '0';
     end if;
 
 end process Word_Size_Logic;
@@ -179,9 +182,11 @@ begin
 
             -- increment the next character index 
             next_char_index <= next_char_index + 1;
-        elsif is_backspace_out = '1' then
+        elsif new_letter = '1' and is_backspace_out = '1' then
             -- remove one character from the word array
             next_char_index <= next_char_index - 1;
+        elsif word_ready_out = '1' then 
+            next_char_index <= 0; -- reset for next word use
         end if;
     end if;  
 end process Word_Array_Logic;
@@ -211,7 +216,7 @@ begin
     word_ready_out <= not(word_ready_out_1) and word_ready_out_0;
 
     -- display output signals 
-    char_disp_out_ready_out <= (is_enter_out or is_backspace_out or (new_letter and is_valid_alpha_out)) and new_letter;
+    char_disp_out_ready_out <= ((is_enter_out and word_full) or is_backspace_out or (new_letter and is_valid_alpha_out)) and new_letter;
 end process Word_Output_Logic;
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -225,5 +230,6 @@ char_3 <= char_3_out;
 char_4 <= char_4_out;
 char_disp_out <= normalized_char;
 char_disp_out_ready <= char_disp_out_ready_out;
+full <= word_full; 
 
 end behavioral_architecture;
