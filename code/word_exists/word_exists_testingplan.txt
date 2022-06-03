@@ -1,0 +1,38 @@
+## TEST BENCH TESTING PLAN 
+## FOR WORD_EXISTS COMPONENT
+
+PORT MAP (
+        -- inputs 
+        clk_in			=> clk_signal,
+        guess      	    => guess_signal,
+        word_ready	    => word_ready_signal,
+
+        -- outputs 
+        is_dict_word    => is_dict_word_signal,
+        not_in_dict     => not_in_dict_signal
+    )
+
+-- INITIALLY 
+    -- the output should be all zeros 
+
+-- TESTING 
+    -- Try to check for a word that exists in the dictionary, and one that does not 
+    -- guess is "model" 
+        -- that is "0110110101101111011001000110010101101100"
+        -- set word ready high 
+        -- is dict word should go high 
+        -- not in dict should stay low 
+    -- guess is "abcde"
+        -- that is "0110000101100010011000110110010001100101"
+        -- set word ready high
+        -- is dict word should stay low
+        -- not in dict should go high
+
+-- IMPLEMENTATION 
+    -- store the guesses in a register file 
+        -- the array should be of size 2 
+        -- each element in the array should be 40 bits 
+    -- iterate over the elements in the array and use them to test 
+
+-- VALIDATION
+    -- everything works, if the output matches the specification above, under "TESTING" 
