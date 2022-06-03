@@ -1,0 +1,44 @@
+## TEST BENCH TESTING PLAN 
+## FOR WORDLE_DICTIONARY_ROM COMPONENT 
+
+PORT MAP (
+        clk => clk_signal,
+        a => a_signal,
+        qspo_ce => qspo_ce_signal,
+        qspo => spo_signal
+    )
+
+
+-- INITIALLY 
+    -- the output should be all zeros 
+    -- since the enable is low 
+
+-- TESTING 
+    -- Try to read some words out of the dictionary
+    -- READ ADDRESS 12 
+        -- That is "model"
+        -- That is "0110110101101111011001000110010101101100" in the dictionary 
+        -- set the enable high
+        -- set the address to 12 i.e. "00000000001100" - 14 bits 
+        -- The output should be "0110110101101111011001000110010101101100" or "model" in ASCII 
+    -- READ ADDRESS 11481
+        -- That is "tecta" 
+        -- That is "0111010001100101011000110111010001100001" in the dictionary 
+        -- set the enable high
+        -- set the address to 11481 i.e. "10110011011001" - 14 bits 
+        -- The output should be "0111010001100101011000110111010001100001" or "tecta" in ASCII
+    -- READ ADDRESS 12971 
+        -- that is "zymic"
+        -- that is "0111101001111001011011010110100101100011" in the dictionary
+        -- set the enable high
+        -- set the address to 12971 i.e. "11001010101011" - 14 bits
+        -- The output should be "0111101001111001011011010110100101100011" or "zymic" in ASCII
+
+-- IMPLEMENTATION 
+    -- store the addresses to read in a register file 
+        -- the array should be of size 3
+        -- each element in the array should be 14 bits 
+    -- iterate over the elements in the array and use them to test 
+
+-- VALIDATION
+    -- everything works, if the output matches the specification above, under "TESTING" 
