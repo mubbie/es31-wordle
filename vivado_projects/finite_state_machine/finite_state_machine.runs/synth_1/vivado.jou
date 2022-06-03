@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Fri Jun  3 16:51:22 2022
+# Process ID: 13896
+# Current directory: O:/ES31/es31-wordle/vivado_projects/finite_state_machine/finite_state_machine.runs/synth_1
+# Command line: vivado.exe -log FSM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FSM.tcl
+# Log file: O:/ES31/es31-wordle/vivado_projects/finite_state_machine/finite_state_machine.runs/synth_1/FSM.vds
+# Journal file: O:/ES31/es31-wordle/vivado_projects/finite_state_machine/finite_state_machine.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source FSM.tcl -notrace
