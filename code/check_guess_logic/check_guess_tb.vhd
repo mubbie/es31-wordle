@@ -37,6 +37,7 @@ component CheckGuess
            
            correct_letters  : out STD_LOGIC_VECTOR(4 DOWNTO 0);
            correct_places   : out STD_LOGIC_VECTOR(4 DOWNTO 0);
+           win             : out STD_LOGIC;
            done             : out STD_LOGIC     );
 end component;
 
@@ -49,6 +50,7 @@ SIGNAL is_dict_word     : STD_LOGIC;
 SIGNAL correct_letters  : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL correct_places   : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL done             : STD_LOGIC;
+SIGNAL win              : STD_LOGIC;
 
 constant clk_period : time := 20 ns;
 
@@ -61,6 +63,7 @@ uut: CheckGuess port map(
     is_dict_word    => is_dict_word,
     correct_letters => correct_letters,
     correct_places  => correct_places,
+    win             => win,
     done            => done    );
 
 stim_proc : process
