@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1870500000fs"></ZoomStartTime>
-      <ZoomEndTime time="2539000001fs"></ZoomEndTime>
-      <Cursor1Time time="2210000000fs"></Cursor1Time>
+      <ZoomStartTime time="3666666666fs"></ZoomStartTime>
+      <ZoomEndTime time="7666666667fs"></ZoomEndTime>
+      <Cursor1Time time="5307577000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="172"></NameColumnWidth>
-      <ValueColumnWidth column_width="89"></ValueColumnWidth>
+      <NameColumnWidth column_width="137"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="21" />
    <wvobject fp_name="/check_guess_tb/solution" type="array">
       <obj_property name="ElementShortName">solution[39:0]</obj_property>
       <obj_property name="ObjectShortName">solution[39:0]</obj_property>
@@ -28,31 +28,6 @@
       <obj_property name="ElementShortName">solution_word[0:4][7:0]</obj_property>
       <obj_property name="ObjectShortName">solution_word[0:4][7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
-      <wvobject fp_name="/check_guess_tb/uut/solution_word[0]" type="array">
-         <obj_property name="ElementShortName">[0][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/solution_word[1]" type="array">
-         <obj_property name="ElementShortName">[1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/solution_word[2]" type="array">
-         <obj_property name="ElementShortName">[2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/solution_word[3]" type="array">
-         <obj_property name="ElementShortName">[3][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/solution_word[4]" type="array">
-         <obj_property name="ElementShortName">[4][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/check_guess_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -63,35 +38,14 @@
       <obj_property name="ObjectShortName">guess[39:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/check_guess_tb/uut/win" type="logic">
+      <obj_property name="ElementShortName">win</obj_property>
+      <obj_property name="ObjectShortName">win</obj_property>
+   </wvobject>
    <wvobject fp_name="/check_guess_tb/uut/guess_word" type="array">
       <obj_property name="ElementShortName">guess_word[0:4][7:0]</obj_property>
       <obj_property name="ObjectShortName">guess_word[0:4][7:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
-      <wvobject fp_name="/check_guess_tb/uut/guess_word[0]" type="array">
-         <obj_property name="ElementShortName">[0][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/guess_word[1]" type="array">
-         <obj_property name="ElementShortName">[1][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/guess_word[2]" type="array">
-         <obj_property name="ElementShortName">[2][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/guess_word[3]" type="array">
-         <obj_property name="ElementShortName">[3][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/uut/guess_word[4]" type="array">
-         <obj_property name="ElementShortName">[4][7:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][7:0]</obj_property>
-         <obj_property name="Radix">ASCIIRADIX</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/check_guess_tb/is_dict_word" type="logic">
       <obj_property name="ElementShortName">is_dict_word</obj_property>
@@ -103,36 +57,6 @@
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/check_guess_tb/correct_letters[4]" type="logic">
-         <obj_property name="ElementShortName">[4]</obj_property>
-         <obj_property name="ObjectShortName">[4]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/correct_letters[3]" type="logic">
-         <obj_property name="ElementShortName">[3]</obj_property>
-         <obj_property name="ObjectShortName">[3]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/correct_letters[2]" type="logic">
-         <obj_property name="ElementShortName">[2]</obj_property>
-         <obj_property name="ObjectShortName">[2]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/correct_letters[1]" type="logic">
-         <obj_property name="ElementShortName">[1]</obj_property>
-         <obj_property name="ObjectShortName">[1]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/check_guess_tb/correct_letters[0]" type="logic">
-         <obj_property name="ElementShortName">[0]</obj_property>
-         <obj_property name="ObjectShortName">[0]</obj_property>
-         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/check_guess_tb/uut/letters_correct_mid" type="array">
       <obj_property name="ElementShortName">letters_correct_mid[4:0]</obj_property>

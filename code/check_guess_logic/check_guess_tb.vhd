@@ -93,6 +93,14 @@ wait for clk_period;
 is_dict_word <= '0';
 
 wait for clk_period*50;
+
+guess <= "0110011101110010011001010110000101110100";        -- great
+is_dict_word <= '1';
+wait for clk_period;
+is_dict_word <= '0';
+
+wait for clk_period*50;
+
 wait;
 end process testing;
 

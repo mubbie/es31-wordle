@@ -39,6 +39,7 @@ entity CheckGuess is
            
            correct_letters  : out STD_LOGIC_VECTOR(4 DOWNTO 0);
            correct_places   : out STD_LOGIC_VECTOR(4 DOWNTO 0);
+           win             : out STD_LOGIC;
            done             : out STD_LOGIC     );
 end CheckGuess;
 
@@ -51,6 +52,8 @@ constant max_ltr_idx : integer := 4;
 
 --Signal Declarations: 
 signal enable_outputs : STD_LOGIC := '0';
+
+signal correct_place_vals   : STD_LOGIC_VECTOR(4 DOWNTO 0);
 
 -- store the words in an array for easy indexing
 type  WordType  is array(0 to 4) of STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -84,7 +87,8 @@ begin
 -- DATAPATH: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- Wiring
-
+win <= (correct_place_vals(0) and correct_place_vals(1) and correct_place_vals(2) and correct_place_vals(3) and correct_place_vals(4));
+correct_places <= correct_place_vals;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Fill Array Logic:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -105,7 +109,7 @@ RightLocations: process (guess_word, solution_word, clk)
 begin
 if rising_edge(clk) then
     if enable_outputs = '1' then
-        correct_places <= place_correct_mid;
+        correct_place_vals <= place_correct_mid;
     end if;
 end if;
 
