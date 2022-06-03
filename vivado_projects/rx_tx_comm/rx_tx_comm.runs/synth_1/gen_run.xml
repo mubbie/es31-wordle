@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654191648">
-  <File Type="PA-TCL" Name="rx_tx_shell.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="rx_tx_shell_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="rx_tx_shell_reports.tcl"/>
-  <File Type="RDS-RDS" Name="rx_tx_shell.vds"/>
-  <File Type="RDS-UTIL" Name="rx_tx_shell_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="rx_tx_shell_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="rx_tx_shell.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="rx_tx_shell_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="rx_tx_shell_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654220801">
+  <File Type="PA-TCL" Name="load_word.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="load_word_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="load_word_reports.tcl"/>
+  <File Type="RDS-RDS" Name="load_word.vds"/>
+  <File Type="RDS-UTIL" Name="load_word_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="load_word_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="load_word.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="load_word_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="load_word_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../code/check_letter/check_letter.vhd">
@@ -17,20 +17,29 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../../code/load_word/load_word.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../code/receiver/sci_receiver.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../code/transmitter/sci_transmitter.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../code/receiver_transmitter/rx_tx_shell.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -51,7 +60,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="rx_tx_shell"/>
+      <Option Name="TopModule" Val="load_word"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

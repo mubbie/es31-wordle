@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a35tcpg236-1
@@ -34,9 +33,7 @@ set_property ip_output_repo c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_p
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd
-  C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd
-  C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd
-  C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd
+  C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -52,12 +49,12 @@ set_property used_in_implementation false [get_files C:/Users/mubar/Documents/EN
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top rx_tx_shell -part xc7a35tcpg236-1
+synth_design -top load_word -part xc7a35tcpg236-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef rx_tx_shell.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file rx_tx_shell_utilization_synth.rpt -pb rx_tx_shell_utilization_synth.pb"
+write_checkpoint -force -noxdef load_word.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file load_word_utilization_synth.rpt -pb load_word_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

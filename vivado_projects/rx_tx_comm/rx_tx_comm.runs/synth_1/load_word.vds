@@ -1,13 +1,14 @@
-
-*** Running vivado
-    with args -log load_word.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source load_word.tcl
-
-
-****** Vivado v2018.3.1 (64-bit)
-  **** SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
-  **** IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Thu Jun  2 21:46:44 2022
+# Process ID: 56708
+# Current directory: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1
+# Command line: vivado.exe -log load_word.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source load_word.tcl
+# Log file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1/load_word.vds
+# Journal file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/rx_tx_comm/rx_tx_comm.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
 source load_word.tcl -notrace
 Command: synth_design -top load_word -part xc7a35tcpg236-1
 Starting synth_design

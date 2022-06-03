@@ -104,7 +104,7 @@ signal normalized_char : std_logic_vector(7 downto 0) := (others => '0');
 -- signal declarations for word size 
 signal word_size : unsigned(3 downto 0) := (others => '0'); 
 signal word_full : std_logic := '0';
-signal next_char_index : unsigned(3 downto 0) := (others => '0');
+signal next_char_index : integer := 0;
 
 -- signal declarations for word characters ( registers)
 -- character 0 -> 4 
@@ -147,7 +147,9 @@ begin
         -- add one character to the word size
         -- new character that is valid alpha
         if new_letter = '1' and is_valid_alpha_out = '1' then
-            word_size <= word_size + 1;
+            if word_size < "101" then 
+                word_size <= word_size + 1;
+            end if; 
         elsif is_backspace_out = '1' then
             -- remove one character to the word size
             -- new character that is backspace 
@@ -156,7 +158,11 @@ begin
     end if;
 
     -- maximum number of characters 
-    word_full <= (word_size = 5);
+    word_full <= '0';
+    if word_size = "101" then
+        word_full <= '1';  
+    end if;
+
 end process Word_Size_Logic;
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -201,7 +207,7 @@ begin
     end if;
 
     -- prepare word ready signal monopulse
-    word_ready_out_0 <= is_enter_out = '1' and word_full = '1';
+    word_ready_out_0 <= is_enter_out and word_full;
     word_ready_out <= not(word_ready_out_1) and word_ready_out_0;
 
     -- display output signals 
