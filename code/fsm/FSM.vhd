@@ -15,10 +15,6 @@
 
 --=============================================================================
 
---=============================================================================
-
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -84,22 +80,31 @@ component CheckGuess
 end component CheckGuess;
 
 -- wire sol_addr to the dictionary
-component Dictionary
-end component;
+component wordle_dictionary_rom
+  PORT (
+    a : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+    clk : IN STD_LOGIC;
+    qspo_ce : IN STD_LOGIC;
+    qspo : OUT STD_LOGIC_VECTOR(39 DOWNTO 0) );
+end component wordle_dictionary_rom;
 
 --=============================================================================
 -- Constants
 constant max_ltr_idx : integer := 4;
 constant max_num_tries : integer := 5;
-constant max_dict_word : integer := 200;
+constant byte_size : integer := 8;
+constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
 
-constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := (others => '0');      -- insert actual values later
-constant yellow_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := (others => '0');
+constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100000";      -- space
+constant yellow_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00111111";     -- quesion mark
 constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
 constant delete : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
+constant enter : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001101";
 
-constant win_out: STD_LOGIC_VECTOR(71 DOWNTO 0) := (others => '0');         -- 12 bytes of data
-constant lose_out: STD_LOGIC_VECTOR(71 DOWNTO 0) := (others => '0'); 
+constant dash : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01011111";
+
+constant win_out: STD_LOGIC_VECTOR(95 DOWNTO 0) := (47 downto 0 => '0') & enter & dash & dash & dash & dash & dash;         -- 12 bytes of data
+constant lose_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & black_sym & black_sym & black_sym & black_sym & black_sym;
 
 --------------------------------------------
 
@@ -108,7 +113,7 @@ constant lose_out: STD_LOGIC_VECTOR(71 DOWNTO 0) := (others => '0');
 --the solution
 signal solution_sig : STD_LOGIC_VECTOR(39 DOWNTO 0);
 -- the solution counter
-signal sol_addr : integer := 0;
+signal sol_addr : unsigned(13 downto 0) := "00000000000000";
 -- the most recent guess
 signal guess_sig    : STD_LOGIC_VECTOR(39 DOWNTO 0);
 -- to wait for dict (2 clk cycles) before getting guess_sig
@@ -120,6 +125,8 @@ signal data_to_send : STD_LOGIC_VECTOR(95 DOWNTO 0);        -- register enough t
 signal cnt          : integer := 0;
 signal data_ready   : std_logic := '0';
 signal send         : std_logic := '0';
+signal sent         : std_logic := '0';
+
 
 
 -- state machine signals
@@ -145,6 +152,10 @@ signal colors_ready         : STD_LOGIC;
 signal num_tries : integer := 0;
 signal max_tries_reached : std_logic := '0';
 signal rst_tries : std_logic := '0';
+
+-- dictionary signals
+signal qspo_signal : STD_LOGIC_VECTOR(39 DOWNTO 0);
+signal qspo_ce_signal : STD_LOGIC;
 --=============================================================================
 
 begin
@@ -201,6 +212,16 @@ guess_checker: CheckGuess
         win             => win_all_green,
         done            => colors_ready    
     );
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Wire the dictionary:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+dictionary : wordle_dictionary_rom 
+    PORT MAP (
+        a               => STD_LOGIC_VECTOR(sol_addr),
+        clk             => clk,
+        qspo_ce         => qspo_ce_signal,
+        qspo            => qspo_signal
+    );
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- WIRING 
@@ -214,7 +235,7 @@ count : process(clk)
 begin
 if rising_edge(clk) then
     if sol_addr = max_dict_word then
-        sol_addr <= 0;
+        sol_addr <= "00000000000000";
     end if;
     sol_addr <= sol_addr + 1;    
 end if;
@@ -245,17 +266,20 @@ end process CountTries;
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- send Data Register: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
-sendData: process(clk, send, cnt)
+sendData: process(clk, send, cnt, data_to_send)
 begin
     Tx_data_ready <= '0';
     if rising_edge(clk) then
         if data_ready = '1' then
             cnt <= 0;
             send <= '1';
+            sent <= '0';
         end if;
         if cnt = 11 then
             cnt <= 0;
             send <= '0';
+            sent <= '1';
+            sent <= '0';
         end if;
         cnt <= cnt + 1; 
     end if;
@@ -279,7 +303,7 @@ begin
 end process StateUpdate;
 
 
-NextStateLogic: process (current_state)
+NextStateLogic: process (current_state, waitcount, char_disp_out_ready_sig, colors_ready, not_in_dict_sig, win_all_green, max_tries_reached)
 begin
 next_state <= current_state;
 
@@ -314,30 +338,38 @@ end case current_state;
 
 end process NextStateLogic;
 
-OutputLogic: process(current_state)
+OutputLogic: process(current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, guess_sig, qspo_signal, sent)
 begin
 rst_tries <= '0';
 guess_sig <= guess_sig;
 data_ready <= '0';
 
+if sent = '1' then
+    data_to_send <= (others => '0');
+end if;
+
 case current_state is
     when newGame =>
-        -- solution_sig <= dict_addr 
+         solution_sig <= qspo_signal; 
 
     when idle => 
         
     when displayLetters =>
---        if disp_out = backspace, data_to_send <= backspace & delete(const), else data_to_send <= disp_out; 
+        if char_disp_out_sig = backspace then 
+            data_to_send <= (79 downto 0 => '0') & delete & backspace;
+        else data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
+        end if;
         data_ready <= '1';
     when displayColors =>
         for ltr_start in 0 to max_ltr_idx loop
             if cltrs(ltr_start) = '0' and cplaces(ltr_start) = '0' then
-                data_to_send(ltr_start*max_ltr_idx + 7 downto ltr_start*max_ltr_idx) <= black_sym;
+                data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= black_sym;
             elsif cltrs(ltr_start) = '1' and cplaces(ltr_start) = '0' then
-                data_to_send(ltr_start*max_ltr_idx + 7 downto ltr_start*max_ltr_idx) <= yellow_sym;
-            else data_to_send(ltr_start*max_ltr_idx + 7 downto ltr_start*max_ltr_idx) <= solution_sig(ltr_start*max_ltr_idx + 7 downto ltr_start*max_ltr_idx);
+                data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= yellow_sym;
+            else data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= solution_sig(ltr_start*byte_size + 7 downto ltr_start*byte_size);
             end if;
         end loop;
+        data_to_send <= (47 downto 0 => '0') & enter & data_to_send(39 downto 0);
         data_ready <= '1';
         
     when win => 
@@ -345,7 +377,7 @@ case current_state is
         data_ready <= '1';
         rst_tries <= '1';
     when lose => 
-        data_to_send <= lose_out;
+        data_to_send <= enter & solution_sig & lose_out;
         data_ready <= '1';
         rst_tries <= '1';
     when others =>

@@ -1,0 +1,52 @@
+
+*** Running vivado
+    with args -log FSM.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FSM.tcl -notrace
+
+
+****** Vivado v2018.3.1 (64-bit)
+  **** SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+  **** IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source FSM.tcl -notrace
+Command: link_design -top FSM -part xc7a35tcpg236-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3.1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'CheckGuess' instantiated as 'guess_checker' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:202]
+CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'CheckWordExists' instantiated as 'word_exists' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:168]
+CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'load_word' instantiated as 'word_loader' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:178]
+CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'wordle_dictionary_rom' instantiated as 'dictionary' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:217]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 581.559 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+6 Infos, 0 Warnings, 4 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 587.117 ; gain = 304.117
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'dictionary' of type 'wordle_dictionary_rom' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'guess_checker' of type 'CheckGuess' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'word_exists' of type 'CheckWordExists' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'word_loader' of type 'load_word' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+INFO: [Project 1-461] DRC finished with 4 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.746 . Memory (MB): peak = 601.469 ; gain = 14.352
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 4 Critical Warnings and 5 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  3 19:27:29 2022...
