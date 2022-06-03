@@ -1,0 +1,7 @@
+0.6
+2018.3
+Mar 26 2019
+04:57:32
+C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd,1654284715,vhdl,,,,word_exists,,,,,,,,
+C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists_tb.vhd,1654284725,vhdl,,,,word_exists_tb,,,,,,,,
+C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/wordle_dictionary_rom/wordle_dictionary_rom_sim_netlist.vhdl,1654276449,vhdl,,,,wordle_dictionary_rom;wordle_dictionary_rom_dist_mem_gen_v8_0_12;wordle_dictionary_rom_dist_mem_gen_v8_0_12_synth;wordle_dictionary_rom_rom,,,,,,,,
