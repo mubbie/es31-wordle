@@ -90,8 +90,14 @@ end component;
 constant max_ltr_idx : integer := 4;
 constant max_num_tries : integer := 5;
 constant max_dict_word : integer := 200;
+
 constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := (others => '0');      -- insert actual values later
 constant yellow_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := (others => '0');
+constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
+constant delete : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
+
+constant win_out: STD_LOGIC_VECTOR(71 DOWNTO 0) := (others => '0');         -- 12 bytes of data
+constant lose_out: STD_LOGIC_VECTOR(71 DOWNTO 0) := (others => '0'); 
 
 --------------------------------------------
 
@@ -319,7 +325,7 @@ case current_state is
     when idle => 
         
     when displayLetters =>
-        -- if disp_out = backspace, data_to_send <= backspace & delete(const), else data_to_send <= disp_out; 
+--        if disp_out = backspace, data_to_send <= backspace & delete(const), else data_to_send <= disp_out; 
         data_ready <= '1';
     when displayColors =>
         for ltr_start in 0 to max_ltr_idx loop
@@ -333,8 +339,12 @@ case current_state is
         data_ready <= '1';
         
     when win => 
+        data_to_send <= win_out;
+        data_ready <= '1';
         rst_tries <= '1';
     when lose => 
+        data_to_send <= lose_out;
+        data_ready <= '1';
         rst_tries <= '1';
     when others =>
 
