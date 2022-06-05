@@ -58,14 +58,19 @@ component load_word is
     );
 end component load_word; 
 
-component CheckWordExists
-    Port ( clk              : in STD_LOGIC;
-           guess            : in STD_LOGIC_VECTOR(39 DOWNTO 0);
-           word_ready       : in STD_LOGIC;
-          
-           is_dict_word     : out STD_LOGIC;
-           not_in_dict      : out STD_LOGIC     );
-end component;
+component WORD_EXISTS IS
+    -- ports 
+    port ( 	
+            -- inputs
+            clk_in			: 	in 	STD_LOGIC;
+            guess      	    : 	in 	STD_LOGIC_VECTOR(39 downto 0);
+            word_ready	    :	in	STD_LOGIC;
+
+            -- outputs
+            is_dict_word    :	out STD_LOGIC;
+            not_in_dict     :	out STD_LOGIC
+    );
+end component WORD_EXISTS;
 
 component CheckGuess
     Port ( clk              : in STD_LOGIC;
@@ -101,7 +106,7 @@ constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
 constant delete : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
 constant enter : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001101";
 
-constant dash : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01011111";
+constant dash : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101101";
 
 constant win_out: STD_LOGIC_VECTOR(95 DOWNTO 0) := (47 downto 0 => '0') & enter & dash & dash & dash & dash & dash;         -- 12 bytes of data
 constant lose_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & black_sym & black_sym & black_sym & black_sym & black_sym;
@@ -115,7 +120,12 @@ signal solution_sig : STD_LOGIC_VECTOR(39 DOWNTO 0);
 -- the solution counter
 signal sol_addr : unsigned(13 downto 0) := "00000000000000";
 -- the most recent guess
-signal guess_sig    : STD_LOGIC_VECTOR(39 DOWNTO 0);
+signal char_0_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+signal char_1_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+signal char_2_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+signal char_3_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+signal char_4_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+signal guess_sig    : STD_LOGIC_VECTOR(39 DOWNTO 0) := (others => '0');
 -- to wait for dict (2 clk cycles) before getting guess_sig
 signal waitcount : integer := 0;
 
@@ -139,14 +149,14 @@ signal char_disp_out_ready_sig  : std_logic;
 signal word_ready_sig       : std_logic;
 
 -- CheckWordExists signals
-signal in_dict_sig          : std_logic;
-signal not_in_dict_sig      : std_logic;
+signal in_dict_sig          : std_logic := '0';
+signal not_in_dict_sig      : std_logic := '0';
 
 -- CheckGuess signals
 signal cltrs                : STD_LOGIC_VECTOR(4 DOWNTO 0);
 signal cplaces              : STD_LOGIC_VECTOR(4 DOWNTO 0);
-signal win_all_green        : STD_LOGIC;
-signal colors_ready         : STD_LOGIC;
+signal win_all_green        : STD_LOGIC := '0';
+signal colors_ready         : STD_LOGIC := '0';
 
 -- count numtries signals
 signal num_tries : integer := 0;
@@ -159,21 +169,22 @@ signal qspo_ce_signal : STD_LOGIC;
 --=============================================================================
 
 begin
-
 --=============================================================================
 --Port Mapping (wiring the component blocks together): 
 --=============================================================================
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the load_word sub-component to the CheckWordExists sub-component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-word_exists : CheckWordExists
+word_exist_block : WORD_EXISTS
     Port map( 
-        clk                 => clk,
-           guess            => guess_sig,
-           word_ready       => word_ready_sig,
+        -- inputs  
+        clk_in           => clk,
+        guess            => guess_sig,
+        word_ready       => word_ready_sig,
           
-           is_dict_word     => in_dict_sig,
-           not_in_dict      => not_in_dict_sig     
+        -- outputs 
+        is_dict_word     => in_dict_sig,
+        not_in_dict      => not_in_dict_sig     
     );
 
 word_loader : load_word 
@@ -190,11 +201,17 @@ word_loader : load_word
         word_ready          => word_ready_sig,
 
         -- Output: Word characters (5 letter word)
-        char_0              => guess_sig(7 downto 0),
-        char_1              => guess_sig(15 downto 8),
-        char_2              => guess_sig(23 downto 16),
-        char_3              => guess_sig(31 downto 24),
-        char_4              => guess_sig(39 downto 32)  
+--        char_0              => guess_sig(7 downto 0),
+--        char_1              => guess_sig(15 downto 8),
+--        char_2              => guess_sig(23 downto 16),
+--        char_3              => guess_sig(31 downto 24),
+--        char_4              => guess_sig(39 downto 32)  
+        
+        char_0              => char_0_signal,
+        char_1              => char_1_signal,
+        char_2              => char_2_signal,
+        char_3              => char_3_signal,
+        char_4              => char_4_signal 
     );
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -233,14 +250,22 @@ dictionary : wordle_dictionary_rom
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 count : process(clk)
 begin
-if rising_edge(clk) then
-    if sol_addr = max_dict_word then
-        sol_addr <= "00000000000000";
+    if rising_edge(clk) then
+        sol_addr <= sol_addr + 1;    
+        if sol_addr = max_dict_word then
+            sol_addr <= "00000000000000";
+        end if;
     end if;
-    sol_addr <= sol_addr + 1;    
-end if;
-
 end process count;
+
+
+--=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+-- Load Guess: 
+--=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+LoadGuess : process(char_0_signal, char_1_signal, char_2_signal, char_3_signal, char_4_signal)
+begin 
+    guess_sig <= (char_0_signal & char_1_signal & char_2_signal & char_3_signal & char_4_signal); 
+end process LoadGuess; 
 
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
@@ -249,16 +274,18 @@ end process count;
 CountTries: process (clk, rst_tries)
 begin
     if rising_edge(clk) then
-        if colors_ready = '1' then
+        if colors_ready = '1' then   
+            max_tries_reached <= '0';         
+            num_tries <= num_tries + 1;
             if num_tries = max_num_tries then
                 num_tries <= 0;
                 max_tries_reached <= '1';
             end if;
-            num_tries <= num_tries + 1;
         end if;
     end if;
-    if rst_tries = '0' then
+    if rst_tries = '1' then
         num_tries <= 0;
+        max_tries_reached <= '0';
     end if;
 
 end process CountTries;
@@ -270,21 +297,19 @@ sendData: process(clk, send, cnt, data_to_send)
 begin
     Tx_data_ready <= '0';
     if rising_edge(clk) then
+        cnt <= cnt + 1; 
         if data_ready = '1' then
             cnt <= 0;
             send <= '1';
             sent <= '0';
-        end if;
-        if cnt = 11 then
+        elsif cnt >= 11 then
             cnt <= 0;
             send <= '0';
             sent <= '1';
-            sent <= '0';
         end if;
-        cnt <= cnt + 1; 
     end if;
     Tx_data_ready <= send;
-    Tx_data <= data_to_send(cnt*max_ltr_idx + 7 downto cnt*max_ltr_idx);
+    Tx_data <= data_to_send(cnt*byte_size + 7 downto cnt*byte_size);
 end process sendData;
 
 
@@ -297,8 +322,9 @@ begin
         current_state <= next_state;
         if waitcount = 2 then 
             waitcount <= 0;
+        else 
+           waitcount <= waitcount + 1; 
         end if;
-        waitcount <= waitcount + 1;
     end if;
 end process StateUpdate;
 
@@ -315,11 +341,13 @@ case current_state is
     when idle => 
         if char_disp_out_ready_sig = '1' then
             next_state <= displayLetters;
+        elsif colors_ready = '1' then
+            next_state <= displayColors;
         end if;
     when displayLetters =>
         if colors_ready = '1' then
             next_state <= displayColors;
-        elsif not_in_dict_sig = '1' then
+        else
             next_state <= idle;
         end if;
     when displayColors =>
@@ -338,51 +366,52 @@ end case current_state;
 
 end process NextStateLogic;
 
-OutputLogic: process(current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, guess_sig, qspo_signal, sent)
+OutputLogic: process(current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, qspo_signal, sent)
 begin
-rst_tries <= '0';
-guess_sig <= guess_sig;
-data_ready <= '0';
-
-if sent = '1' then
-    data_to_send <= (others => '0');
-end if;
-
-case current_state is
-    when newGame =>
-         solution_sig <= qspo_signal; 
-
-    when idle => 
-        
-    when displayLetters =>
-        if char_disp_out_sig = backspace then 
-            data_to_send <= (79 downto 0 => '0') & delete & backspace;
-        else data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
-        end if;
-        data_ready <= '1';
-    when displayColors =>
-        for ltr_start in 0 to max_ltr_idx loop
-            if cltrs(ltr_start) = '0' and cplaces(ltr_start) = '0' then
-                data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= black_sym;
-            elsif cltrs(ltr_start) = '1' and cplaces(ltr_start) = '0' then
-                data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= yellow_sym;
-            else data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= solution_sig(ltr_start*byte_size + 7 downto ltr_start*byte_size);
+    rst_tries <= '0';
+    data_ready <= '0';
+    qspo_ce_signal <= '0';
+    
+    if sent = '1' then
+        data_to_send <= (others => '0');
+    end if;
+    
+    case current_state is
+        when newGame =>
+            qspo_ce_signal <= '1';
+             solution_sig <= qspo_signal; 
+    
+        when idle => 
+            
+        when displayLetters =>
+            if char_disp_out_sig = backspace then 
+                data_to_send <= (79 downto 0 => '0') & delete & backspace;
+            else data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
             end if;
-        end loop;
-        data_to_send <= (47 downto 0 => '0') & enter & data_to_send(39 downto 0);
-        data_ready <= '1';
-        
-    when win => 
-        data_to_send <= win_out;
-        data_ready <= '1';
-        rst_tries <= '1';
-    when lose => 
-        data_to_send <= enter & solution_sig & lose_out;
-        data_ready <= '1';
-        rst_tries <= '1';
-    when others =>
-
-end case current_state;
+            data_ready <= '1';
+        when displayColors =>
+            for ltr_start in 0 to max_ltr_idx loop
+                if cltrs(ltr_start) = '0' and cplaces(ltr_start) = '0' then
+                    data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= black_sym;
+                elsif cltrs(ltr_start) = '1' and cplaces(ltr_start) = '0' then
+                    data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= yellow_sym;
+                else data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= solution_sig(ltr_start*byte_size + 7 downto ltr_start*byte_size);
+                end if;
+            end loop;
+            data_to_send(95 downto 40) <= (47 downto 0 => '0') & enter;
+            data_ready <= '1';
+            
+        when win => 
+            data_to_send <= win_out;
+            data_ready <= '1';
+            rst_tries <= '1';
+        when lose => 
+            data_to_send <= enter & solution_sig & lose_out;
+            data_ready <= '1';
+            rst_tries <= '1';
+        when others =>
+    
+    end case current_state;
 end process OutputLogic;
 
 

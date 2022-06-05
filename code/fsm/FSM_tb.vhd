@@ -138,15 +138,16 @@ stimulus_process: process
 begin 
     -- iteratively write to the input signals 
     wait for clock_period/2;
+    wait for clock_period*4;
 
     -- send the data packets 
-    for i in 0 to 8 loop
+    for i in 0 to 21 loop
         -- send character 
         Rx_done_signal <= '1';
         Rx_data_signal <= TestInputsArray(i);
         wait for clock_period;
         Rx_done_signal <= '0';
-        wait for clock_period*10;
+        wait for clock_period*1000;
     end loop;
     
     Rx_data_signal <= (others => '1'); 
