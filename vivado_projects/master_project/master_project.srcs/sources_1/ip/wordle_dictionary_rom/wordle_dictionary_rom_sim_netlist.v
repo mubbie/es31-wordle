@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-// Date        : Fri Jun  3 13:14:07 2022
+// Date        : Fri Jun  3 13:14:04 2022
 // Host        : Mubarak-XPS15 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/wordle_dictionary_rom/wordle_dictionary_rom_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top wordle_dictionary_rom -prefix
+//               wordle_dictionary_rom_ wordle_dictionary_rom_sim_netlist.v
 // Design      : wordle_dictionary_rom
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -94,7 +94,7 @@ endmodule
 (* C_MEM_INIT_FILE = "wordle_dictionary_rom.mif" *) (* C_MEM_TYPE = "0" *) (* C_PARSER_TYPE = "1" *) 
 (* C_PIPELINE_STAGES = "0" *) (* C_QCE_JOINED = "0" *) (* C_QUALIFY_WE = "0" *) 
 (* C_READ_MIF = "1" *) (* C_REG_A_D_INPUTS = "1" *) (* C_REG_DPRA_INPUT = "0" *) 
-(* C_SYNC_ENABLE = "1" *) (* C_WIDTH = "40" *) (* ORIG_REF_NAME = "dist_mem_gen_v8_0_12" *) 
+(* C_SYNC_ENABLE = "1" *) (* C_WIDTH = "40" *) 
 module wordle_dictionary_rom_dist_mem_gen_v8_0_12
    (a,
     d,
@@ -285,7 +285,6 @@ module wordle_dictionary_rom_dist_mem_gen_v8_0_12
         .qspo_ce(qspo_ce));
 endmodule
 
-(* ORIG_REF_NAME = "dist_mem_gen_v8_0_12_synth" *) 
 module wordle_dictionary_rom_dist_mem_gen_v8_0_12_synth
    (qspo,
     qspo_ce,
@@ -308,7 +307,6 @@ module wordle_dictionary_rom_dist_mem_gen_v8_0_12_synth
         .qspo_ce(qspo_ce));
 endmodule
 
-(* ORIG_REF_NAME = "rom" *) 
 module wordle_dictionary_rom_rom
    (qspo,
     qspo_ce,
