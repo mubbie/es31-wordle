@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
--- Date        : Fri Jun  3 13:14:07 2022
+-- Date        : Fri Jun  3 13:14:04 2022
 -- Host        : Mubarak-XPS15 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/wordle_dictionary_rom/wordle_dictionary_rom_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top wordle_dictionary_rom -prefix
+--               wordle_dictionary_rom_ wordle_dictionary_rom_stub.vhdl
 -- Design      : wordle_dictionary_rom
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

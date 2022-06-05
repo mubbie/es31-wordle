@@ -11,12 +11,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="104490644491fs"></ZoomEndTime>
-      <Cursor1Time time="140000000000fs"></Cursor1Time>
+      <ZoomEndTime time="1000000001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="227"></NameColumnWidth>
-      <ValueColumnWidth column_width="174"></ValueColumnWidth>
+      <ValueColumnWidth column_width="170"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="13" />
    <wvobject fp_name="/WORD_EXISTS_tb/clk_signal" type="logic">
