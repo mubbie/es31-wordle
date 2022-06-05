@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/word_exists_sim/behav/xsim/xsim.dir/WORD_EXISTS_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Fri Jun  3 16:53:23 2022" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Sat Jun  4 12:19:23 2022" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2018.3.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2489853" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "aed52731-6fac-49f9-8afb-d88e885d7ec1" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "e178fdf42fb24886994bd89583259cbc" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "16" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "17" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz" -context "user_environment"
@@ -24,9 +24,9 @@ webtalk_add_data -client project -key system_ram -value "34.000 GB" -context "us
 webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "160 us" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "140 us" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "2" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "152.91_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "73768_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 4287665065 -regid "" -xml C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/word_exists_sim/behav/xsim/xsim.dir/WORD_EXISTS_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/word_exists_sim/behav/xsim/xsim.dir/WORD_EXISTS_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/word_exists_sim/behav/xsim/xsim.dir/WORD_EXISTS_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "234.01_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "72324_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 851847462 -regid "" -xml C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/word_exists_sim/behav/xsim/xsim.dir/WORD_EXISTS_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/word_exists_sim/behav/xsim/xsim.dir/WORD_EXISTS_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/word_exists_sim/behav/xsim/xsim.dir/WORD_EXISTS_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

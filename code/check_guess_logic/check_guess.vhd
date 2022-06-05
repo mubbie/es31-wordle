@@ -39,7 +39,7 @@ entity CheckGuess is
            
            correct_letters  : out STD_LOGIC_VECTOR(4 DOWNTO 0);
            correct_places   : out STD_LOGIC_VECTOR(4 DOWNTO 0);
-           win             : out STD_LOGIC;
+           win              : out STD_LOGIC;
            done             : out STD_LOGIC     );
 end CheckGuess;
 
@@ -47,16 +47,16 @@ architecture Behavioral of CheckGuess is
 --=============================================================================
 --------------------------------------------
 -- Constants
-constant max_ltr_idx : integer := 4;
+constant max_ltr_idx : integer := 4;          -- max iterations? 
 --------------------------------------------
 
 --Signal Declarations: 
-signal enable_outputs : STD_LOGIC := '0';
+signal enable_outputs : STD_LOGIC := '0';     -- send outputs out? 
 
 signal correct_place_vals   : STD_LOGIC_VECTOR(4 DOWNTO 0);
 
 -- store the words in an array for easy indexing
-type  WordType  is array(0 to 4) of STD_LOGIC_VECTOR(7 DOWNTO 0);
+type  WordType  is array(0 to 4) of STD_LOGIC_VECTOR(7 DOWNTO 0);  -- hold a word, a characters in each index 
 signal guess_word :  WordType; -- := ((guess(7 DOWNTO 0)), (guess(15 DOWNTO 8)), (guess(23 DOWNTO 16)), (guess(31 DOWNTO 24)), (guess(39 DOWNTO 32)));
 signal solution_word :  WordType; --:= ((solution(7 DOWNTO 0)), (solution(15 DOWNTO 8)), (solution(23 DOWNTO 16)), (solution(31 DOWNTO 24)), (solution(39 DOWNTO 32)));
 
@@ -65,7 +65,7 @@ signal place_correct_mid : STD_LOGIC_VECTOR(4 DOWNTO 0);
 
 -- for address counters
 signal count_addresses : STD_LOGIC := '0';
-signal sol_addr : integer := 0;
+signal sol_addr : integer := 0; -- is this also a counter? 
 signal guess_addr : integer := 0;
 signal guess_count_en :  STD_LOGIC := '0';
 
@@ -94,12 +94,12 @@ correct_places <= correct_place_vals;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FillArrays: process (clk)
 begin
-if rising_edge(clk) then
-    if is_dict_word = '1' then
-        guess_word <= ( (guess(39 DOWNTO 32)), (guess(31 DOWNTO 24)), (guess(23 DOWNTO 16)), (guess(15 DOWNTO 8)), (guess(7 DOWNTO 0)) );
-        solution_word <= ((solution(39 DOWNTO 32)), (solution(31 DOWNTO 24)), (solution(23 DOWNTO 16)), (solution(15 DOWNTO 8)), (solution(7 DOWNTO 0)));
+    if rising_edge(clk) then
+        if is_dict_word = '1' then
+            guess_word <= ( (guess(39 DOWNTO 32)), (guess(31 DOWNTO 24)), (guess(23 DOWNTO 16)), (guess(15 DOWNTO 8)), (guess(7 DOWNTO 0)) );
+            solution_word <= ((solution(39 DOWNTO 32)), (solution(31 DOWNTO 24)), (solution(23 DOWNTO 16)), (solution(15 DOWNTO 8)), (solution(7 DOWNTO 0)));
+        end if;
     end if;
-end if;
 end process FillArrays;
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -107,19 +107,18 @@ end process FillArrays;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 RightLocations: process (guess_word, solution_word, clk)
 begin
-if rising_edge(clk) then
-    if enable_outputs = '1' then
-        correct_place_vals <= place_correct_mid;
+    if rising_edge(clk) then
+        if enable_outputs = '1' then
+            correct_place_vals <= place_correct_mid;
+        end if;
     end if;
-end if;
-
-comparator: for ltr_start in 0 to max_ltr_idx loop
-    place_correct_mid(ltr_start) <= '0';
-    if guess_word(ltr_start) = solution_word(ltr_start) then
-        place_correct_mid(ltr_start) <= '1';
-    end if;
-end loop comparator;
-
+    
+    comparator: for ltr_start in 0 to max_ltr_idx loop
+        place_correct_mid(ltr_start) <= '0';
+        if guess_word(ltr_start) = solution_word(ltr_start) then
+            place_correct_mid(ltr_start) <= '1';
+        end if;
+    end loop comparator;
 end process RightLocations;
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -161,31 +160,33 @@ end process AddressCounters;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wrong Locations Logic:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-WrongLocations: process (clk, sol_addr, guess_addr, place_correct_mid, letters_correct_mid, reset_ltrs_correct, sol_letters_present, compare_en)
-begin
-
-compare_en <= not( place_correct_mid(sol_addr) or letters_correct_mid(guess_addr) or sol_letters_present(sol_addr));
-
-if compare_en = '1' then
-    if guess_word(guess_addr) = solution_word(sol_addr) then
-        letters_correct_mid(guess_addr) <= '1';
-        sol_letters_present(sol_addr) <= '1';
-    end if;
-end if;   
+WrongLocations: process (clk, sol_addr, guess_addr, solution_word, guess_word, place_correct_mid, letters_correct_mid, reset_ltrs_correct, sol_letters_present, compare_en)
+    begin
     
-if rising_edge(clk) then
-    if enable_outputs = '1' then
-        correct_letters <= letters_correct_mid;
+    compare_en <= not( place_correct_mid(sol_addr) or letters_correct_mid(guess_addr) or sol_letters_present(sol_addr) );
+    
+    if rising_edge(clk) then
+        if enable_outputs = '1' then
+            correct_letters <= letters_correct_mid;
+        end if;
+        
+        if compare_en = '1' then
+            if guess_word(guess_addr) = solution_word(sol_addr) then
+                letters_correct_mid(guess_addr) <= '1';
+                sol_letters_present(sol_addr) <= '1';
+            end if;
+        end if;      
+        
+        if reset_ltrs_correct = '1' then
+            letters_correct_mid <= "00000";
+            sol_letters_present <= "00000";
+        end if;
     end if;
-     
-end if;
-
-if reset_ltrs_correct = '1' then
-    letters_correct_mid <= "00000";
-    sol_letters_present <= "00000";
-end if;
-
-
+    
+--    if reset_ltrs_correct = '1' then
+--        letters_correct_mid <= "00000";
+--        sol_letters_present <= "00000";
+--    end if;
 end process WrongLocations;
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+

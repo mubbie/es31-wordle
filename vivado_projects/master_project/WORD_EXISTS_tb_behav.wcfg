@@ -11,12 +11,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="160000000001fs"></ZoomEndTime>
-      <Cursor1Time time="130761584000fs"></Cursor1Time>
+      <ZoomEndTime time="104490644491fs"></ZoomEndTime>
+      <Cursor1Time time="140000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="227"></NameColumnWidth>
-      <ValueColumnWidth column_width="182"></ValueColumnWidth>
+      <ValueColumnWidth column_width="174"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="13" />
    <wvobject fp_name="/WORD_EXISTS_tb/clk_signal" type="logic">
@@ -31,6 +31,8 @@
       <obj_property name="ElementShortName">guess_signal[39:0]</obj_property>
       <obj_property name="ObjectShortName">guess_signal[39:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/WORD_EXISTS_tb/uut/qspo_signal" type="array">
       <obj_property name="ElementShortName">qspo_signal[39:0]</obj_property>
@@ -40,6 +42,8 @@
    <wvobject fp_name="/WORD_EXISTS_tb/word_ready_signal" type="logic">
       <obj_property name="ElementShortName">word_ready_signal</obj_property>
       <obj_property name="ObjectShortName">word_ready_signal</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/WORD_EXISTS_tb/is_dict_word_signal" type="logic">
       <obj_property name="ElementShortName">is_dict_word_signal</obj_property>
@@ -48,6 +52,8 @@
    <wvobject fp_name="/WORD_EXISTS_tb/not_in_dict_signal" type="logic">
       <obj_property name="ElementShortName">not_in_dict_signal</obj_property>
       <obj_property name="ObjectShortName">not_in_dict_signal</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/WORD_EXISTS_tb/TestGuessesArray" type="array">
       <obj_property name="ElementShortName">TestGuessesArray[0:1][39:0]</obj_property>
@@ -69,9 +75,13 @@
    <wvobject fp_name="/WORD_EXISTS_tb/uut/current_state" type="other">
       <obj_property name="ElementShortName">current_state</obj_property>
       <obj_property name="ObjectShortName">current_state</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/WORD_EXISTS_tb/uut/next_state" type="other">
       <obj_property name="ElementShortName">next_state</obj_property>
       <obj_property name="ObjectShortName">next_state</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
 </wave_config>
