@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="LOAD_WORD_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="LOAD_WORD_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="909193246fs"></ZoomEndTime>
+      <Cursor1Time time="1200000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="227"></NameColumnWidth>
+      <ValueColumnWidth column_width="343"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="27" />
+   <wvobject fp_name="/LOAD_WORD_tb/clk_signal" type="logic">
+      <obj_property name="ElementShortName">clk_signal</obj_property>
+      <obj_property name="ObjectShortName">clk_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/letter_in_signal" type="array">
+      <obj_property name="ElementShortName">letter_in_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter_in_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/letter_in_signal" type="array">
+      <obj_property name="ElementShortName">letter_in_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter_in_signal[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/letter_in_signal" type="array">
+      <obj_property name="ElementShortName">letter_in_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter_in_signal[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/new_letter_signal" type="logic">
+      <obj_property name="ElementShortName">new_letter_signal</obj_property>
+      <obj_property name="ObjectShortName">new_letter_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/uut/normalized_char" type="array">
+      <obj_property name="ElementShortName">normalized_char[7:0]</obj_property>
+      <obj_property name="ObjectShortName">normalized_char[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/uut/normalized_char" type="array">
+      <obj_property name="ElementShortName">normalized_char[7:0]</obj_property>
+      <obj_property name="ObjectShortName">normalized_char[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/full_signal" type="logic">
+      <obj_property name="ElementShortName">full_signal</obj_property>
+      <obj_property name="ObjectShortName">full_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_disp_out_signal" type="array">
+      <obj_property name="ElementShortName">char_disp_out_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_disp_out_signal[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_disp_out_ready_signal" type="logic">
+      <obj_property name="ElementShortName">char_disp_out_ready_signal</obj_property>
+      <obj_property name="ObjectShortName">char_disp_out_ready_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/word_ready_signal" type="logic">
+      <obj_property name="ElementShortName">word_ready_signal</obj_property>
+      <obj_property name="ObjectShortName">word_ready_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/uut/word_chars_reg" type="array">
+      <obj_property name="ElementShortName">word_chars_reg[0:4][7:0]</obj_property>
+      <obj_property name="ObjectShortName">word_chars_reg[0:4][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_0_signal" type="array">
+      <obj_property name="ElementShortName">char_0_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_0_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_1_signal" type="array">
+      <obj_property name="ElementShortName">char_1_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_1_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_2_signal" type="array">
+      <obj_property name="ElementShortName">char_2_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_2_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_3_signal" type="array">
+      <obj_property name="ElementShortName">char_3_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_3_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_4_signal" type="array">
+      <obj_property name="ElementShortName">char_4_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_4_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_0_signal" type="array">
+      <obj_property name="ElementShortName">char_0_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_0_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_1_signal" type="array">
+      <obj_property name="ElementShortName">char_1_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_1_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_2_signal" type="array">
+      <obj_property name="ElementShortName">char_2_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_2_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_3_signal" type="array">
+      <obj_property name="ElementShortName">char_3_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_3_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/char_4_signal" type="array">
+      <obj_property name="ElementShortName">char_4_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_4_signal[7:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/TestCharactersArray" type="array">
+      <obj_property name="ElementShortName">TestCharactersArray[0:8][7:0]</obj_property>
+      <obj_property name="ObjectShortName">TestCharactersArray[0:8][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/clock_period" type="other">
+      <obj_property name="ElementShortName">clock_period</obj_property>
+      <obj_property name="ObjectShortName">clock_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/uut/is_backspace_out" type="logic">
+      <obj_property name="ElementShortName">is_backspace_out</obj_property>
+      <obj_property name="ObjectShortName">is_backspace_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/uut/next_char_index" type="other">
+      <obj_property name="ElementShortName">next_char_index</obj_property>
+      <obj_property name="ObjectShortName">next_char_index</obj_property>
+   </wvobject>
+   <wvobject fp_name="/LOAD_WORD_tb/uut/word_size" type="array">
+      <obj_property name="ElementShortName">word_size[2:0]</obj_property>
+      <obj_property name="ObjectShortName">word_size[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

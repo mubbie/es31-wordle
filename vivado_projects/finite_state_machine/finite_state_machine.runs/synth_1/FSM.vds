@@ -1,0 +1,319 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Fri Jun  3 19:26:34 2022
+# Process ID: 17380
+# Current directory: O:/ES31/es31-wordle/vivado_projects/finite_state_machine/finite_state_machine.runs/synth_1
+# Command line: vivado.exe -log FSM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FSM.tcl
+# Log file: O:/ES31/es31-wordle/vivado_projects/finite_state_machine/finite_state_machine.runs/synth_1/FSM.vds
+# Journal file: O:/ES31/es31-wordle/vivado_projects/finite_state_machine/finite_state_machine.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source FSM.tcl -notrace
+Command: synth_design -top FSM -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11292 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 389.750 ; gain = 99.523
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'FSM' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:37]
+INFO: [Synth 8-637] synthesizing blackbox instance 'word_exists' of component 'CheckWordExists' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:168]
+INFO: [Synth 8-637] synthesizing blackbox instance 'word_loader' of component 'load_word' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:178]
+INFO: [Synth 8-637] synthesizing blackbox instance 'guess_checker' of component 'CheckGuess' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:202]
+INFO: [Synth 8-637] synthesizing blackbox instance 'dictionary' of component 'wordle_dictionary_rom' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:217]
+WARNING: [Synth 8-3848] Net qspo_ce_signal in module/entity FSM does not have driver. [O:/ES31/es31-wordle/code/fsm/FSM.vhd:157]
+INFO: [Synth 8-256] done synthesizing module 'FSM' (1#1) [O:/ES31/es31-wordle/code/fsm/FSM.vhd:37]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 445.840 ; gain = 155.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 445.840 ; gain = 155.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 445.840 ; gain = 155.613
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "max_tries_reached" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-327] inferring latch for variable 'data_to_send_reg' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:347]
+WARNING: [Synth 8-327] inferring latch for variable 'solution_sig_reg' [O:/ES31/es31-wordle/code/fsm/FSM.vhd:206]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 445.840 ; gain = 155.613
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   7 Input     96 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module FSM 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   7 Input     96 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "max_tries_reached" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (sent_reg)
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[95]' (LD) to 'data_to_send_reg[94]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[94]' (LD) to 'data_to_send_reg[93]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[93]' (LD) to 'data_to_send_reg[92]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[92]' (LD) to 'data_to_send_reg[89]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[91]' (LD) to 'data_to_send_reg[90]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[90]' (LD) to 'data_to_send_reg[88]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[89]' (LD) to 'data_to_send_reg[47]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[47]' (LD) to 'data_to_send_reg[46]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[46]' (LD) to 'data_to_send_reg[45]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[45]' (LD) to 'data_to_send_reg[44]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[44]' (LD) to 'data_to_send_reg[41]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[43]' (LD) to 'data_to_send_reg[42]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[42]' (LD) to 'data_to_send_reg[40]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_to_send_reg[41] )
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[39]' (LD) to 'data_to_send_reg[31]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[38]' (LD) to 'data_to_send_reg[36]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[37]' (LD) to 'data_to_send_reg[29]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[36]' (LD) to 'data_to_send_reg[35]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[35]' (LD) to 'data_to_send_reg[34]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[34]' (LD) to 'data_to_send_reg[33]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[33]' (LD) to 'data_to_send_reg[32]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[32]' (LD) to 'data_to_send_reg[30]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[31]' (LD) to 'data_to_send_reg[23]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[30]' (LD) to 'data_to_send_reg[28]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[29]' (LD) to 'data_to_send_reg[21]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[28]' (LD) to 'data_to_send_reg[27]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[27]' (LD) to 'data_to_send_reg[26]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[26]' (LD) to 'data_to_send_reg[25]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[25]' (LD) to 'data_to_send_reg[24]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[24]' (LD) to 'data_to_send_reg[22]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[23]' (LD) to 'data_to_send_reg[15]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[22]' (LD) to 'data_to_send_reg[20]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[20]' (LD) to 'data_to_send_reg[19]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[19]' (LD) to 'data_to_send_reg[18]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[18]' (LD) to 'data_to_send_reg[17]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[17]' (LD) to 'data_to_send_reg[16]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_to_send_reg[15] )
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[14]' (LD) to 'data_to_send_reg[12]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[12]' (LD) to 'data_to_send_reg[11]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[11]' (LD) to 'data_to_send_reg[10]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[10]' (LD) to 'data_to_send_reg[9]'
+INFO: [Synth 8-3886] merging instance 'data_to_send_reg[9]' (LD) to 'data_to_send_reg[8]'
+WARNING: [Synth 8-3332] Sequential element (data_to_send_reg[41]) is unused and will be removed from module FSM.
+WARNING: [Synth 8-3332] Sequential element (data_to_send_reg[15]) is unused and will be removed from module FSM.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 584.664 ; gain = 294.438
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 584.664 ; gain = 294.438
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module dictionary has unconnected pin qspo_ce
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------+----------+
+|      |BlackBox name         |Instances |
++------+----------------------+----------+
+|1     |CheckWordExists       |         1|
+|2     |load_word             |         1|
+|3     |CheckGuess            |         1|
+|4     |wordle_dictionary_rom |         1|
++------+----------------------+----------+
+
+Report Cell Usage: 
++------+-----------------------------+------+
+|      |Cell                         |Count |
++------+-----------------------------+------+
+|1     |CheckGuess_bbox_2            |     1|
+|2     |CheckWordExists_bbox_0       |     1|
+|3     |load_word_bbox_1             |     1|
+|4     |wordle_dictionary_rom_bbox_3 |     1|
+|5     |BUFG                         |     3|
+|6     |CARRY4                       |    20|
+|7     |LUT1                         |     3|
+|8     |LUT2                         |     2|
+|9     |LUT3                         |     7|
+|10    |LUT4                         |    52|
+|11    |LUT5                         |    32|
+|12    |LUT6                         |    43|
+|13    |MUXF7                        |     3|
+|14    |FDCE                         |    32|
+|15    |FDRE                         |    51|
+|16    |LD                           |    94|
+|17    |IBUF                         |    10|
+|18    |OBUF                         |     9|
++------+-----------------------------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   466|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 586.082 ; gain = 295.855
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 117 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 685.785 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 94 instances were transformed.
+  LD => LDCE: 94 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+60 Infos, 5 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 685.785 ; gain = 407.715
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 685.785 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'O:/ES31/es31-wordle/vivado_projects/finite_state_machine/finite_state_machine.runs/synth_1/FSM.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file FSM_utilization_synth.rpt -pb FSM_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  3 19:26:56 2022...
