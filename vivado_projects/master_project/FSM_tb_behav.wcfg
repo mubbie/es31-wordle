@@ -10,23 +10,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="166790973872fs"></ZoomEndTime>
+      <ZoomStartTime time="10044000000fs"></ZoomStartTime>
+      <ZoomEndTime time="10273400001fs"></ZoomEndTime>
       <Cursor1Time time="10075000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="169"></NameColumnWidth>
-      <ValueColumnWidth column_width="69"></ValueColumnWidth>
+      <ValueColumnWidth column_width="65"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="41" />
+   <WVObjectSize size="6" />
    <wvobject fp_name="/FSM_tb/clk_signal" type="logic">
       <obj_property name="ElementShortName">clk_signal</obj_property>
       <obj_property name="ObjectShortName">clk_signal</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/Rx_data_signal" type="array">
-      <obj_property name="ElementShortName">Rx_data_signal[7:0]</obj_property>
-      <obj_property name="ObjectShortName">Rx_data_signal[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/FSM_tb/Rx_data_signal" type="array">
       <obj_property name="ElementShortName">Rx_data_signal[7:0]</obj_property>
@@ -37,16 +32,6 @@
       <obj_property name="ElementShortName">Rx_done_signal</obj_property>
       <obj_property name="ObjectShortName">Rx_done_signal</obj_property>
    </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/char_disp_out_ready_sig" type="logic">
-      <obj_property name="ElementShortName">char_disp_out_ready_sig</obj_property>
-      <obj_property name="ObjectShortName">char_disp_out_ready_sig</obj_property>
-      <obj_property name="CustomSignalColor">#008000</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/Tx_data_ready_signal" type="logic">
-      <obj_property name="ElementShortName">Tx_data_ready_signal</obj_property>
-      <obj_property name="ObjectShortName">Tx_data_ready_signal</obj_property>
-   </wvobject>
    <wvobject fp_name="/FSM_tb/Tx_data_signal" type="array">
       <obj_property name="ElementShortName">Tx_data_signal[7:0]</obj_property>
       <obj_property name="ObjectShortName">Tx_data_signal[7:0]</obj_property>
@@ -55,168 +40,9 @@
    <wvobject fp_name="/FSM_tb/Tx_data_signal" type="array">
       <obj_property name="ElementShortName">Tx_data_signal[7:0]</obj_property>
       <obj_property name="ObjectShortName">Tx_data_signal[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/data_to_send" type="array">
-      <obj_property name="ElementShortName">data_to_send[95:0]</obj_property>
-      <obj_property name="ObjectShortName">data_to_send[95:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/data_to_send" type="array">
-      <obj_property name="ElementShortName">data_to_send[95:0]</obj_property>
-      <obj_property name="ObjectShortName">data_to_send[95:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="radix_realType">UNSIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">0</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/guess_checker/correct_letters" type="array">
-      <obj_property name="ElementShortName">correct_letters[4:0]</obj_property>
-      <obj_property name="ObjectShortName">correct_letters[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/guess_checker/correct_places" type="array">
-      <obj_property name="ElementShortName">correct_places[4:0]</obj_property>
-      <obj_property name="ObjectShortName">correct_places[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/word_loader/word_ready" type="logic">
-      <obj_property name="ElementShortName">word_ready</obj_property>
-      <obj_property name="ObjectShortName">word_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/word_loader/full" type="logic">
-      <obj_property name="ElementShortName">full</obj_property>
-      <obj_property name="ObjectShortName">full</obj_property>
-   </wvobject>
-   <wvobject fp_name="group163" type="group">
-      <obj_property name="label">guess chars</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/FSM_tb/uut/char_0_signal" type="array">
-         <obj_property name="ElementShortName">char_0_signal[7:0]</obj_property>
-         <obj_property name="ObjectShortName">char_0_signal[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/FSM_tb/uut/char_1_signal" type="array">
-         <obj_property name="ElementShortName">char_1_signal[7:0]</obj_property>
-         <obj_property name="ObjectShortName">char_1_signal[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/FSM_tb/uut/char_2_signal" type="array">
-         <obj_property name="ElementShortName">char_2_signal[7:0]</obj_property>
-         <obj_property name="ObjectShortName">char_2_signal[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/FSM_tb/uut/char_3_signal" type="array">
-         <obj_property name="ElementShortName">char_3_signal[7:0]</obj_property>
-         <obj_property name="ObjectShortName">char_3_signal[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/FSM_tb/uut/char_4_signal" type="array">
-         <obj_property name="ElementShortName">char_4_signal[7:0]</obj_property>
-         <obj_property name="ObjectShortName">char_4_signal[7:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/guess_sig" type="array">
-      <obj_property name="ElementShortName">guess_sig[39:0]</obj_property>
-      <obj_property name="ObjectShortName">guess_sig[39:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/FSM_tb/Tx_data_ready_signal" type="logic">
       <obj_property name="ElementShortName">Tx_data_ready_signal</obj_property>
       <obj_property name="ObjectShortName">Tx_data_ready_signal</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/Tx_data" type="array">
-      <obj_property name="ElementShortName">Tx_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">Tx_data[7:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/Tx_data_ready" type="logic">
-      <obj_property name="ElementShortName">Tx_data_ready</obj_property>
-      <obj_property name="ObjectShortName">Tx_data_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/current_state" type="other">
-      <obj_property name="ElementShortName">current_state</obj_property>
-      <obj_property name="ObjectShortName">current_state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/colors_ready" type="logic">
-      <obj_property name="ElementShortName">colors_ready</obj_property>
-      <obj_property name="ObjectShortName">colors_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/solution_sig" type="array">
-      <obj_property name="ElementShortName">solution_sig[39:0]</obj_property>
-      <obj_property name="ObjectShortName">solution_sig[39:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/solution_sig" type="array">
-      <obj_property name="ElementShortName">solution_sig[39:0]</obj_property>
-      <obj_property name="ObjectShortName">solution_sig[39:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/sol_addr" type="array">
-      <obj_property name="ElementShortName">sol_addr[13:0]</obj_property>
-      <obj_property name="ObjectShortName">sol_addr[13:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/waitcount" type="other">
-      <obj_property name="ElementShortName">waitcount</obj_property>
-      <obj_property name="ObjectShortName">waitcount</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/cnt" type="other">
-      <obj_property name="ElementShortName">cnt</obj_property>
-      <obj_property name="ObjectShortName">cnt</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/data_ready" type="logic">
-      <obj_property name="ElementShortName">data_ready</obj_property>
-      <obj_property name="ObjectShortName">data_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/send" type="logic">
-      <obj_property name="ElementShortName">send</obj_property>
-      <obj_property name="ObjectShortName">send</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/sent" type="logic">
-      <obj_property name="ElementShortName">sent</obj_property>
-      <obj_property name="ObjectShortName">sent</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/next_state" type="other">
-      <obj_property name="ElementShortName">next_state</obj_property>
-      <obj_property name="ObjectShortName">next_state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/word_ready_sig" type="logic">
-      <obj_property name="ElementShortName">word_ready_sig</obj_property>
-      <obj_property name="ObjectShortName">word_ready_sig</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/in_dict_sig" type="logic">
-      <obj_property name="ElementShortName">in_dict_sig</obj_property>
-      <obj_property name="ObjectShortName">in_dict_sig</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/not_in_dict_sig" type="logic">
-      <obj_property name="ElementShortName">not_in_dict_sig</obj_property>
-      <obj_property name="ObjectShortName">not_in_dict_sig</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/cltrs" type="array">
-      <obj_property name="ElementShortName">cltrs[4:0]</obj_property>
-      <obj_property name="ObjectShortName">cltrs[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/cplaces" type="array">
-      <obj_property name="ElementShortName">cplaces[4:0]</obj_property>
-      <obj_property name="ObjectShortName">cplaces[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/win_all_green" type="logic">
-      <obj_property name="ElementShortName">win_all_green</obj_property>
-      <obj_property name="ObjectShortName">win_all_green</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/num_tries" type="other">
-      <obj_property name="ElementShortName">num_tries</obj_property>
-      <obj_property name="ObjectShortName">num_tries</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/max_tries_reached" type="logic">
-      <obj_property name="ElementShortName">max_tries_reached</obj_property>
-      <obj_property name="ObjectShortName">max_tries_reached</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/rst_tries" type="logic">
-      <obj_property name="ElementShortName">rst_tries</obj_property>
-      <obj_property name="ObjectShortName">rst_tries</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/qspo_signal" type="array">
-      <obj_property name="ElementShortName">qspo_signal[39:0]</obj_property>
-      <obj_property name="ObjectShortName">qspo_signal[39:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FSM_tb/uut/qspo_ce_signal" type="logic">
-      <obj_property name="ElementShortName">qspo_ce_signal</obj_property>
-      <obj_property name="ObjectShortName">qspo_ce_signal</obj_property>
    </wvobject>
 </wave_config>
