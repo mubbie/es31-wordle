@@ -136,6 +136,8 @@ signal cnt          : integer := 0;
 signal data_ready   : std_logic := '0';
 signal send         : std_logic := '0';
 signal sent         : std_logic := '1';
+signal data_ready_next   : std_logic := '0';
+signal data_ready_mp   : std_logic := '0';
 
 
 
@@ -293,22 +295,27 @@ end process CountTries;
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- send Data Register: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
-sendData: process(clk, send, cnt, data_to_send)
+sendData: process(clk, send, cnt, data_to_send, data_ready_mp)
 begin
+    if data_ready_mp = '1' then
+        cnt <= 0;
+        send <= '1';
+        sent <= '0';
+    end if;
     if rising_edge(clk) then
         cnt <= cnt + 1; 
-        if data_ready = '1' then
+        if cnt >= 11 then
             cnt <= 0;
-            send <= '1';
-            sent <= '0';
-        elsif cnt >= 11 then
-            cnt <= 0;
-            send <= '0';
-            sent <= '1';
+            if send = '1' then
+                send <= '0';
+                sent <= '1';
+            end if;
         end if;
+        
+        Tx_data_ready <= send;
+        Tx_data <= data_to_send(cnt*byte_size + 7 downto cnt*byte_size);
     end if;
-    Tx_data_ready <= send;
-    Tx_data <= data_to_send(cnt*byte_size + 7 downto cnt*byte_size);
+
 end process sendData;
 
 
@@ -319,11 +326,6 @@ StateUpdate: process (clk)
 begin
     if rising_edge(clk) then
         current_state <= next_state;
-        if waitcount = 2 then 
-            waitcount <= 0;
-        else 
-           waitcount <= waitcount + 1; 
-        end if;
     end if;
 end process StateUpdate;
 
@@ -334,8 +336,8 @@ next_state <= current_state;
 
 case current_state is
     when newGame => 
-        if waitcount = 2 then
-            next_state <= idle;
+        if char_disp_out_ready_sig = '1' then
+            next_state <= displayLetters;
         end if;
     when idle => 
         if char_disp_out_ready_sig = '1' then
@@ -381,6 +383,10 @@ begin
     qspo_ce_signal <= '0';
     data_to_send <= (others => '0');
 
+    if rising_edge(clk) then
+        data_ready_next <= data_ready;
+    end if;
+    data_ready_mp <= not data_ready_next and data_ready;
 
     case current_state is
         when newGame =>

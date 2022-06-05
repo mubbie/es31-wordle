@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date             : Sun Jun  5 03:06:32 2022
+| Date             : Sun Jun  5 04:42:12 2022
 | Host             : mecha-10 running 64-bit major release  (build 9200)
 | Command          : report_power -file WORDLE_TOP_LEVEL_SHELL_power_routed.rpt -pb WORDLE_TOP_LEVEL_SHELL_power_summary_routed.pb -rpx WORDLE_TOP_LEVEL_SHELL_power_routed.rpx
 | Design           : WORDLE_TOP_LEVEL_SHELL
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.350        |
+| Total On-Chip Power (W)  | 0.453        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.277        |
-| Device Static (W)        | 0.072        |
+| Dynamic (W)              | 0.381        |
+| Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 83.3         |
-| Junction Temperature (C) | 26.7         |
+| Max Ambient (C)          | 82.7         |
+| Junction Temperature (C) | 27.3         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.011 |        3 |       --- |             --- |
-| Slice Logic    |     0.096 |    24651 |       --- |             --- |
-|   LUT as Logic |     0.091 |    17399 |     20800 |           83.65 |
-|   F7/F8 Muxes  |     0.004 |     5473 |     32600 |           16.79 |
-|   CARRY4       |    <0.001 |      104 |      8150 |            1.28 |
-|   Register     |    <0.001 |     1089 |     41600 |            2.62 |
+| Slice Logic    |     0.134 |    24597 |       --- |             --- |
+|   LUT as Logic |     0.127 |    17374 |     20800 |           83.53 |
+|   F7/F8 Muxes  |     0.006 |     5476 |     32600 |           16.80 |
+|   Register     |    <0.001 |     1060 |     41600 |            2.55 |
+|   CARRY4       |    <0.001 |       96 |      8150 |            1.18 |
 |   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.171 |    13392 |       --- |             --- |
+| Signals        |     0.236 |    13335 |       --- |             --- |
 | I/O            |    <0.001 |       11 |       106 |           10.38 |
-| Static Power   |     0.072 |          |           |                 |
-| Total          |     0.350 |          |           |                 |
+| Static Power   |     0.073 |          |           |                 |
+| Total          |     0.453 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.288 |       0.277 |      0.010 |
+| Vccint    |       1.000 |     0.391 |       0.381 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -141,13 +141,13 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| WORDLE_TOP_LEVEL_SHELL  |     0.277 |
-|   state_machine         |     0.273 |
-|     dictionary          |     0.048 |
-|       U0                |     0.048 |
+| WORDLE_TOP_LEVEL_SHELL  |     0.381 |
+|   state_machine         |     0.377 |
+|     dictionary          |     0.146 |
+|       U0                |     0.146 |
 |     guess_checker       |     0.002 |
-|     word_exist_block    |     0.219 |
-|       wordle_dictionary |     0.219 |
+|     word_exist_block    |     0.224 |
+|       wordle_dictionary |     0.224 |
 |     word_loader         |     0.001 |
 |   transmitter           |     0.003 |
 +-------------------------+-----------+
