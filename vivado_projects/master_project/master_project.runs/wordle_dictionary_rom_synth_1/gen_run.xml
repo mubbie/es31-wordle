@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="wordle_dictionary_rom_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654401035">
   <File Type="PA-TCL" Name="wordle_dictionary_rom.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="wordle_dictionary_rom_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="wordle_dictionary_rom_reports.tcl"/>
   <File Type="RDS-RDS" Name="wordle_dictionary_rom.vds"/>
-  <File Type="RDS-UTIL" Name="wordle_dictionary_rom_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="wordle_dictionary_rom_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="wordle_dictionary_rom.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="wordle_dictionary_rom_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="wordle_dictionary_rom_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/wordle_dictionary_rom">
     <File Path="$PSRCDIR/sources_1/ip/wordle_dictionary_rom/wordle_dictionary_rom.xci">
       <FileInfo>
