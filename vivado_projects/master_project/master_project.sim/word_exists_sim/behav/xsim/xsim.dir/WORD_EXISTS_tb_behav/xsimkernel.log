@@ -2,3 +2,6 @@ Running: xsim.dir/WORD_EXISTS_tb_behav/xsimk.exe -simmode gui -wdb WORD_EXISTS_t
 Design successfully loaded
 Design Loading Memory Usage: 18504 KB (Peak: 18504 KB)
 Design Loading CPU Usage: 312 ms
+Simulation completed
+Simulation Memory Usage: 59048 KB (Peak: 59048 KB)
+Simulation CPU Usage: 562 ms
