@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -70,13 +69,14 @@ set rc [catch {
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir O:/ES31/es31-wordle/vivado_projects/master_project/master_project.cache/wt [current_project]
-  set_property parent.project_path O:/ES31/es31-wordle/vivado_projects/master_project/master_project.xpr [current_project]
-  set_property ip_output_repo O:/ES31/es31-wordle/vivado_projects/master_project/master_project.cache/ip [current_project]
+  set_property webtalk.parent_dir O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.cache/wt [current_project]
+  set_property parent.project_path O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.xpr [current_project]
+  set_property ip_output_repo O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet O:/ES31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL.dcp
-  read_ip -quiet O:/ES31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/wordle_dictionary_rom/wordle_dictionary_rom.xci
-  read_xdc O:/ES31/es31-wordle/constraint_files/wordle_constraints.xdc
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+  add_files -quiet O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL.dcp
+  read_ip -quiet O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom.xci
+  read_xdc O:/ES31_22S/es31-worldle/constraint_files/wordle_constraints.xdc
   link_design -top WORDLE_TOP_LEVEL_SHELL -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -156,6 +156,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   catch { write_mem_info -force WORDLE_TOP_LEVEL_SHELL.mmi }
   write_bitstream -force WORDLE_TOP_LEVEL_SHELL.bit 
   catch {write_debug_probes -quiet -force WORDLE_TOP_LEVEL_SHELL}

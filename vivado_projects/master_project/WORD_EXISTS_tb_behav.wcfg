@@ -11,14 +11,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1000000001fs"></ZoomEndTime>
-      <Cursor1Time time="1000000000fs"></Cursor1Time>
+      <ZoomEndTime time="140000000001fs"></ZoomEndTime>
+      <Cursor1Time time="140000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="227"></NameColumnWidth>
-      <ValueColumnWidth column_width="170"></ValueColumnWidth>
+      <ValueColumnWidth column_width="166"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="12" />
    <wvobject fp_name="/WORD_EXISTS_tb/clk_signal" type="logic">
       <obj_property name="ElementShortName">clk_signal</obj_property>
       <obj_property name="ObjectShortName">clk_signal</obj_property>
@@ -33,11 +33,6 @@
       <obj_property name="Radix">ASCIIRADIX</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/WORD_EXISTS_tb/uut/qspo_signal" type="array">
-      <obj_property name="ElementShortName">qspo_signal[39:0]</obj_property>
-      <obj_property name="ObjectShortName">qspo_signal[39:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/WORD_EXISTS_tb/word_ready_signal" type="logic">
       <obj_property name="ElementShortName">word_ready_signal</obj_property>

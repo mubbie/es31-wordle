@@ -64,14 +64,13 @@ ARCHITECTURE behavior of WORD_EXISTS is
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wordle Dictionary ROM:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component wordle_dictionary_rom IS
+component game_dict_rom IS
 PORT (
-  clk : IN STD_LOGIC;
-  a : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
-  qspo_ce : IN STD_LOGIC;
-  qspo : OUT STD_LOGIC_VECTOR(39 DOWNTO 0)
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(39 DOWNTO 0)
 );
-END component wordle_dictionary_rom;
+END component game_dict_rom;
 
 --=============================================================================
 --State Type Declarations: 
@@ -88,8 +87,8 @@ signal counter_tc : std_logic := '0';
 signal counter_reset : std_logic := '1';
 
 -- rom access signals 
-signal qspo_ce_signal : std_logic := '0'; -- 
-signal qspo_signal : std_logic_vector(39 downto 0) := (others => '0'); -- initially 0
+--signal qspo_ce_signal : std_logic := '0'; -- 
+signal dout_sig : std_logic_vector(39 downto 0) := (others => '0'); -- initially 0
 
 -- states 
 signal current_state : state := sWait;
@@ -107,12 +106,11 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the ROM:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-wordle_dictionary : wordle_dictionary_rom 
+wordle_dictionary : game_dict_rom 
     port map (
-        clk => clk_in,
-        a => std_logic_vector(counter_a_signal),
-        qspo_ce => qspo_ce_signal,
-        qspo => qspo_signal
+        clka => clk_in,
+        addra => std_logic_vector(counter_a_signal),
+        douta => dout_sig
     );
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -130,7 +128,7 @@ end process StateUpdate;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Next State Logic (asynchronous):
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-NextStateLogic: process(current_state, current_state_bin, word_ready, qspo_signal, guess, counter_tc)
+NextStateLogic: process(current_state, current_state_bin, word_ready, dout_sig, guess, counter_tc)
 begin 
     -- define defaults: 
     next_state <= current_state;
@@ -144,7 +142,7 @@ begin
                 next_state_bin <= "01";
             end if;
         when sCountEnable => 
-            if qspo_signal = guess then
+            if dout_sig = guess then
                 next_state <= sInDict;
                 next_state_bin <= "10";
             else 
@@ -171,14 +169,12 @@ begin
     not_in_dict <= '0'; 
     is_dict_word <= '0';
     counter_reset <= '1';
-    qspo_ce_signal <= '0';
 
     case current_state is 
         when sWait => 
             -- no output
         when sCountEnable => 
             counter_reset <= '0';
-            qspo_ce_signal <= '1'; -- enable rom access
         when sInDict => 
             is_dict_word <= '1';
             not_in_dict <= '0';

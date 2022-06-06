@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date                      : Sun Jun  5 04:38:25 2022
-| Host                      : mecha-10 running 64-bit major release  (build 9200)
+| Date                      : Mon Jun  6 16:09:24 2022
+| Host                      : mecha-9 running 64-bit major release  (build 9200)
 | Command                   : report_io -file WORDLE_TOP_LEVEL_SHELL_io_placed.rpt
 | Design                    : WORDLE_TOP_LEVEL_SHELL
 | Device                    : xc7a35t

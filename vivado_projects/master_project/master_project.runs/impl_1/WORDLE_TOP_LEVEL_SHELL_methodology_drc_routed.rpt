@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date         : Sun Jun  5 04:41:59 2022
-| Host         : mecha-10 running 64-bit major release  (build 9200)
+| Date         : Mon Jun  6 16:09:52 2022
+| Host         : mecha-9 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file WORDLE_TOP_LEVEL_SHELL_methodology_drc_routed.rpt -pb WORDLE_TOP_LEVEL_SHELL_methodology_drc_routed.pb -rpx WORDLE_TOP_LEVEL_SHELL_methodology_drc_routed.rpx
 | Design       : WORDLE_TOP_LEVEL_SHELL
 | Device       : xc7a35tcpg236-1
@@ -35,7 +35,7 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell state_machine/dictionary_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) state_machine/max_tries_reached_reg/CLR, state_machine/num_tries_reg[0]/CLR, state_machine/num_tries_reg[10]/CLR, state_machine/num_tries_reg[11]/CLR, state_machine/num_tries_reg[12]/CLR, state_machine/num_tries_reg[13]/CLR, state_machine/num_tries_reg[14]/CLR, state_machine/num_tries_reg[15]/CLR, state_machine/num_tries_reg[16]/CLR, state_machine/num_tries_reg[17]/CLR, state_machine/num_tries_reg[18]/CLR, state_machine/num_tries_reg[19]/CLR, state_machine/num_tries_reg[1]/CLR, state_machine/num_tries_reg[20]/CLR, state_machine/num_tries_reg[21]/CLR (the first 15 of 33 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell state_machine/data_ready_next_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) state_machine/max_tries_reached_reg/CLR, state_machine/num_tries_reg[0]/CLR, state_machine/num_tries_reg[10]/CLR, state_machine/num_tries_reg[11]/CLR, state_machine/num_tries_reg[12]/CLR, state_machine/num_tries_reg[13]/CLR, state_machine/num_tries_reg[14]/CLR, state_machine/num_tries_reg[15]/CLR, state_machine/num_tries_reg[16]/CLR, state_machine/num_tries_reg[17]/CLR, state_machine/num_tries_reg[18]/CLR, state_machine/num_tries_reg[19]/CLR, state_machine/num_tries_reg[1]/CLR, state_machine/num_tries_reg[20]/CLR, state_machine/num_tries_reg[21]/CLR (the first 15 of 33 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning

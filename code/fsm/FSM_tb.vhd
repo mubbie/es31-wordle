@@ -147,7 +147,7 @@ begin
         Rx_data_signal <= TestInputsArray(i);
         wait for clock_period;
         Rx_done_signal <= '0';
-        wait for clock_period*1000;
+        wait for clock_period*100;
     end loop;
     
     Rx_data_signal <= (others => '1'); 

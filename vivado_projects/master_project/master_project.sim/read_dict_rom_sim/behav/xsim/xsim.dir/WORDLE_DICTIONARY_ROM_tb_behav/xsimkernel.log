@@ -1,7 +1,7 @@
-Running: xsim.dir/WORDLE_DICTIONARY_ROM_tb_behav/xsimk.exe -simmode gui -wdb WORDLE_DICTIONARY_ROM_tb_behav.wdb -simrunnum 0 -socket 59782
+Running: xsim.dir/WORDLE_DICTIONARY_ROM_tb_behav/xsimk.exe -simmode gui -wdb WORDLE_DICTIONARY_ROM_tb_behav.wdb -simrunnum 0 -socket 49682
 Design successfully loaded
-Design Loading Memory Usage: 20644 KB (Peak: 20644 KB)
-Design Loading CPU Usage: 0 ms
+Design Loading Memory Usage: 12884 KB (Peak: 12884 KB)
+Design Loading CPU Usage: 155 ms
 Simulation completed
-Simulation Memory Usage: 65844 KB (Peak: 65844 KB)
-Simulation CPU Usage: 311 ms
+Simulation Memory Usage: 15024 KB (Peak: 15024 KB)
+Simulation CPU Usage: 202 ms

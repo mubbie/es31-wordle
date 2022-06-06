@@ -1,1 +1,0 @@
---relax --debug typical --mt auto -L xil_defaultlib -L secureip -L xpm --snapshot wordle_dictionary_rom xil_defaultlib.wordle_dictionary_rom -log elaborate.log

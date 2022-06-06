@@ -50,14 +50,13 @@ architecture testbench of WORDLE_DICTIONARY_ROM_tb is
 --=============================================================================
 --Component Declaration:
 --============================================================================= 
-component wordle_dictionary_rom IS
+component game_dict_rom IS
 PORT (
-    a : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
-    clk : IN STD_LOGIC;
-    qspo_ce : IN STD_LOGIC;
-    qspo : OUT STD_LOGIC_VECTOR(39 DOWNTO 0)
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(39 DOWNTO 0)
   );
-END component wordle_dictionary_rom;
+END component game_dict_rom;
 
 
 --=============================================================================
@@ -66,10 +65,9 @@ END component wordle_dictionary_rom;
 -- inputs 
 signal clk_signal : std_logic := '0';
 signal a_signal : STD_LOGIC_VECTOR(13 DOWNTO 0) := (others => '0');
-signal qspo_ce_signal : STD_LOGIC := '0';
 
 -- outputs
-signal qspo_signal : STD_LOGIC_VECTOR(39 DOWNTO 0) := (others => '0');
+signal dout_sig : STD_LOGIC_VECTOR(39 DOWNTO 0) := (others => '0');
 
 -- constants
 constant clock_period : time := 10 ns; -- 100 MHz clock
@@ -88,12 +86,11 @@ signal TestAddressesArray : RegisterFile :=
 
 -- TESTBENCH
 begin 
-uut : wordle_dictionary_rom 
+uut : game_dict_rom 
     PORT MAP (
-        a => a_signal,
-        clk => clk_signal,
-        qspo_ce => qspo_ce_signal,
-        qspo => qspo_signal
+        clka => clk_signal,
+        addra => a_signal,
+        douta => dout_sig
     );
 
 --=============================================================================
@@ -119,12 +116,11 @@ begin
 
     -- send in each address 
     for i in 0 to 2 loop 
-        qspo_ce_signal <= '1'; 
         a_signal <= TestAddressesArray(i);
-        wait for clock_period;
-        qspo_ce_signal <= '0'; 
         wait for clock_period*10;
     end loop;
+    
+    wait;
 
 end process stimulus_process; 
 
