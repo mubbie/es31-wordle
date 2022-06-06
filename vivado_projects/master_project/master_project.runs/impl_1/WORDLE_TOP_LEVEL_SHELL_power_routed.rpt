@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date             : Sun Jun  5 04:42:12 2022
-| Host             : mecha-10 running 64-bit major release  (build 9200)
+| Date             : Mon Jun  6 16:09:53 2022
+| Host             : mecha-9 running 64-bit major release  (build 9200)
 | Command          : report_power -file WORDLE_TOP_LEVEL_SHELL_power_routed.rpt -pb WORDLE_TOP_LEVEL_SHELL_power_summary_routed.pb -rpx WORDLE_TOP_LEVEL_SHELL_power_routed.rpx
 | Design           : WORDLE_TOP_LEVEL_SHELL
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.453        |
+| Total On-Chip Power (W)  | 0.102        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.381        |
+| Dynamic (W)              | 0.029        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 82.7         |
-| Junction Temperature (C) | 27.3         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.011 |        3 |       --- |             --- |
-| Slice Logic    |     0.134 |    24597 |       --- |             --- |
-|   LUT as Logic |     0.127 |    17374 |     20800 |           83.53 |
-|   F7/F8 Muxes  |     0.006 |     5476 |     32600 |           16.80 |
-|   Register     |    <0.001 |     1060 |     41600 |            2.55 |
+| Clocks         |     0.004 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     1598 |       --- |             --- |
+|   LUT as Logic |     0.001 |      584 |     20800 |            2.81 |
 |   CARRY4       |    <0.001 |       96 |      8150 |            1.18 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.236 |    13335 |       --- |             --- |
+|   Register     |    <0.001 |      695 |     41600 |            1.67 |
+|   F7/F8 Muxes  |    <0.001 |       76 |     32600 |            0.23 |
+|   Others       |     0.000 |       76 |       --- |             --- |
+| Signals        |     0.002 |     1414 |       --- |             --- |
+| Block RAM      |     0.020 |       30 |        50 |           60.00 |
 | I/O            |    <0.001 |       11 |       106 |           10.38 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.453 |          |           |                 |
+| Total          |     0.102 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.391 |       0.381 |      0.010 |
+| Vccint    |       1.000 |     0.037 |       0.027 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -81,7 +82,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.003 |       0.002 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -141,15 +142,14 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| WORDLE_TOP_LEVEL_SHELL  |     0.381 |
-|   state_machine         |     0.377 |
-|     dictionary          |     0.146 |
-|       U0                |     0.146 |
-|     guess_checker       |     0.002 |
-|     word_exist_block    |     0.224 |
-|       wordle_dictionary |     0.224 |
-|     word_loader         |     0.001 |
-|   transmitter           |     0.003 |
+| WORDLE_TOP_LEVEL_SHELL  |     0.029 |
+|   state_machine         |     0.026 |
+|     dictionary          |     0.010 |
+|       U0                |     0.010 |
+|     guess_checker       |     0.001 |
+|     word_exist_block    |     0.012 |
+|       wordle_dictionary |     0.012 |
+|   transmitter           |     0.002 |
 +-------------------------+-----------+
 
 

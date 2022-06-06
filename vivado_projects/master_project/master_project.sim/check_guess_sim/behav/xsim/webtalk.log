@@ -2,12 +2,12 @@
 # Webtalk v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Sun Jun  5 04:52:25 2022
-# Process ID: 9752
-# Current directory: O:/ES31/es31-wordle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim
-# Command line: wbtcv.exe -mode batch -source O:/ES31/es31-wordle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim/xsim.dir/check_guess_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: O:/ES31/es31-wordle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim/webtalk.log
-# Journal file: O:/ES31/es31-wordle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim\webtalk.jou
+# Start of session at: Mon Jun  6 15:21:06 2022
+# Process ID: 17168
+# Current directory: O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim
+# Command line: wbtcv.exe -mode batch -source O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim/xsim.dir/check_guess_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim/webtalk.log
+# Journal file: O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source O:/ES31/es31-wordle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim/xsim.dir/check_guess_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Sun Jun  5 04:52:25 2022...
+source O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.sim/check_guess_sim/behav/xsim/xsim.dir/check_guess_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jun  6 15:21:06 2022...

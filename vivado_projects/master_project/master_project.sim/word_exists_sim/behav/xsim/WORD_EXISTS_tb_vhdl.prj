@@ -1,6 +1,6 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
-"../../../../master_project.srcs/sources_1/ip/wordle_dictionary_rom/wordle_dictionary_rom_sim_netlist.vhdl" \
+"../../../../master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom_sim_netlist.vhdl" \
 "../../../../../../code/word_exists/word_exists.vhd" \
 "../../../../../../code/word_exists/word_exists_tb.vhd" \
 

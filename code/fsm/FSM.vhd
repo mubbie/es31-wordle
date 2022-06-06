@@ -99,13 +99,12 @@ end component CheckGuess;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Dictionary ROM Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component wordle_dictionary_rom
+component game_dict_rom
   PORT (
-    a : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
-    clk : IN STD_LOGIC;
-    qspo_ce : IN STD_LOGIC;
-    qspo : OUT STD_LOGIC_VECTOR(39 DOWNTO 0) );
-end component wordle_dictionary_rom;
+    clka : IN STD_LOGIC;
+    addra : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(39 DOWNTO 0)   );
+end component game_dict_rom;
 
 --=============================================================================
 --Signal Declarations: 
@@ -182,8 +181,7 @@ signal max_tries_reached : std_logic := '0';
 signal rst_tries : std_logic := '0';
 
 -- dictionary signals
-signal qspo_signal : STD_LOGIC_VECTOR(39 DOWNTO 0);
-signal qspo_ce_signal : STD_LOGIC;
+signal dout_sig : STD_LOGIC_VECTOR(39 DOWNTO 0);
 --=============================================================================
 
 begin
@@ -250,12 +248,11 @@ guess_checker: CheckGuess
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the dictionary:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
-dictionary : wordle_dictionary_rom 
+dictionary : game_dict_rom 
     PORT MAP (
-        a               => STD_LOGIC_VECTOR(sol_addr),
-        clk             => clk,
-        qspo_ce         => qspo_ce_signal,
-        qspo            => qspo_signal
+        addra               => STD_LOGIC_VECTOR(sol_addr),
+        clka                => clk,
+        douta               => dout_sig
     );
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
@@ -392,11 +389,10 @@ end case current_state;
 
 end process NextStateLogic;
 
-OutputLogic: process(clk, current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, qspo_signal)
+OutputLogic: process(clk, current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, dout_sig, data_ready_next)
 begin
     rst_tries <= '0';
     data_ready <= '0';
-    qspo_ce_signal <= '0';
     data_to_send <= (others => '0');
 
     if rising_edge(clk) then
@@ -406,10 +402,9 @@ begin
 
     case current_state is
         when newGame =>
-            qspo_ce_signal <= '1';       
             -- send output 
             if rising_edge(clk) then 
-                solution_sig <= qspo_signal; 
+                solution_sig <= dout_sig; 
             end if;
         when idle => 
             -- no output 

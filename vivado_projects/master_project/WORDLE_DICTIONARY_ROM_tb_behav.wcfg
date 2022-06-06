@@ -11,14 +11,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="400000001fs"></ZoomEndTime>
-      <Cursor1Time time="290909000fs"></Cursor1Time>
+      <ZoomEndTime time="300000001fs"></ZoomEndTime>
+      <Cursor1Time time="300000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="227"></NameColumnWidth>
-      <ValueColumnWidth column_width="343"></ValueColumnWidth>
+      <ValueColumnWidth column_width="129"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="5" />
    <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/clk_signal" type="logic">
       <obj_property name="ElementShortName">clk_signal</obj_property>
       <obj_property name="ObjectShortName">clk_signal</obj_property>
@@ -26,45 +26,18 @@
    <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/a_signal" type="array">
       <obj_property name="ElementShortName">a_signal[13:0]</obj_property>
       <obj_property name="ObjectShortName">a_signal[13:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="CustomSignalColor">#FFA500</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/qspo_ce_signal" type="logic">
-      <obj_property name="ElementShortName">qspo_ce_signal</obj_property>
-      <obj_property name="ObjectShortName">qspo_ce_signal</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/qspo_signal" type="array">
-      <obj_property name="ElementShortName">qspo_signal[39:0]</obj_property>
-      <obj_property name="ObjectShortName">qspo_signal[39:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/qspo_signal" type="array">
-      <obj_property name="ElementShortName">qspo_signal[39:0]</obj_property>
-      <obj_property name="ObjectShortName">qspo_signal[39:0]</obj_property>
+   <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/dout_sig" type="array">
+      <obj_property name="ElementShortName">dout_sig[39:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_sig[39:0]</obj_property>
       <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/TestAddressesArray" type="array">
       <obj_property name="ElementShortName">TestAddressesArray[0:2][13:0]</obj_property>
       <obj_property name="ObjectShortName">TestAddressesArray[0:2][13:0]</obj_property>
-      <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/TestAddressesArray[0]" type="array">
-         <obj_property name="ElementShortName">[0][13:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][13:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/TestAddressesArray[1]" type="array">
-         <obj_property name="ElementShortName">[1][13:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][13:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/TestAddressesArray[2]" type="array">
-         <obj_property name="ElementShortName">[2][13:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][13:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/WORDLE_DICTIONARY_ROM_tb/clock_period" type="other">
       <obj_property name="ElementShortName">clock_period</obj_property>
