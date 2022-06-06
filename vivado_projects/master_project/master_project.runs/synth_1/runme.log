@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8132 
+INFO: Helper process launched with PID 10760 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 420.031 ; gain = 101.047
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 420.207 ; gain = 101.477
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'WORDLE_TOP_LEVEL_SHELL' [O:/ES31_22S/es31-worldle/code/top_level/top_level_shell.vhd:59]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
@@ -31,8 +31,8 @@ INFO: [Synth 8-3491] module 'FSM' declared at 'O:/ES31_22S/es31-worldle/code/fsm
 INFO: [Synth 8-638] synthesizing module 'FSM' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:42]
 INFO: [Synth 8-3491] module 'WORD_EXISTS' declared at 'O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:41' bound to instance 'word_exist_block' of component 'WORD_EXISTS' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:194]
 INFO: [Synth 8-638] synthesizing module 'WORD_EXISTS' [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:59]
-INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-10504-mecha-9/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'wordle_dictionary' of component 'game_dict_rom' [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:109]
-INFO: [Synth 8-638] synthesizing module 'game_dict_rom' [O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-10504-mecha-9/realtime/game_dict_rom_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-1988-mecha-9/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'wordle_dictionary' of component 'game_dict_rom' [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:109]
+INFO: [Synth 8-638] synthesizing module 'game_dict_rom' [O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-1988-mecha-9/realtime/game_dict_rom_stub.vhdl:14]
 WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was removed.  [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:124]
 INFO: [Synth 8-256] done synthesizing module 'WORD_EXISTS' (2#1) [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:59]
 INFO: [Synth 8-3491] module 'load_word' declared at 'O:/ES31_22S/es31-worldle/code/load_word/load_word.vhd:43' bound to instance 'word_loader' of component 'load_word' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:206]
@@ -44,8 +44,7 @@ INFO: [Synth 8-256] done synthesizing module 'load_word' (4#1) [O:/ES31_22S/es31
 INFO: [Synth 8-3491] module 'CheckGuess' declared at 'O:/ES31_22S/es31-worldle/code/check_guess_logic/check_guess.vhd:34' bound to instance 'guess_checker' of component 'CheckGuess' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:236]
 INFO: [Synth 8-638] synthesizing module 'CheckGuess' [O:/ES31_22S/es31-worldle/code/check_guess_logic/check_guess.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'CheckGuess' (5#1) [O:/ES31_22S/es31-worldle/code/check_guess_logic/check_guess.vhd:46]
-INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-10504-mecha-9/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'dictionary' of component 'game_dict_rom' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:251]
-WARNING: [Synth 8-614] signal 'data_ready' is read in the process but is not in the sensitivity list [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:392]
+INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-1988-mecha-9/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'dictionary' of component 'game_dict_rom' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:251]
 INFO: [Synth 8-256] done synthesizing module 'FSM' (6#1) [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:42]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
 	Parameter BIT_COUNTER_TOP bound to: 10 - type: integer 
@@ -62,7 +61,7 @@ RAM "queue_reg_reg" dissolved into registers
 INFO: [Synth 8-256] done synthesizing module 'SCI_Transmitter' (7#1) [O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd:71]
 INFO: [Synth 8-256] done synthesizing module 'WORDLE_TOP_LEVEL_SHELL' (8#1) [O:/ES31_22S/es31-worldle/code/top_level/top_level_shell.vhd:59]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 476.289 ; gain = 157.305
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 476.684 ; gain = 157.953
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -75,10 +74,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 476.289 ; gain = 157.305
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 476.684 ; gain = 157.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 476.289 ; gain = 157.305
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 476.684 ; gain = 157.953
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -93,26 +92,26 @@ Parsing XDC File [O:/ES31_22S/es31-worldle/constraint_files/wordle_constraints.x
 Finished Parsing XDC File [O:/ES31_22S/es31-worldle/constraint_files/wordle_constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [O:/ES31_22S/es31-worldle/constraint_files/wordle_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/WORDLE_TOP_LEVEL_SHELL_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/WORDLE_TOP_LEVEL_SHELL_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 813.973 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.715 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 814.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 814.738 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 814.023 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 814.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 814.738 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 814.738 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'state_machine/dictionary' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'state_machine/word_exist_block/wordle_dictionary' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 815.293 ; gain = 496.309
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 815.844 ; gain = 497.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 815.293 ; gain = 496.309
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 815.844 ; gain = 497.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -120,7 +119,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for state_machine/dictionary. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for state_machine/word_exist_block/wordle_dictionary. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 815.293 ; gain = 496.309
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 815.844 ; gain = 497.113
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SCI_RECEIVER'
 INFO: [Synth 8-5544] ROM "bit_tc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -192,7 +191,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'CheckGuess'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 815.293 ; gain = 496.309
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 815.844 ; gain = 497.113
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -391,7 +390,7 @@ INFO: [Synth 8-3886] merging instance 'state_machine/Tx_data_reg[2]' (FD) to 'st
 INFO: [Synth 8-3886] merging instance 'state_machine/Tx_data_reg[1]' (FD) to 'state_machine/Tx_data_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_machine/Tx_data_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 815.293 ; gain = 496.309
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 815.844 ; gain = 497.113
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -403,13 +402,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 815.293 ; gain = 496.309
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 815.844 ; gain = 497.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 868.074 ; gain = 549.090
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 869.254 ; gain = 550.523
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -421,7 +420,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -445,7 +444,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -458,7 +457,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -470,25 +469,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -536,27 +535,27 @@ Report Instance Areas:
 |7     |  transmitter        |SCI_Transmitter |   503|
 +------+---------------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 869.141 ; gain = 550.156
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 869.141 ; gain = 211.152
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 869.141 ; gain = 550.156
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 870.309 ; gain = 212.418
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 100 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 869.141 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 870.309 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-112 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+112 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 869.141 ; gain = 561.629
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 869.141 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 870.309 ; gain = 563.078
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 870.309 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file WORDLE_TOP_LEVEL_SHELL_utilization_synth.rpt -pb WORDLE_TOP_LEVEL_SHELL_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun  6 16:08:32 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Jun  6 16:30:52 2022...

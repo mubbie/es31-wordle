@@ -389,7 +389,7 @@ end case current_state;
 
 end process NextStateLogic;
 
-OutputLogic: process(clk, current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, dout_sig, data_ready_next)
+OutputLogic: process(clk, current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, dout_sig, data_ready_next, data_ready)
 begin
     rst_tries <= '0';
     data_ready <= '0';
