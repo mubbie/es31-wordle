@@ -14,19 +14,20 @@
 -- KNOWN ISSUES: 
 
 --=============================================================================
+--=============================================================================
 
+--=============================================================================
+--Library Declarations:
+--=============================================================================
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
+library UNISIM;
+use UNISIM.VComponents.all;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
+--=============================================================================
+--Entity Declaration:
+--=============================================================================
 entity FSM is
     Port ( clk              : in STD_LOGIC;
            Rx_data : in STD_LOGIC_VECTOR (7 downto 0);
@@ -35,6 +36,9 @@ entity FSM is
            Tx_data_ready : out STD_LOGIC);
 end FSM;
 
+--=============================================================================
+--Architecture Type:
+--=============================================================================
 architecture Behavioral of FSM is
 component load_word is 
     port (
@@ -57,7 +61,12 @@ component load_word is
         char_4              :   out std_logic_vector(7 downto 0)
     );
 end component load_word; 
-
+--=============================================================================
+--Sub-Component Declarations:
+--=============================================================================
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--WordExists Sub-Component:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 component WORD_EXISTS IS
     -- ports 
     port ( 	
@@ -72,6 +81,9 @@ component WORD_EXISTS IS
     );
 end component WORD_EXISTS;
 
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CheckGuess Machine Sub-Component:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 component CheckGuess
     Port ( clk              : in STD_LOGIC;
            guess            : in STD_LOGIC_VECTOR(39 DOWNTO 0);
@@ -84,7 +96,9 @@ component CheckGuess
            done             : out STD_LOGIC     );
 end component CheckGuess;
 
--- wire sol_addr to the dictionary
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--Dictionary ROM Sub-Component:
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 component wordle_dictionary_rom
   PORT (
     a : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
@@ -93,6 +107,9 @@ component wordle_dictionary_rom
     qspo : OUT STD_LOGIC_VECTOR(39 DOWNTO 0) );
 end component wordle_dictionary_rom;
 
+--=============================================================================
+--Signal Declarations: 
+--=============================================================================
 --=============================================================================
 -- Constants
 constant max_ltr_idx : integer := 4;
@@ -113,8 +130,7 @@ constant lose_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & black_sym & black_sy
 
 --------------------------------------------
 
---Signal Declarations: 
-
+--Signals:
 --the solution
 signal solution_sig : STD_LOGIC_VECTOR(39 DOWNTO 0);
 -- the solution counter
