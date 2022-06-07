@@ -141,8 +141,6 @@ signal char_2_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
 signal char_3_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
 signal char_4_signal : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
 signal guess_sig    : STD_LOGIC_VECTOR(39 DOWNTO 0) := (others => '0');
--- to wait for dict (2 clk cycles) before getting guess_sig
-signal waitcount : integer := 0;
 
 
 -- data to send register
@@ -151,14 +149,16 @@ signal cnt          : integer := 0;
 signal data_ready   : std_logic := '0';
 signal send         : std_logic := '0';
 signal sent         : std_logic := '1';
-signal state_flag   : integer := 0;
+signal max_data_to_send          : integer := 0;
 
--- newGame = 0, idle = 1, displayLetters = 2, displayColors = 3, win = 4, lose = 5
 
 
 -- state machine signals
 type StateType is (newGame, idle, displayLetters, displayColors, win, lose);
 signal current_state, next_state : StateType;
+signal state_flag   : integer := 0;
+-- newGame = 0, idle = 1, displayLetters = 2, displayColors = 3, win = 4, lose = 5
+
 
 -- load_word signals
 signal char_disp_out_sig        : std_logic_vector(7 downto 0);
@@ -318,9 +318,11 @@ begin
             when 1 =>
             when 2 =>
                 if char_disp_out_sig = backspace then 
-                    data_to_send <= (79 downto 0 => '0') & delete & backspace;
+                    data_to_send <= (79 downto 0 => '0') & backspace & delete;
+                    max_data_to_send <= 2;
                 else 
                     data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
+                    max_data_to_send <= 0;
                 end if;
                 data_ready <= '1';
             when 3 =>
@@ -333,12 +335,15 @@ begin
                     end if;
                 end loop;
                 data_to_send(95 downto 40) <= (47 downto 0 => '0') & enter;
+                max_data_to_send <= 5;
                 data_ready <= '1';
             when 4 =>
                 data_to_send <= win_out;
+                max_data_to_send <= 5;
                 data_ready <= '1';
             when 5 =>
                 data_to_send <= enter & solution_sig & lose_out;
+                max_data_to_send <= 11;
                 data_ready <= '1';
             when 6 =>
             when others =>
@@ -350,17 +355,18 @@ end process dataRegister;
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- send Data Register: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
-sendData: process(clk, send, cnt, data_to_send)
+sendData: process(clk, send, cnt, data_to_send, max_data_to_send)
 begin
 
     if rising_edge(clk) then
+        cnt <= cnt + 1; 
+
         if data_ready = '1' then
             cnt <= 0;
             send <= '1';
             sent <= '0';
         end if;
-        cnt <= cnt + 1; 
-        if cnt >= 11 then
+        if cnt >= max_data_to_send or cnt >= 11 then
             cnt <= 0;
             if send = '1' then
                 send <= '0';
@@ -386,7 +392,7 @@ begin
 end process StateUpdate;
 
 
-NextStateLogic: process (current_state, waitcount, char_disp_out_ready_sig, colors_ready, win_all_green, max_tries_reached, sent)
+NextStateLogic: process (current_state, char_disp_out_ready_sig, colors_ready, win_all_green, max_tries_reached, sent)
 begin
 next_state <= current_state;
 
