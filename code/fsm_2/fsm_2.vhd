@@ -393,7 +393,7 @@ begin
         when sNewGame =>
             -- choose solution
             if rising_edge(clk) then 
-                solution_sig <= dout_sig; 
+                solution_sig <= dout_sig; -- use a flag to indicate that the solution is ready
             end if;
         when sIdle => 
             -- nothing 
