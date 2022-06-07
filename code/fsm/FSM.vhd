@@ -151,9 +151,9 @@ signal cnt          : integer := 0;
 signal data_ready   : std_logic := '0';
 signal send         : std_logic := '0';
 signal sent         : std_logic := '1';
-signal data_ready_next   : std_logic := '0';
-signal data_ready_mp   : std_logic := '0';
+signal state_flag   : integer := 0;
 
+-- newGame = 0, idle = 1, displayLetters = 2, displayColors = 3, win = 4, lose = 5
 
 
 -- state machine signals
@@ -306,16 +306,59 @@ begin
 end process CountTries;
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+-- Data to send Register: 
+--=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+dataRegister: process (clk)
+begin
+    if rising_edge(clk) then
+        data_ready <= '0';
+        case state_flag is
+            when 0 =>
+                solution_sig <= dout_sig;
+            when 1 =>
+            when 2 =>
+                if char_disp_out_sig = backspace then 
+                    data_to_send <= (79 downto 0 => '0') & delete & backspace;
+                else 
+                    data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
+                end if;
+                data_ready <= '1';
+            when 3 =>
+                for ltr_start in 0 to max_ltr_idx loop
+                    if cltrs(ltr_start) = '0' and cplaces(ltr_start) = '0' then
+                        data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= black_sym;
+                    elsif cltrs(ltr_start) = '1' and cplaces(ltr_start) = '0' then
+                        data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= yellow_sym;
+                    else data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= solution_sig(ltr_start*byte_size + 7 downto ltr_start*byte_size);
+                    end if;
+                end loop;
+                data_to_send(95 downto 40) <= (47 downto 0 => '0') & enter;
+                data_ready <= '1';
+            when 4 =>
+                data_to_send <= win_out;
+                data_ready <= '1';
+            when 5 =>
+                data_to_send <= enter & solution_sig & lose_out;
+                data_ready <= '1';
+            when 6 =>
+            when others =>
+        end case state_flag;
+    end if;
+
+end process dataRegister;
+
+--=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- send Data Register: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
-sendData: process(clk, send, cnt, data_to_send, data_ready_mp)
+sendData: process(clk, send, cnt, data_to_send)
 begin
-    if data_ready_mp = '1' then
-        cnt <= 0;
-        send <= '1';
-        sent <= '0';
-    end if;
+
     if rising_edge(clk) then
+        if data_ready = '1' then
+            cnt <= 0;
+            send <= '1';
+            sent <= '0';
+        end if;
         cnt <= cnt + 1; 
         if cnt >= 11 then
             cnt <= 0;
@@ -389,52 +432,25 @@ end case current_state;
 
 end process NextStateLogic;
 
-OutputLogic: process(clk, current_state, char_disp_out_sig, cltrs, cplaces, data_to_send, solution_sig, dout_sig, data_ready_next, data_ready)
+OutputLogic: process(current_state)
 begin
     rst_tries <= '0';
-    data_ready <= '0';
-    data_to_send <= (others => '0');
-
-    if rising_edge(clk) then
-        data_ready_next <= data_ready;
-    end if;
-    data_ready_mp <= not data_ready_next and data_ready;
-
+    state_flag <= 1;
     case current_state is
         when newGame =>
             -- send output 
-            if rising_edge(clk) then 
-                solution_sig <= dout_sig; 
-            end if;
+            state_flag <= 0;
         when idle => 
-            -- no output 
+            state_flag <= 1;
         when displayLetters =>
-            -- send output 
-            if char_disp_out_sig = backspace then 
-                data_to_send <= (79 downto 0 => '0') & delete & backspace;
-            else 
-                data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
-            end if;
-            data_ready <= '1';
+            state_flag <= 2;
         when displayColors =>
-            -- send output
-            for ltr_start in 0 to max_ltr_idx loop
-                if cltrs(ltr_start) = '0' and cplaces(ltr_start) = '0' then
-                    data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= black_sym;
-                elsif cltrs(ltr_start) = '1' and cplaces(ltr_start) = '0' then
-                    data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= yellow_sym;
-                else data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= solution_sig(ltr_start*byte_size + 7 downto ltr_start*byte_size);
-                end if;
-            end loop;
-            data_to_send(95 downto 40) <= (47 downto 0 => '0') & enter;
-            data_ready <= '1';
+            state_flag <= 3;   
         when win => 
-            data_to_send <= win_out;
-            data_ready <= '1';
+            state_flag <= 4;
             rst_tries <= '1';
         when lose => 
-            data_to_send <= enter & solution_sig & lose_out;
-            data_ready <= '1';
+            state_flag <= 5;
             rst_tries <= '1';
         when others =>
             -- send nothing
