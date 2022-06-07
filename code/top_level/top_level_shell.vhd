@@ -50,6 +50,7 @@ entity WORDLE_TOP_LEVEL_SHELL is
         
         -- Rx_data_port for testing purposes
         Rx_data_port : out std_logic_vector(7 downto 0)
+--        debug        :  out std_logic_vector(7 downto 0)
     ); 
 end WORDLE_TOP_LEVEL_SHELL;
 
@@ -104,7 +105,7 @@ end component FSM;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component Sci_Transmitter IS
+component SCI_Transmitter IS
     -- constants 
     generic(
         BAUD_COUNTER_TOP : integer; 
@@ -120,7 +121,7 @@ component Sci_Transmitter IS
             -- outputs
             Tx			:	out STD_LOGIC
     );
-end component Sci_Transmitter;
+end component SCI_Transmitter;
 
 
 --=============================================================================
@@ -156,7 +157,7 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 receiver : SCI_RECEIVER 
     generic map (
-        BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
+        BAUD_COUNTER_TOP => 868, --10417, -- 9600 baud rate
         BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop
     )
     port map (
@@ -170,7 +171,7 @@ receiver : SCI_RECEIVER
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the finite state machine sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-state_machine : FSM
+state_machine : FSM 
     port map (
         clk => clk_ext_port,
         Rx_Done => Rx_Done_sig,
@@ -182,9 +183,9 @@ state_machine : FSM
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the transmitter sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-transmitter : Sci_Transmitter
+transmitter : SCI_Transmitter
     generic map (
-        BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
+        BAUD_COUNTER_TOP => 868, --10417, -- 9600 baud rate
         BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop
     )
     port map (

@@ -201,6 +201,7 @@ begin
         word_ready_out_1 <= word_ready_out_0;
 
         -- if the word is ready send the output 
+        word_ready <= word_ready_out;
         if word_ready_out = '1' then
             -- pass the word characters through the registers 
             char_0_out <= word_chars_reg(0);
@@ -222,7 +223,6 @@ end process Word_Output_Logic;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Block Output:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-word_ready <= word_ready_out;
 char_0 <= char_0_out;
 char_1 <= char_1_out;
 char_2 <= char_2_out;

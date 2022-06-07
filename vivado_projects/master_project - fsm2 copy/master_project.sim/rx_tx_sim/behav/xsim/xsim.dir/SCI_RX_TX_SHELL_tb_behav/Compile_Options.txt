@@ -1,1 +1,0 @@
--wto "e178fdf42fb24886994bd89583259cbc" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "SCI_RX_TX_SHELL_tb_behav" "xil_defaultlib.SCI_RX_TX_SHELL_tb" -log "elaborate.log" 

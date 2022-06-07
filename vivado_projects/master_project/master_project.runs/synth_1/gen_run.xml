@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654613515">
+=======
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654619581">
+>>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
   <File Type="PA-TCL" Name="WORDLE_TOP_LEVEL_SHELL.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="WORDLE_TOP_LEVEL_SHELL_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="WORDLE_TOP_LEVEL_SHELL_reports.tcl"/>
@@ -61,7 +65,6 @@
     </File>
     <File Path="$PPRDIR/../../code/receiver_transmitter/rx_tx_shell.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

@@ -1552,11 +1552,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue Jun 07 14:51:55 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>9:19c06bd4</spirit:value>
+=======
+            <spirit:value>Tue Jun 07 14:51:07 UTC 2022</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:7b14cfb3</spirit:value>
+>>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1572,11 +1580,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue Jun 07 14:51:55 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>9:19c06bd4</spirit:value>
+=======
+            <spirit:value>Tue Jun 07 14:51:07 UTC 2022</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:7b14cfb3</spirit:value>
+>>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1590,11 +1606,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue Jun 07 14:52:08 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>9:19c06bd4</spirit:value>
+=======
+            <spirit:value>Tue Jun 07 14:51:22 UTC 2022</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:7b14cfb3</spirit:value>
+>>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

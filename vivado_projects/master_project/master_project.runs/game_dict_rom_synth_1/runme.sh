@@ -24,7 +24,11 @@ else
 fi
 export LD_LIBRARY_PATH
 
+<<<<<<< HEAD
 HD_PWD='C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1'
+=======
+HD_PWD='O:/ES31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1'
+>>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
 cd "$HD_PWD"
 
 HD_LOG=runme.log

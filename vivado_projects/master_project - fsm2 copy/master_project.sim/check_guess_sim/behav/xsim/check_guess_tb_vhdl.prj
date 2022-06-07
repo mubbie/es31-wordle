@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../../code/check_guess_logic/check_guess.vhd" \
-"../../../../../../code/check_guess_logic/check_guess_tb.vhd" \
-
-# Do not sort compile order
-nosort

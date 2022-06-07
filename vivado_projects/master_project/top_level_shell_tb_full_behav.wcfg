@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_level_shell_tb_full_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="top_level_shell_tb_full" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1007920000001fs"></ZoomEndTime>
+      <Cursor1Time time="606865000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="205"></NameColumnWidth>
+      <ValueColumnWidth column_width="154"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/top_level_shell_tb_full/clk_signal" type="logic">
+      <obj_property name="ElementShortName">clk_signal</obj_property>
+      <obj_property name="ObjectShortName">clk_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/TestInputsArray" type="array">
+      <obj_property name="ElementShortName">TestInputsArray[0:5][7:0]</obj_property>
+      <obj_property name="ObjectShortName">TestInputsArray[0:5][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/guess_checker/is_dict_word" type="logic">
+      <obj_property name="ElementShortName">is_dict_word</obj_property>
+      <obj_property name="ObjectShortName">is_dict_word</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/word_exist_block/is_dict_word" type="logic">
+      <obj_property name="ElementShortName">is_dict_word</obj_property>
+      <obj_property name="ObjectShortName">is_dict_word</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/transmitter/New_data" type="logic">
+      <obj_property name="ElementShortName">New_data</obj_property>
+      <obj_property name="ObjectShortName">New_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/guess_checker/guess" type="array">
+      <obj_property name="ElementShortName">guess[39:0]</obj_property>
+      <obj_property name="ObjectShortName">guess[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/guess_checker/solution" type="array">
+      <obj_property name="ElementShortName">solution[39:0]</obj_property>
+      <obj_property name="ObjectShortName">solution[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/word_loader/char_disp_out" type="array">
+      <obj_property name="ElementShortName">char_disp_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">char_disp_out[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/word_loader/word_ready" type="logic">
+      <obj_property name="ElementShortName">word_ready</obj_property>
+      <obj_property name="ObjectShortName">word_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/word_exist_block/not_in_dict" type="logic">
+      <obj_property name="ElementShortName">not_in_dict</obj_property>
+      <obj_property name="ObjectShortName">not_in_dict</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/guess_checker/win" type="logic">
+      <obj_property name="ElementShortName">win</obj_property>
+      <obj_property name="ObjectShortName">win</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/guess_checker/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/guess_checker/correct_letters" type="array">
+      <obj_property name="ElementShortName">correct_letters[4:0]</obj_property>
+      <obj_property name="ObjectShortName">correct_letters[4:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb_full/uut/state_machine/guess_checker/correct_places" type="array">
+      <obj_property name="ElementShortName">correct_places[4:0]</obj_property>
+      <obj_property name="ObjectShortName">correct_places[4:0]</obj_property>
+   </wvobject>
+</wave_config>
