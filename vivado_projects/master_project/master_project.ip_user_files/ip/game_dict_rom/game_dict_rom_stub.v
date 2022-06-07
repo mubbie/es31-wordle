@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-// Date        : Mon Jun  6 15:44:15 2022
+// Date        : Mon Jun  6 15:44:14 2022
 // Host        : mecha-9 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top game_dict_rom -prefix
+//               game_dict_rom_ game_dict_rom_stub.v
 // Design      : game_dict_rom
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1

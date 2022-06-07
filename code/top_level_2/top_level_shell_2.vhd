@@ -38,7 +38,7 @@ use UNISIM.VComponents.all;
 --=============================================================================
 --Entity Declaration:
 --=============================================================================
-entity WORDLE_TOP_LEVEL_SHELL is
+entity WORDLE_TOP_LEVEL_SHELL2 is
     port (
         --Inputs:
         -- clock 
@@ -51,12 +51,12 @@ entity WORDLE_TOP_LEVEL_SHELL is
         -- Rx_data_port for testing purposes
         Rx_data_port : out std_logic_vector(7 downto 0)
     ); 
-end WORDLE_TOP_LEVEL_SHELL;
+end WORDLE_TOP_LEVEL_SHELL2;
 
 --=============================================================================
 --Architecture Type:
 --=============================================================================
-architecture behavioral_architecture of WORDLE_TOP_LEVEL_SHELL is 
+architecture behavioral_architecture of WORDLE_TOP_LEVEL_SHELL2 is 
 --=============================================================================
 --Sub-Component Declarations:
 --=============================================================================
@@ -86,7 +86,7 @@ end component SCI_RECEIVER;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Finite State Machine Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component FSM is 
+component FSM2 is 
     -- port 
     port (
         -- inputs 
@@ -98,13 +98,13 @@ component FSM is
         Tx_Data : out std_logic_vector(7 downto 0);
         Tx_Data_Ready : out std_logic
     );
-end component FSM;
+end component FSM2;
 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component Sci_Transmitter IS
+component Transmitter2 IS
     -- constants 
     generic(
         BAUD_COUNTER_TOP : integer; 
@@ -120,7 +120,7 @@ component Sci_Transmitter IS
             -- outputs
             Tx			:	out STD_LOGIC
     );
-end component Sci_Transmitter;
+end component Transmitter2;
 
 
 --=============================================================================
@@ -170,7 +170,7 @@ receiver : SCI_RECEIVER
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the finite state machine sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-state_machine : FSM
+state_machine : FSM2 
     port map (
         clk => clk_ext_port,
         Rx_Done => Rx_Done_sig,
@@ -182,7 +182,7 @@ state_machine : FSM
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the transmitter sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-transmitter : Sci_Transmitter
+transmitter : Transmitter2
     generic map (
         BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
         BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop

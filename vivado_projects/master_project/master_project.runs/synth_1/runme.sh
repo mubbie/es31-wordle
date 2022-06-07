@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1'
+HD_PWD='C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

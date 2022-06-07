@@ -2,12 +2,12 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Mon Jun  6 16:30:04 2022
-# Process ID: 1988
-# Current directory: O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1
+# Start of session at: Tue Jun  7 10:52:13 2022
+# Process ID: 19468
+# Current directory: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1
 # Command line: vivado.exe -log WORDLE_TOP_LEVEL_SHELL.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source WORDLE_TOP_LEVEL_SHELL.tcl
-# Log file: O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL.vds
-# Journal file: O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1\vivado.jou
+# Log file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL.vds
+# Journal file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source WORDLE_TOP_LEVEL_SHELL.tcl -notrace
 Command: synth_design -top WORDLE_TOP_LEVEL_SHELL -part xc7a35tcpg236-1
@@ -15,42 +15,42 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10760 
+INFO: Helper process launched with PID 32396 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 420.207 ; gain = 101.477
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 420.734 ; gain = 101.863
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'WORDLE_TOP_LEVEL_SHELL' [O:/ES31_22S/es31-worldle/code/top_level/top_level_shell.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'WORDLE_TOP_LEVEL_SHELL' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/top_level/top_level_shell.vhd:59]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
 	Parameter BIT_COUNTER_TOP bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'SCI_RECEIVER' declared at 'O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd:53' bound to instance 'receiver' of component 'SCI_RECEIVER' [O:/ES31_22S/es31-worldle/code/top_level/top_level_shell.vhd:157]
-INFO: [Synth 8-638] synthesizing module 'SCI_RECEIVER' [O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd:76]
+INFO: [Synth 8-3491] module 'SCI_RECEIVER' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd:53' bound to instance 'receiver' of component 'SCI_RECEIVER' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/top_level/top_level_shell.vhd:157]
+INFO: [Synth 8-638] synthesizing module 'SCI_RECEIVER' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd:76]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
 	Parameter BIT_COUNTER_TOP bound to: 10 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was removed.  [O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd:142]
-INFO: [Synth 8-256] done synthesizing module 'SCI_RECEIVER' (1#1) [O:/ES31_22S/es31-worldle/code/receiver/sci_receiver.vhd:76]
-INFO: [Synth 8-3491] module 'FSM' declared at 'O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:31' bound to instance 'state_machine' of component 'FSM' [O:/ES31_22S/es31-worldle/code/top_level/top_level_shell.vhd:173]
-INFO: [Synth 8-638] synthesizing module 'FSM' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:42]
-INFO: [Synth 8-3491] module 'WORD_EXISTS' declared at 'O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:41' bound to instance 'word_exist_block' of component 'WORD_EXISTS' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:194]
-INFO: [Synth 8-638] synthesizing module 'WORD_EXISTS' [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:59]
-INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-1988-mecha-9/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'wordle_dictionary' of component 'game_dict_rom' [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:109]
-INFO: [Synth 8-638] synthesizing module 'game_dict_rom' [O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-1988-mecha-9/realtime/game_dict_rom_stub.vhdl:14]
-WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was removed.  [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:124]
-INFO: [Synth 8-256] done synthesizing module 'WORD_EXISTS' (2#1) [O:/ES31_22S/es31-worldle/code/word_exists/word_exists.vhd:59]
-INFO: [Synth 8-3491] module 'load_word' declared at 'O:/ES31_22S/es31-worldle/code/load_word/load_word.vhd:43' bound to instance 'word_loader' of component 'load_word' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:206]
-INFO: [Synth 8-638] synthesizing module 'load_word' [O:/ES31_22S/es31-worldle/code/load_word/load_word.vhd:69]
-INFO: [Synth 8-3491] module 'Check_Letter' declared at 'O:/ES31_22S/es31-worldle/code/check_letter/check_letter.vhd:42' bound to instance 'check_letter_block' of component 'Check_Letter' [O:/ES31_22S/es31-worldle/code/load_word/load_word.vhd:131]
-INFO: [Synth 8-638] synthesizing module 'Check_Letter' [O:/ES31_22S/es31-worldle/code/check_letter/check_letter.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'Check_Letter' (3#1) [O:/ES31_22S/es31-worldle/code/check_letter/check_letter.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'load_word' (4#1) [O:/ES31_22S/es31-worldle/code/load_word/load_word.vhd:69]
-INFO: [Synth 8-3491] module 'CheckGuess' declared at 'O:/ES31_22S/es31-worldle/code/check_guess_logic/check_guess.vhd:34' bound to instance 'guess_checker' of component 'CheckGuess' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:236]
-INFO: [Synth 8-638] synthesizing module 'CheckGuess' [O:/ES31_22S/es31-worldle/code/check_guess_logic/check_guess.vhd:46]
-INFO: [Synth 8-256] done synthesizing module 'CheckGuess' (5#1) [O:/ES31_22S/es31-worldle/code/check_guess_logic/check_guess.vhd:46]
-INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-1988-mecha-9/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'dictionary' of component 'game_dict_rom' [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:251]
-INFO: [Synth 8-256] done synthesizing module 'FSM' (6#1) [O:/ES31_22S/es31-worldle/code/fsm/FSM.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was removed.  [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'SCI_RECEIVER' (1#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd:76]
+INFO: [Synth 8-3491] module 'FSM' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd:31' bound to instance 'state_machine' of component 'FSM' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/top_level/top_level_shell.vhd:173]
+INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd:42]
+INFO: [Synth 8-3491] module 'WORD_EXISTS' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:41' bound to instance 'word_exist_block' of component 'WORD_EXISTS' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd:194]
+INFO: [Synth 8-638] synthesizing module 'WORD_EXISTS' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:59]
+INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-19468-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'wordle_dictionary' of component 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:109]
+INFO: [Synth 8-638] synthesizing module 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-19468-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:14]
+WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was removed.  [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:124]
+INFO: [Synth 8-256] done synthesizing module 'WORD_EXISTS' (2#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:59]
+INFO: [Synth 8-3491] module 'load_word' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:43' bound to instance 'word_loader' of component 'load_word' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd:206]
+INFO: [Synth 8-638] synthesizing module 'load_word' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:69]
+INFO: [Synth 8-3491] module 'Check_Letter' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:42' bound to instance 'check_letter_block' of component 'Check_Letter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:131]
+INFO: [Synth 8-638] synthesizing module 'Check_Letter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'Check_Letter' (3#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'load_word' (4#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:69]
+INFO: [Synth 8-3491] module 'CheckGuess' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd:34' bound to instance 'guess_checker' of component 'CheckGuess' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'CheckGuess' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'CheckGuess' (5#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd:46]
+INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1/.Xil/Vivado-19468-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'dictionary' of component 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd:251]
+INFO: [Synth 8-256] done synthesizing module 'FSM' (6#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd:42]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
 	Parameter BIT_COUNTER_TOP bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'SCI_Transmitter' declared at 'O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd:49' bound to instance 'transmitter' of component 'SCI_Transmitter' [O:/ES31_22S/es31-worldle/code/top_level/top_level_shell.vhd:185]
-INFO: [Synth 8-638] synthesizing module 'SCI_Transmitter' [O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd:71]
+INFO: [Synth 8-3491] module 'SCI_Transmitter' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd:49' bound to instance 'transmitter' of component 'Sci_Transmitter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/top_level/top_level_shell.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'SCI_Transmitter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd:71]
 	Parameter BAUD_COUNTER_TOP bound to: 10417 - type: integer 
 	Parameter BIT_COUNTER_TOP bound to: 10 - type: integer 
 WARNING: [Synth 8-4767] Trying to implement RAM 'queue_reg_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
@@ -59,10 +59,10 @@ Reason is one or more of the following :
 	2: Unable to determine number of words or word size in RAM. 
 	3: No valid read/write found for RAM. 
 RAM "queue_reg_reg" dissolved into registers
-INFO: [Synth 8-256] done synthesizing module 'SCI_Transmitter' (7#1) [O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd:71]
-INFO: [Synth 8-256] done synthesizing module 'WORDLE_TOP_LEVEL_SHELL' (8#1) [O:/ES31_22S/es31-worldle/code/top_level/top_level_shell.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'SCI_Transmitter' (7#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'WORDLE_TOP_LEVEL_SHELL' (8#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/top_level/top_level_shell.vhd:59]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 476.684 ; gain = 157.953
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 477.168 ; gain = 158.297
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -75,44 +75,44 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 476.684 ; gain = 157.953
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 477.168 ; gain = 158.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 476.684 ; gain = 157.953
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 477.168 ; gain = 158.297
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [o:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/word_exist_block/wordle_dictionary'
-Finished Parsing XDC File [o:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/word_exist_block/wordle_dictionary'
-Parsing XDC File [o:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/dictionary'
-Finished Parsing XDC File [o:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/dictionary'
-Parsing XDC File [O:/ES31_22S/es31-worldle/constraint_files/wordle_constraints.xdc]
-Finished Parsing XDC File [O:/ES31_22S/es31-worldle/constraint_files/wordle_constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [O:/ES31_22S/es31-worldle/constraint_files/wordle_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/WORDLE_TOP_LEVEL_SHELL_propImpl.xdc].
+Parsing XDC File [c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/word_exist_block/wordle_dictionary'
+Finished Parsing XDC File [c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/word_exist_block/wordle_dictionary'
+Parsing XDC File [c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/dictionary'
+Finished Parsing XDC File [c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom/game_dict_rom_in_context.xdc] for cell 'state_machine/dictionary'
+Parsing XDC File [C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/wordle_constraints.xdc]
+Finished Parsing XDC File [C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/wordle_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/wordle_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/WORDLE_TOP_LEVEL_SHELL_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/WORDLE_TOP_LEVEL_SHELL_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.555 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 814.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 814.562 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 814.738 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 814.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 814.562 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 814.562 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'state_machine/dictionary' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'state_machine/word_exist_block/wordle_dictionary' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 815.844 ; gain = 497.113
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 815.684 ; gain = 496.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 815.844 ; gain = 497.113
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 815.684 ; gain = 496.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -120,7 +120,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for state_machine/dictionary. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for state_machine/word_exist_block/wordle_dictionary. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 815.844 ; gain = 497.113
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 815.684 ; gain = 496.812
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SCI_RECEIVER'
 INFO: [Synth 8-5544] ROM "bit_tc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -141,7 +141,7 @@ INFO: [Synth 8-5544] ROM "not_in_dict" won't be mapped to Block RAM because addr
 INFO: [Synth 8-5544] ROM "is_dict_word" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "is_backspace" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "is_enter" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [O:/ES31_22S/es31-worldle/code/load_word/load_word.vhd:179]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:179]
 INFO: [Synth 8-5544] ROM "word_full" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5545] ROM "word_chars_reg_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "word_chars_reg_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -154,7 +154,7 @@ INFO: [Synth 8-5545] ROM "guess_addr" won't be mapped to RAM because address siz
 INFO: [Synth 8-5545] ROM "guess_count_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "max_tries_reached" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "num_tries" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [O:/ES31_22S/es31-worldle/code/transmitter/sci_transmitter.vhd:149]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd:149]
 INFO: [Synth 8-5545] ROM "empty" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "w_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "r_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -192,7 +192,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'CheckGuess'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 815.844 ; gain = 497.113
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 815.684 ; gain = 496.812
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -391,7 +391,7 @@ INFO: [Synth 8-3886] merging instance 'state_machine/Tx_data_reg[2]' (FD) to 'st
 INFO: [Synth 8-3886] merging instance 'state_machine/Tx_data_reg[1]' (FD) to 'state_machine/Tx_data_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_machine/Tx_data_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 815.844 ; gain = 497.113
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 815.684 ; gain = 496.812
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -403,13 +403,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 815.844 ; gain = 497.113
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 815.684 ; gain = 496.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 869.254 ; gain = 550.523
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:46 . Memory (MB): peak = 868.504 ; gain = 549.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -421,7 +421,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:46 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -445,7 +445,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -458,7 +458,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -470,25 +470,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -509,13 +509,13 @@ Report Cell Usage:
 |2     |game_dict_rom_bbox_2 |     1|
 |3     |BUFG                 |     1|
 |4     |CARRY4               |    96|
-|5     |LUT1                 |    44|
-|6     |LUT2                 |   141|
-|7     |LUT3                 |    41|
-|8     |LUT4                 |    76|
-|9     |LUT5                 |    85|
-|10    |LUT6                 |   139|
-|11    |MUXF7                |     4|
+|5     |LUT1                 |    39|
+|6     |LUT2                 |   140|
+|7     |LUT3                 |    38|
+|8     |LUT4                 |    79|
+|9     |LUT5                 |    82|
+|10    |LUT6                 |   118|
+|11    |MUXF7                |     6|
 |12    |FDCE                 |    33|
 |13    |FDRE                 |   628|
 |14    |FDSE                 |    10|
@@ -527,36 +527,36 @@ Report Instance Areas:
 +------+---------------------+----------------+------+
 |      |Instance             |Module          |Cells |
 +------+---------------------+----------------+------+
-|1     |top                  |                |  1389|
-|2     |  receiver           |SCI_RECEIVER    |   118|
-|3     |  state_machine      |FSM             |   756|
-|4     |    guess_checker    |CheckGuess      |   258|
+|1     |top                  |                |  1361|
+|2     |  receiver           |SCI_RECEIVER    |   144|
+|3     |  state_machine      |FSM             |   759|
+|4     |    guess_checker    |CheckGuess      |   260|
 |5     |    word_exist_block |WORD_EXISTS     |    76|
-|6     |    word_loader      |load_word       |   149|
-|7     |  transmitter        |SCI_Transmitter |   503|
+|6     |    word_loader      |load_word       |   150|
+|7     |  transmitter        |SCI_Transmitter |   446|
 +------+---------------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 869.246 ; gain = 550.375
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 870.309 ; gain = 212.418
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 870.309 ; gain = 551.578
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:40 . Memory (MB): peak = 869.246 ; gain = 211.859
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:49 . Memory (MB): peak = 869.246 ; gain = 550.375
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 100 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 102 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 870.309 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 869.246 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 112 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 870.309 ; gain = 563.078
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 870.309 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:52 . Memory (MB): peak = 869.246 ; gain = 561.871
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 869.246 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file WORDLE_TOP_LEVEL_SHELL_utilization_synth.rpt -pb WORDLE_TOP_LEVEL_SHELL_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun  6 16:30:52 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  7 10:53:13 2022...

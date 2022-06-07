@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="O:/ES31_22S/es31-worldle/vivado_projects/master_project/master_project.xpr">
+<Project Version="7" Minor="39" Path="C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="e178fdf42fb24886994bd89583259cbc"/>
