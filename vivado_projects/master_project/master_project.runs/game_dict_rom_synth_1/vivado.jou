@@ -2,11 +2,20 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+<<<<<<< HEAD
+# Start of session at: Tue Jun  7 10:52:00 2022
+# Process ID: 29972
+# Current directory: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1
+# Command line: vivado.exe -log game_dict_rom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source game_dict_rom.tcl
+# Log file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1/game_dict_rom.vds
+# Journal file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1\vivado.jou
+=======
 # Start of session at: Tue Jun  7 10:51:12 2022
 # Process ID: 10164
 # Current directory: O:/ES31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1
 # Command line: vivado.exe -log game_dict_rom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source game_dict_rom.tcl
 # Log file: O:/ES31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1/game_dict_rom.vds
 # Journal file: O:/ES31/es31-wordle/vivado_projects/master_project/master_project.runs/game_dict_rom_synth_1\vivado.jou
+>>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
 #-----------------------------------------------------------
 source game_dict_rom.tcl -notrace
