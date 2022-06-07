@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="WORD_EXISTS_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="WORD_EXISTS_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="216000001fs"></ZoomEndTime>
+      <Cursor1Time time="18400000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="195"></NameColumnWidth>
+      <ValueColumnWidth column_width="67"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/clk_in" type="logic">
+      <obj_property name="ElementShortName">clk_in</obj_property>
+      <obj_property name="ObjectShortName">clk_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/guess" type="array">
+      <obj_property name="ElementShortName">guess[39:0]</obj_property>
+      <obj_property name="ObjectShortName">guess[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/word_ready" type="logic">
+      <obj_property name="ElementShortName">word_ready</obj_property>
+      <obj_property name="ObjectShortName">word_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/is_dict_word" type="logic">
+      <obj_property name="ElementShortName">is_dict_word</obj_property>
+      <obj_property name="ObjectShortName">is_dict_word</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/not_in_dict" type="logic">
+      <obj_property name="ElementShortName">not_in_dict</obj_property>
+      <obj_property name="ObjectShortName">not_in_dict</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/counter_a_signal" type="array">
+      <obj_property name="ElementShortName">counter_a_signal[13:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_a_signal[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/counter_tc" type="logic">
+      <obj_property name="ElementShortName">counter_tc</obj_property>
+      <obj_property name="ObjectShortName">counter_tc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/counter_reset" type="logic">
+      <obj_property name="ElementShortName">counter_reset</obj_property>
+      <obj_property name="ObjectShortName">counter_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/qspo_ce_signal" type="logic">
+      <obj_property name="ElementShortName">qspo_ce_signal</obj_property>
+      <obj_property name="ObjectShortName">qspo_ce_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/qspo_signal" type="array">
+      <obj_property name="ElementShortName">qspo_signal[39:0]</obj_property>
+      <obj_property name="ObjectShortName">qspo_signal[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/current_state" type="other">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/next_state" type="other">
+      <obj_property name="ElementShortName">next_state</obj_property>
+      <obj_property name="ObjectShortName">next_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/current_state_bin" type="array">
+      <obj_property name="ElementShortName">current_state_bin[1:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state_bin[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/next_state_bin" type="array">
+      <obj_property name="ElementShortName">next_state_bin[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state_bin[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/WORD_EXISTS_tb/uut/COUNTER_TOP" type="array">
+      <obj_property name="ElementShortName">COUNTER_TOP[13:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNTER_TOP[13:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
