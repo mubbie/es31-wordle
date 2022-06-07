@@ -86,7 +86,7 @@ end component SCI_RECEIVER;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Finite State Machine Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component FSM2 is 
+component FSM is 
     -- port 
     port (
         -- inputs 
@@ -98,13 +98,13 @@ component FSM2 is
         Tx_Data : out std_logic_vector(7 downto 0);
         Tx_Data_Ready : out std_logic
     );
-end component FSM2;
+end component FSM;
 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component Transmitter2 IS
+component SCI_Transmitter IS
     -- constants 
     generic(
         BAUD_COUNTER_TOP : integer; 
@@ -120,7 +120,7 @@ component Transmitter2 IS
             -- outputs
             Tx			:	out STD_LOGIC
     );
-end component Transmitter2;
+end component SCI_Transmitter;
 
 
 --=============================================================================
@@ -170,7 +170,7 @@ receiver : SCI_RECEIVER
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the finite state machine sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-state_machine : FSM2 
+state_machine : FSM 
     port map (
         clk => clk_ext_port,
         Rx_Done => Rx_Done_sig,
@@ -182,7 +182,7 @@ state_machine : FSM2
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the transmitter sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-transmitter : Transmitter2
+transmitter : SCI_Transmitter
     generic map (
         BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
         BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop

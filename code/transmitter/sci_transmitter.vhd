@@ -169,7 +169,7 @@ begin
     -- queue size logic 
 	if (q_size = 0) then
     	Empty <= '1';
-  	elsif (q_size = 8) then
+  	elsif (q_size = 7) then
     	Full <= '1';
   	end if;
     
