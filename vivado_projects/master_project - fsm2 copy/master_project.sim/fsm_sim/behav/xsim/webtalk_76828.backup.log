@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Fri Jun  3 19:47:04 2022
+# Process ID: 76828
+# Current directory: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/fsm_sim/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/fsm_sim/behav/xsim/xsim.dir/FSM_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/fsm_sim/behav/xsim/webtalk.log
+# Journal file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/fsm_sim/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.sim/fsm_sim/behav/xsim/xsim.dir/FSM_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun  3 19:47:05 2022...

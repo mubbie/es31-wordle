@@ -1,0 +1,1 @@
+--relax --debug typical --mt auto -L xil_defaultlib -L secureip -L xpm --snapshot game_dict_rom xil_defaultlib.game_dict_rom -log elaborate.log
