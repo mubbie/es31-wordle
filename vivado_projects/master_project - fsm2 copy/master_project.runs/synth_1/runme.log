@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18944 
+INFO: Helper process launched with PID 27224 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 420.582 ; gain = 101.969
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 421.117 ; gain = 101.742
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'WORDLE_TOP_LEVEL_SHELL2' [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/top_level_2/top_level_shell_2.vhd:59]
 	Parameter BAUD_COUNTER_TOP bound to: 868 - type: integer 
@@ -29,22 +29,22 @@ WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was remo
 INFO: [Synth 8-256] done synthesizing module 'SCI_RECEIVER' (1#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd:76]
 INFO: [Synth 8-3491] module 'FSM2' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:32' bound to instance 'state_machine' of component 'FSM2' [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/top_level_2/top_level_shell_2.vhd:173]
 INFO: [Synth 8-638] synthesizing module 'FSM2' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:49]
-INFO: [Synth 8-3491] module 'WORD_EXISTS' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:41' bound to instance 'word_exist_block' of component 'WORD_EXISTS' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:201]
+INFO: [Synth 8-3491] module 'WORD_EXISTS' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:41' bound to instance 'word_exist_block' of component 'WORD_EXISTS' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:202]
 INFO: [Synth 8-638] synthesizing module 'WORD_EXISTS' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:59]
-INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/.Xil/Vivado-21368-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'wordle_dictionary' of component 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:109]
-INFO: [Synth 8-638] synthesizing module 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/.Xil/Vivado-21368-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/.Xil/Vivado-29700-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'wordle_dictionary' of component 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:109]
+INFO: [Synth 8-638] synthesizing module 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/.Xil/Vivado-29700-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:14]
 WARNING: [Synth 8-6014] Unused sequential element current_state_bin_reg was removed.  [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:124]
 INFO: [Synth 8-256] done synthesizing module 'WORD_EXISTS' (2#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd:59]
-INFO: [Synth 8-3491] module 'load_word' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:43' bound to instance 'word_loader' of component 'load_word' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:216]
+INFO: [Synth 8-3491] module 'load_word' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:43' bound to instance 'word_loader' of component 'load_word' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:217]
 INFO: [Synth 8-638] synthesizing module 'load_word' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:69]
 INFO: [Synth 8-3491] module 'Check_Letter' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:42' bound to instance 'check_letter_block' of component 'Check_Letter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:131]
 INFO: [Synth 8-638] synthesizing module 'Check_Letter' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:61]
 INFO: [Synth 8-256] done synthesizing module 'Check_Letter' (3#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd:61]
 INFO: [Synth 8-256] done synthesizing module 'load_word' (4#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd:69]
-INFO: [Synth 8-3491] module 'CheckGuess' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd:34' bound to instance 'guess_checker' of component 'CheckGuess' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:239]
+INFO: [Synth 8-3491] module 'CheckGuess' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd:34' bound to instance 'guess_checker' of component 'CheckGuess' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:240]
 INFO: [Synth 8-638] synthesizing module 'CheckGuess' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'CheckGuess' (5#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd:46]
-INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/.Xil/Vivado-21368-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'dictionary' of component 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:255]
+INFO: [Synth 8-3491] module 'game_dict_rom' declared at 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/.Xil/Vivado-29700-Mubarak-XPS15/realtime/game_dict_rom_stub.vhdl:5' bound to instance 'dictionary' of component 'game_dict_rom' [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:256]
 INFO: [Synth 8-256] done synthesizing module 'FSM2' (6#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_2/fsm_2.vhd:49]
 	Parameter BAUD_COUNTER_TOP bound to: 868 - type: integer 
 	Parameter BIT_COUNTER_TOP bound to: 10 - type: integer 
@@ -61,7 +61,7 @@ RAM "queue_reg_reg" dissolved into registers
 INFO: [Synth 8-256] done synthesizing module 'SCI_Transmitter' (7#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/transmitter/sci_transmitter.vhd:71]
 INFO: [Synth 8-256] done synthesizing module 'WORDLE_TOP_LEVEL_SHELL2' (8#1) [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/top_level_2/top_level_shell_2.vhd:59]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 477.414 ; gain = 158.801
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 477.699 ; gain = 158.324
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -74,10 +74,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 477.414 ; gain = 158.801
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 477.699 ; gain = 158.324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 477.414 ; gain = 158.801
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 477.699 ; gain = 158.324
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -92,26 +92,26 @@ Parsing XDC File [C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/w
 Finished Parsing XDC File [C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/wordle_constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/wordle_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/WORDLE_TOP_LEVEL_SHELL2_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/WORDLE_TOP_LEVEL_SHELL2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 813.367 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 814.996 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 813.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 815.004 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 813.426 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 813.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 815.004 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 815.004 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'state_machine/dictionary' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'state_machine/word_exist_block/wordle_dictionary' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 814.934 ; gain = 496.320
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 816.125 ; gain = 496.750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 814.934 ; gain = 496.320
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 816.125 ; gain = 496.750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -119,7 +119,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for state_machine/dictionary. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for state_machine/word_exist_block/wordle_dictionary. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 814.934 ; gain = 496.320
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 816.125 ; gain = 496.750
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SCI_RECEIVER'
 INFO: [Synth 8-5544] ROM "bit_tc" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -157,7 +157,7 @@ INFO: [Synth 8-5545] ROM "num_tries" won't be mapped to RAM because address size
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/transmitter/sci_transmitter.vhd:149]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/transmitter/sci_transmitter.vhd:150]
 INFO: [Synth 8-5545] ROM "empty" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "w_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "r_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -197,36 +197,37 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                snewgame |       00000000000000000000000001 |                            00000
-             ssenduserin |       00000000000000000000000010 |                            00010
-             ssenddelete |       00000000000000000000000100 |                            00100
-             ssendletter |       00000000000000000000001000 |                            00011
-                   sidle |       00000000000000000000010000 |                            00001
-         sdisplayresults |       00000000000000000000100000 |                            00101
-               ssendcol1 |       00000000000000000001000000 |                            00110
-               ssendcol2 |       00000000000000000010000000 |                            00111
-               ssendcol3 |       00000000000000000100000000 |                            01000
-               ssendcol4 |       00000000000000001000000000 |                            01001
-               ssendcol5 |       00000000000000010000000000 |                            01010
-              ssendenter |       00000000000000100000000000 |                            01011
-                    swin |       00000000000001000000000000 |                            01100
-                   slose |       00000000000010000000000000 |                            01101
-               ssendsol1 |       00000000000100000000000000 |                            01110
-               ssendsol2 |       00000000001000000000000000 |                            01111
-               ssendsol3 |       00000000010000000000000000 |                            10000
-               ssendsol4 |       00000000100000000000000000 |                            10001
-               ssendsol5 |       00000001000000000000000000 |                            10010
-                  sdash1 |       00000010000000000000000000 |                            10101
-                  sdash2 |       00000100000000000000000000 |                            10110
-                  sdash3 |       00001000000000000000000000 |                            10111
-                  sdash4 |       00010000000000000000000000 |                            11000
-                  sdash5 |       00100000000000000000000000 |                            11001
-           ssendendenter |       01000000000000000000000000 |                            10011
-          ssendlastenter |       10000000000000000000000000 |                            10100
+                snewgame |      000000000000000000000000001 |                            00000
+             ssenduserin |      000000000000000000000000010 |                            00010
+             ssenddelete |      000000000000000000000000100 |                            00100
+             ssendletter |      000000000000000000000001000 |                            00011
+                   sidle |      000000000000000000000010000 |                            00001
+         sdisplayresults |      000000000000000000000100000 |                            00101
+               ssendcol1 |      000000000000000000001000000 |                            00110
+               ssendcol2 |      000000000000000000010000000 |                            00111
+               ssendcol3 |      000000000000000000100000000 |                            01000
+               ssendcol4 |      000000000000000001000000000 |                            01001
+               ssendcol5 |      000000000000000010000000000 |                            01010
+              ssendenter |      000000000000000100000000000 |                            01011
+                    swin |      000000000000001000000000000 |                            01100
+                   slose |      000000000000010000000000000 |                            01101
+               ssendsol1 |      000000000000100000000000000 |                            01110
+               ssendsol2 |      000000000001000000000000000 |                            01111
+               ssendsol3 |      000000000010000000000000000 |                            10000
+               ssendsol4 |      000000000100000000000000000 |                            10001
+               ssendsol5 |      000000001000000000000000000 |                            10010
+          ssendloseenter |      000000010000000000000000000 |                            11010
+                  sdash1 |      000000100000000000000000000 |                            10101
+                  sdash2 |      000001000000000000000000000 |                            10110
+                  sdash3 |      000010000000000000000000000 |                            10111
+                  sdash4 |      000100000000000000000000000 |                            11000
+                  sdash5 |      001000000000000000000000000 |                            11001
+           ssendendenter |      010000000000000000000000000 |                            10011
+          ssendlastenter |      100000000000000000000000000 |                            10100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'FSM2'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 814.934 ; gain = 496.320
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 816.125 ; gain = 496.750
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -250,22 +251,22 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 6     
 	               14 Bit    Registers := 1     
 	               10 Bit    Registers := 4     
-	                8 Bit    Registers := 30    
+	                8 Bit    Registers := 46    
 	                5 Bit    Registers := 4     
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 9     
 +---Muxes : 
-	   2 Input     64 Bit        Muxes := 1     
+	   2 Input    192 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 6     
-	  26 Input     26 Bit        Muxes := 1     
-	   2 Input     26 Bit        Muxes := 4     
+	  27 Input     27 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 4     
 	   2 Input     14 Bit        Muxes := 1     
 	   3 Input     10 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 27    
+	   2 Input      8 Bit        Muxes := 40    
 	   2 Input      5 Bit        Muxes := 4     
-	  26 Input      5 Bit        Muxes := 1     
+	  27 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 1     
 	   7 Input      3 Bit        Muxes := 1     
@@ -275,8 +276,8 @@ Detailed RTL Component Info :
 	   7 Input      1 Bit        Muxes := 7     
 	   4 Input      1 Bit        Muxes := 2     
 	   3 Input      1 Bit        Muxes := 2     
-	  26 Input      1 Bit        Muxes := 1     
-	  21 Input      1 Bit        Muxes := 1     
+	  27 Input      1 Bit        Muxes := 1     
+	  22 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -351,14 +352,14 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
-	  26 Input     26 Bit        Muxes := 1     
-	   2 Input     26 Bit        Muxes := 4     
+	  27 Input     27 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 4     
 	   2 Input     14 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 10    
-	  26 Input      5 Bit        Muxes := 1     
+	  27 Input      5 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
-	  26 Input      1 Bit        Muxes := 1     
-	  21 Input      1 Bit        Muxes := 1     
+	  27 Input      1 Bit        Muxes := 1     
+	  22 Input      1 Bit        Muxes := 1     
 Module SCI_Transmitter 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -367,14 +368,14 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 3     
 	               10 Bit    Registers := 2     
-	                8 Bit    Registers := 8     
+	                8 Bit    Registers := 24    
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     64 Bit        Muxes := 1     
+	   2 Input    192 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 3     
 	   3 Input     10 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 17    
+	   2 Input      8 Bit        Muxes := 30    
 	   3 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
@@ -393,6 +394,14 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "full__00" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "empty" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "num_bits_sent" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "num_bits_sent" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "block_sent" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "tc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "r_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "w_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "state_machine/next_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "receiver/baud_start_tc" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "receiver/baud_tc" won't be mapped to RAM because it is too sparse
@@ -409,16 +418,8 @@ INFO: [Synth 8-5545] ROM "state_machine/guess_checker/guess_count_en" won't be m
 INFO: [Synth 8-5545] ROM "state_machine/guess_checker/guess_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "state_machine/num_tries" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "state_machine/max_tries_reached" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "transmitter/full__00" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "transmitter/empty" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "transmitter/num_bits_sent" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "transmitter/num_bits_sent" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "transmitter/block_sent" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "transmitter/tc" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "transmitter/w_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "transmitter/r_addr" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 814.934 ; gain = 496.320
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 816.125 ; gain = 496.750
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -430,13 +431,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:24 . Memory (MB): peak = 814.934 ; gain = 496.320
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 816.125 ; gain = 496.750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 898.688 ; gain = 580.074
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:32 . Memory (MB): peak = 937.594 ; gain = 618.219
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -448,7 +449,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -472,7 +473,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -485,7 +486,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -497,25 +498,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -536,14 +537,14 @@ Report Cell Usage:
 |2     |game_dict_rom_bbox_2 |     1|
 |3     |BUFG                 |     1|
 |4     |CARRY4               |    76|
-|5     |LUT1                 |     9|
-|6     |LUT2                 |   137|
-|7     |LUT3                 |    28|
-|8     |LUT4                 |    78|
-|9     |LUT5                 |    73|
-|10    |LUT6                 |   319|
-|11    |FDRE                 |   665|
-|12    |FDSE                 |    10|
+|5     |LUT1                 |     8|
+|6     |LUT2                 |    97|
+|7     |LUT3                 |    79|
+|8     |LUT4                 |    89|
+|9     |LUT5                 |   111|
+|10    |LUT6                 |   468|
+|11    |FDRE                 |   793|
+|12    |FDSE                 |    11|
 |13    |IBUF                 |     2|
 |14    |OBUF                 |     9|
 +------+---------------------+------+
@@ -552,36 +553,36 @@ Report Instance Areas:
 +------+---------------------+----------------+------+
 |      |Instance             |Module          |Cells |
 +------+---------------------+----------------+------+
-|1     |top                  |                |  1487|
-|2     |  receiver           |SCI_RECEIVER    |    81|
-|3     |  state_machine      |FSM2            |   910|
-|4     |    guess_checker    |CheckGuess      |   404|
+|1     |top                  |                |  1824|
+|2     |  receiver           |SCI_RECEIVER    |    80|
+|3     |  state_machine      |FSM2            |   890|
+|4     |    guess_checker    |CheckGuess      |   383|
 |5     |    word_exist_block |WORD_EXISTS     |    89|
-|6     |    word_loader      |load_word       |   182|
-|7     |  transmitter        |SCI_Transmitter |   484|
+|6     |    word_loader      |load_word       |   183|
+|7     |  transmitter        |SCI_Transmitter |   842|
 +------+---------------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 938.605 ; gain = 619.230
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:25 . Memory (MB): peak = 899.707 ; gain = 243.574
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:30 . Memory (MB): peak = 899.707 ; gain = 581.094
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:28 . Memory (MB): peak = 938.605 ; gain = 280.805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 938.605 ; gain = 619.230
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 76 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 899.707 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 938.605 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 110 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:33 . Memory (MB): peak = 899.707 ; gain = 592.629
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 899.707 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 938.605 ; gain = 630.758
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 938.605 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL2.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file WORDLE_TOP_LEVEL_SHELL2_utilization_synth.rpt -pb WORDLE_TOP_LEVEL_SHELL2_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun  7 23:17:21 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun  8 01:34:30 2022...

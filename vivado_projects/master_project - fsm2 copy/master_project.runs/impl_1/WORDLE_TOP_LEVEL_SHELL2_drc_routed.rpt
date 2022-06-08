@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date         : Tue Jun  7 23:18:28 2022
+| Date         : Wed Jun  8 01:35:39 2022
 | Host         : Mubarak-XPS15 running 64-bit major release  (build 9200)
 | Command      : report_drc -file WORDLE_TOP_LEVEL_SHELL2_drc_routed.rpt -pb WORDLE_TOP_LEVEL_SHELL2_drc_routed.pb -rpx WORDLE_TOP_LEVEL_SHELL2_drc_routed.rpx
 | Design       : WORDLE_TOP_LEVEL_SHELL2

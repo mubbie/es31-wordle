@@ -2,7 +2,7 @@
 --ENGS 31/ CoSc 56 22S
 --Final Project - Wordle
 --Mubarak Idoko, Ikeoluwa Abioye, Lobna Jbenaini
--- Module Name: CheckGuess - Behavioral
+-- Module Name: FSM 2 -> Alternative FSM
 
 
 -- UPDATE LOG: 
@@ -12,8 +12,8 @@
 --=============================================================================
 
 -- KNOWN ISSUES: 
-
 --=============================================================================
+
 --=============================================================================
 
 --=============================================================================
@@ -126,7 +126,7 @@ end component game_dict_rom;
 type StateType is (sNewGame, sIdle, sSendUserIn, sSendLetter, sSendDelete, 
                 sDisplayResults, sSendCol1, sSendCol2, sSendCol3, sSendCol4, sSendCol5, sSendEnter,
                 sWin, sLose, sSendSol1, sSendSol2, sSendSol3, sSendSol4, sSendSol5, 
-                 sSendEndEnter, sSendLastEnter, sDash1, sDash2, sDash3, sDash4, sDash5); 
+                 sSendEndEnter, sSendLastEnter, sDash1, sDash2, sDash3, sDash4, sDash5, sSendLoseEnter); 
 signal data_to_send_signal : STD_LOGIC_VECTOR(4 downto 0) := (others => '0');
 
 --=============================================================================
@@ -142,6 +142,7 @@ constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
 constant delete : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
 constant enter : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001101";
 constant dash : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101101";
+constant plus : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101011"; 
 constant exclamation : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100001";
 constant byte_size : integer := 8;
 
@@ -387,6 +388,8 @@ begin
         when sSendSol4 => 
             next_state <= sSendSol5;
         when sSendSol5 => 
+            next_state <= sSendLoseEnter;
+        when sSendLoseEnter => 
             next_state <= sDash1;
         when sSendEndEnter => 
             next_state <= sSendLastEnter;
@@ -455,6 +458,8 @@ begin
             data_to_send_signal <= "10011";
         when sDash5 => 
             data_to_send_signal <= "10100";
+        when sSendLoseEnter => 
+            data_to_send_signal <= "10101";
     end case;   
 end process OutputLogic;  
 
@@ -485,7 +490,7 @@ begin
                 elsif cltrs(0) = '1' and cplaces(0) = '0' then
                     Tx_data_sig <= question_mark;
                 else 
-                    Tx_data_sig <= solution_sig(0*byte_size + 7 downto 0*byte_size); 
+                    Tx_data_sig <= solution_sig((4*byte_size + 7) downto 4*byte_size); 
                 end if;
             when "00100" => -- col2
                 Tx_data_ready_sig <= '1';
@@ -494,7 +499,7 @@ begin
                 elsif cltrs(1) = '1' and cplaces(1) = '0' then
                     Tx_data_sig <= question_mark;
                 else 
-                    Tx_data_sig <= solution_sig(1*byte_size + 7 downto 1*byte_size); 
+                    Tx_data_sig <= solution_sig((3*byte_size + 7) downto 3*byte_size); 
                 end if;
             when "00101" => -- col3
                 Tx_data_ready_sig <= '1';
@@ -503,7 +508,7 @@ begin
                 elsif cltrs(2) = '1' and cplaces(2) = '0' then
                     Tx_data_sig <= question_mark;
                 else 
-                    Tx_data_sig <= solution_sig(2*byte_size + 7 downto 2*byte_size); 
+                    Tx_data_sig <= solution_sig((2*byte_size + 7) downto 2*byte_size); 
                 end if;
             when "00110" => -- col4
                 Tx_data_ready_sig <= '1';
@@ -512,7 +517,7 @@ begin
                 elsif cltrs(3) = '1' and cplaces(3) = '0' then
                     Tx_data_sig <= question_mark;
                 else 
-                    Tx_data_sig <= solution_sig(3*byte_size + 7 downto 3*byte_size); 
+                    Tx_data_sig <= solution_sig((1*byte_size + 7) downto 1*byte_size); 
                 end if;
             when "00111" => -- col5
                 Tx_data_ready_sig <= '1';
@@ -521,7 +526,7 @@ begin
                 elsif cltrs(4) = '1' and cplaces(4) = '0' then
                     Tx_data_sig <= question_mark;
                 else 
-                    Tx_data_sig <= solution_sig(4*byte_size + 7 downto 4*byte_size); 
+                    Tx_data_sig <= solution_sig((0*byte_size + 7) downto 0*byte_size); 
                 end if;
             when "01000" => -- enter
                 -- send enter 
@@ -530,23 +535,23 @@ begin
             when "01001" => -- sol1
                 -- send solution
                 Tx_data_ready_sig <= '1';
-                Tx_data_sig <= solution_sig(0*byte_size + 7 downto 0*byte_size);
+                Tx_data_sig <= solution_sig((4*byte_size + 7) downto 4*byte_size);
             when "01010" => -- sol2
                 -- send solution
                 Tx_data_ready_sig <= '1';
-                Tx_data_sig <= solution_sig(1*byte_size + 7 downto 1*byte_size);
+                Tx_data_sig <= solution_sig((3*byte_size + 7) downto 3*byte_size);
             when "01011" => -- sol3
                 -- send solution
                 Tx_data_ready_sig <= '1';
-                Tx_data_sig <= solution_sig(2*byte_size + 7 downto 2*byte_size);
+                Tx_data_sig <= solution_sig((2*byte_size + 7) downto 2*byte_size);
             when "01100" => -- sol4
                 -- send solution
                 Tx_data_ready_sig <= '1';
-                Tx_data_sig <= solution_sig(3*byte_size + 7 downto 3*byte_size);
+                Tx_data_sig <= solution_sig((1*byte_size + 7) downto 1*byte_size);
             when "01101" => -- sol5
                 -- send solution
                 Tx_data_ready_sig <= '1';
-                Tx_data_sig <= solution_sig(4*byte_size + 7 downto 4*byte_size);
+                Tx_data_sig <= solution_sig((0*byte_size + 7) downto 0*byte_size);
             when "01110" => -- send end enter
                 -- send enter 
                 Tx_data_ready_sig <= '1';
@@ -558,18 +563,21 @@ begin
             when "10000" => -- send dash 
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= dash; 
-            when "10001" => -- send dash 
+            when "10001" => -- send plus
                 Tx_data_ready_sig <= '1';
-                Tx_data_sig <= dash;
+                Tx_data_sig <= plus;
             when "10010" => -- send dash 
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= dash;
-            when "10011" => -- send dash 
+            when "10011" => -- send plus
                 Tx_data_ready_sig <= '1';
-                Tx_data_sig <= dash;
+                Tx_data_sig <= plus;
             when "10100" => -- send dash 
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= dash;
+            when "10101" => -- send enter
+                Tx_data_ready_sig <= '1';
+                Tx_data_sig <= enter;
             when others => 
                 Tx_data_ready_sig <= '0';
                 Tx_data_sig <= (others => '1');

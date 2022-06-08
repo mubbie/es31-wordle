@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date             : Tue Jun  7 23:18:30 2022
+| Date             : Wed Jun  8 01:35:41 2022
 | Host             : Mubarak-XPS15 running 64-bit major release  (build 9200)
 | Command          : report_power -file WORDLE_TOP_LEVEL_SHELL2_power_routed.rpt -pb WORDLE_TOP_LEVEL_SHELL2_power_summary_routed.pb -rpx WORDLE_TOP_LEVEL_SHELL2_power_routed.rpx
 | Design           : WORDLE_TOP_LEVEL_SHELL2
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.004 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     1728 |       --- |             --- |
-|   LUT as Logic |     0.001 |      738 |     20800 |            3.55 |
+| Slice Logic    |     0.002 |     2065 |       --- |             --- |
+|   LUT as Logic |     0.002 |      901 |     20800 |            4.33 |
 |   CARRY4       |    <0.001 |       76 |      8150 |            0.93 |
-|   Register     |    <0.001 |      699 |     41600 |            1.68 |
+|   Register     |    <0.001 |      828 |     41600 |            1.99 |
 |   F7/F8 Muxes  |    <0.001 |       72 |     32600 |            0.22 |
 |   Others       |     0.000 |       76 |       --- |             --- |
-| Signals        |     0.002 |     1539 |       --- |             --- |
+| Signals        |     0.002 |     1754 |       --- |             --- |
 | Block RAM      |     0.020 |       30 |        50 |           60.00 |
 | I/O            |     0.001 |       11 |       106 |           10.38 |
 | Static Power   |     0.073 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.037 |       0.027 |      0.010 |
+| Vccint    |       1.000 |     0.038 |       0.027 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,13 +143,13 @@ Table of Contents
 | Name                    | Power (W) |
 +-------------------------+-----------+
 | WORDLE_TOP_LEVEL_SHELL2 |     0.030 |
-|   state_machine         |     0.026 |
+|   state_machine         |     0.025 |
 |     dictionary          |     0.010 |
 |       U0                |     0.010 |
 |     guess_checker       |     0.002 |
 |     word_exist_block    |     0.011 |
 |       wordle_dictionary |     0.011 |
-|   transmitter           |     0.002 |
+|   transmitter           |     0.003 |
 +-------------------------+-----------+
 
 

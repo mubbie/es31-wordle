@@ -86,14 +86,15 @@ signal block_sent : std_logic := '0';
 signal num_bits_sent : integer := 0;
 
 -- signals for the queue
-type regfile is array(0 to 7) of std_logic_vector((BIT_COUNTER_TOP - 3) downto 0);
-signal queue_reg : regfile:= ((others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0')); --one way to zero out all the elements.
+constant q_max : integer := 23;     -- queue size - 1 (use a queue of size 24) 
+type regfile is array(0 to q_max) of std_logic_vector((BIT_COUNTER_TOP - 3) downto 0);
+signal queue_reg : regfile:= (others => (others => '0')); --one way to zero out all the elements.
 
 -- other signals 
 signal r_addr : integer := 0;
 signal w_addr : integer := 0;
 signal q_size : integer := 0;
-signal empty  : std_logic := '0';
+signal empty  : std_logic := '0';       
 signal full   : std_logic := '0';
 signal r_data :	std_logic_vector(7 downto 0);
 
@@ -140,7 +141,7 @@ begin
       		queue_reg(w_addr) <= Parallel_in;
             q_size <= q_size + 1;
             -- increment the address, accounting for overflow
-            if w_addr = 7 then
+            if w_addr = q_max then
             	w_addr <= 0;
             else w_addr <= w_addr + 1;
             end if;
@@ -150,7 +151,7 @@ begin
             queue_reg(r_addr) <= (others => '0');
             q_size <= q_size - 1;
             -- increment the address, accounting for overflow
-            if r_addr = 7 then
+            if r_addr = q_max then
             	r_addr <= 0;
             else r_addr <= r_addr + 1;
             end if;
@@ -169,7 +170,7 @@ begin
     -- queue size logic 
 	if (q_size = 0) then
     	Empty <= '1';
-  	elsif (q_size = 8) then
+  	elsif (q_size = q_max) then
     	Full <= '1';
   	end if;
     

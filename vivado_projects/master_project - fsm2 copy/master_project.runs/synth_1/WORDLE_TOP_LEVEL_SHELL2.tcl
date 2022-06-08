@@ -18,7 +18,6 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -34,6 +33,7 @@ set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo {c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/mubar/Documents/ENGS31/es31-wordle/coe_files/BINARYASCIIDICT.coe
+add_files C:/Users/mubar/Documents/ENGS31/es31-wordle/coe_files/UpdatedBinASCIIDict.coe
 read_vhdl -library xil_defaultlib {
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd
@@ -44,7 +44,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd
   {C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/top_level_2/top_level_shell_2.vhd}
 }
-read_ip -quiet {{c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom.xci}}
+read_ip -quiet {{C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being

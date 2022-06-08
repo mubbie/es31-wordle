@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654658201">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654666427">
   <File Type="PA-TCL" Name="WORDLE_TOP_LEVEL_SHELL2.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="WORDLE_TOP_LEVEL_SHELL2_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="WORDLE_TOP_LEVEL_SHELL2_reports.tcl"/>
@@ -109,6 +109,12 @@
     <File Path="$PPRDIR/../../code/fsm_tx_2/fsm_tx_2.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../coe_files/UpdatedBinASCIIDict.coe">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

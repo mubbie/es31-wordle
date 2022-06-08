@@ -2,8 +2,8 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Tue Jun  7 23:16:43 2022
-# Process ID: 21368
+# Start of session at: Wed Jun  8 01:33:49 2022
+# Process ID: 29700
 # Current directory: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1
 # Command line: vivado.exe -log WORDLE_TOP_LEVEL_SHELL2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source WORDLE_TOP_LEVEL_SHELL2.tcl
 # Log file: C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.runs/synth_1/WORDLE_TOP_LEVEL_SHELL2.vds

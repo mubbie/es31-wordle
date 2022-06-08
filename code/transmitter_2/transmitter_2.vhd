@@ -3,7 +3,7 @@
 --Final Project - Wordle
 --B.L. Dobbins, E.W. Hansen, Professor Luke
 --Mubarak Idoko, Ikeoluwa Abioye, Lobna Jbenaini
-    --SCI Transmitter 2  
+    --SCI Transmitter 2: Alternative Transmitter
 
 -- TODO: (DO NOT REMOVE) Write to "Update Log" if you modify the code, document your changes.
 -- TODO: (DO NOT REMOVE) Update known issues to account for fixes of newly discovered bugs.
