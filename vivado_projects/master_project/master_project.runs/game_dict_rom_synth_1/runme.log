@@ -10,4 +10,8 @@
 
 source game_dict_rom.tcl -notrace
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP game_dict_rom, cache-ID = 2264ad5abaa42ffe.
+<<<<<<< HEAD
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  7 10:52:09 2022...
+=======
 INFO: [Common 17-206] Exiting Vivado at Tue Jun  7 10:51:23 2022...
+>>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867

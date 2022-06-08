@@ -17,58 +17,33 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-<<<<<<< HEAD
-set_property webtalk.parent_dir C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.cache/wt [current_project]
-set_property parent.project_path C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.xpr [current_project]
-=======
-set_property webtalk.parent_dir O:/ES31/es31-wordle/vivado_projects/master_project/master_project.cache/wt [current_project]
-set_property parent.project_path O:/ES31/es31-wordle/vivado_projects/master_project/master_project.xpr [current_project]
->>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
+set_property webtalk.parent_dir {C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.xpr} [current_project]
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-<<<<<<< HEAD
-set_property ip_output_repo c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.cache/ip [current_project]
+set_property ip_output_repo {c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/mubar/Documents/ENGS31/es31-wordle/coe_files/BINARYASCIIDICT.coe
 read_vhdl -library xil_defaultlib {
-  C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm/FSM.vhd
+  {C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/fsm/FSM.vhd}
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_guess_logic/check_guess.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/receiver/sci_receiver.vhd
-  C:/Users/mubar/Documents/ENGS31/es31-wordle/code/transmitter/sci_transmitter.vhd
+  {C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/imports/transmitter/sci_transmitter.vhd}
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/word_exists/word_exists.vhd
   C:/Users/mubar/Documents/ENGS31/es31-wordle/code/top_level/top_level_shell.vhd
 }
-read_ip -quiet C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom.xci
-set_property used_in_implementation false [get_files -all c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom_ooc.xdc]
-=======
-set_property ip_output_repo o:/ES31/es31-wordle/vivado_projects/master_project/master_project.cache/ip [current_project]
-set_property ip_cache_permissions {read write} [current_project]
-add_files O:/ES31/es31-wordle/coe_files/BINARYASCIIDICT.coe
-read_vhdl -library xil_defaultlib {
-  O:/ES31/es31-wordle/code/fsm/FSM.vhd
-  O:/ES31/es31-wordle/code/check_guess_logic/check_guess.vhd
-  O:/ES31/es31-wordle/code/check_letter/check_letter.vhd
-  O:/ES31/es31-wordle/code/load_word/load_word.vhd
-  O:/ES31/es31-wordle/code/receiver/sci_receiver.vhd
-  O:/ES31/es31-wordle/code/transmitter/sci_transmitter.vhd
-  O:/ES31/es31-wordle/code/word_exists/word_exists.vhd
-  O:/ES31/es31-wordle/code/top_level/top_level_shell.vhd
-  O:/ES31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd
-}
-read_ip -quiet O:/ES31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom.xci
-set_property used_in_implementation false [get_files -all o:/ES31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom_ooc.xdc]
->>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
+read_ip -quiet {{C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2 copy/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -78,13 +53,8 @@ set_property used_in_implementation false [get_files -all o:/ES31/es31-wordle/vi
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-<<<<<<< HEAD
 read_xdc C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/wordle_constraints.xdc
 set_property used_in_implementation false [get_files C:/Users/mubar/Documents/ENGS31/es31-wordle/constraint_files/wordle_constraints.xdc]
-=======
-read_xdc O:/ES31/es31-wordle/constraint_files/wordle_constraints.xdc
-set_property used_in_implementation false [get_files O:/ES31/es31-wordle/constraint_files/wordle_constraints.xdc]
->>>>>>> 0b01092aef01c03b9d55f485884066cb49dde867
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
