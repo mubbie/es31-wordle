@@ -44,7 +44,7 @@ read_vhdl -library xil_defaultlib {
   O:/ES31/es31-wordle/code/top_level/top_level_shell.vhd
   O:/ES31/es31-wordle/code/receiver_transmitter/rx_tx_shell.vhd
 }
-read_ip -quiet o:/ES31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom_1/game_dict_rom.xci
+read_ip -quiet O:/ES31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom_1/game_dict_rom.xci
 set_property used_in_implementation false [get_files -all o:/ES31/es31-wordle/vivado_projects/master_project/master_project.srcs/sources_1/ip/game_dict_rom_1/game_dict_rom_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
