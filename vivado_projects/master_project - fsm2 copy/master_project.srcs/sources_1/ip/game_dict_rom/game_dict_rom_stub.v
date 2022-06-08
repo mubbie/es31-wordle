@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-// Date        : Tue Jun  7 23:56:30 2022
+// Date        : Wed Jun  8 00:15:51 2022
 // Host        : Mubarak-XPS15 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               {c:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2
+//               {C:/Users/mubar/Documents/ENGS31/es31-wordle/vivado_projects/master_project - fsm2
 //               copy/master_project.srcs/sources_1/ip/game_dict_rom/game_dict_rom_stub.v}
 // Design      : game_dict_rom
 // Purpose     : Stub declaration of top-level module interface

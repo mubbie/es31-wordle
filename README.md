@@ -2,6 +2,8 @@
 
 ## Ike, Mubbie, Lobna
 
+## INTERNAL REAMDE.md for us working on the project
+
 ## GUIDE TO RESOURCES
 
 - **Logisim**: https://github.com/logisim-evolution/logisim-evolution

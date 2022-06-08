@@ -82,7 +82,6 @@ signal current_state, next_state : StateType;
 --=============================================================================
 
 begin
-
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- DATAPATH: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
@@ -182,16 +181,12 @@ WrongLocations: process (clk, sol_addr, guess_addr, solution_word, guess_word, p
             sol_letters_present <= "00000";
         end if;
     end if;
-    
---    if reset_ltrs_correct = '1' then
---        letters_correct_mid <= "00000";
---        sol_letters_present <= "00000";
---    end if;
 end process WrongLocations;
 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- STATE MACHINE: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+-- state update
 StateUpdate: process (clk)
 begin
     if rising_edge(clk) then
@@ -200,42 +195,38 @@ begin
     end if;
 end process StateUpdate;
 
-
+-- next state logic
 NextStateLogic: process(current_state, is_dict_word, enable_outputs)
 begin
-next_state <= current_state;
-case current_state is
-    when idle => 
-        if is_dict_word = '1' then
-            next_state <= checkRightLocs;
-        end if;
-    when checkRightLocs =>
-        next_state <= checkWrongLocs;
-    when checkWrongLocs =>
-        if enable_outputs = '1' then
-            next_state <= idle;
-        end if;
-    -- when others =>  -- gets the current state automatically
-end case current_state;
+    next_state <= current_state;
+    case current_state is
+        when idle => 
+            if is_dict_word = '1' then
+                next_state <= checkRightLocs;
+            end if;
+        when checkRightLocs =>
+            next_state <= checkWrongLocs;
+        when checkWrongLocs =>
+            if enable_outputs = '1' then
+                next_state <= idle;
+            end if;
+        -- when others =>  -- gets the current state automatically
+    end case current_state;
 end process NextStateLogic;
 
+-- output logic
 OutputLogic: process(current_state)
 begin
-reset_ltrs_correct <= '0';
---store_words <= '0';
-count_addresses <= '0';
+    reset_ltrs_correct <= '0';
+    count_addresses <= '0';
 
-case current_state is
-    when idle => 
-        reset_ltrs_correct <= '1';
-    when checkRightLocs =>
-    when checkWrongLocs =>
-        count_addresses <= '1';
-
-    -- when others =>  -- gets the current state automatically
-end case current_state;
+    case current_state is
+        when idle => 
+            reset_ltrs_correct <= '1';
+        when checkRightLocs =>
+        when checkWrongLocs =>
+            count_addresses <= '1';
+    end case current_state;
 end process OutputLogic;
-
-
 
 end Behavioral;

@@ -1,6 +1,6 @@
 
 { 
-    crc :  5956078662664413284  , 
+    crc :  5956078662312226496  , 
     ccp_crc :  0  , 
     cmdline : " -wto e178fdf42fb24886994bd89583259cbc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot WORDLE_DICTIONARY_ROM_tb_behav xil_defaultlib.WORDLE_DICTIONARY_ROM_tb" , 
     buildDate : "Mar 26 2019" , 
