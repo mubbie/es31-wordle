@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date         : Tue Jun  7 20:29:01 2022
+| Date         : Tue Jun  7 22:50:54 2022
 | Host         : mecha-9 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file WORDLE_TOP_LEVEL_SHELL_utilization_synth.rpt -pb WORDLE_TOP_LEVEL_SHELL_utilization_synth.pb
 | Design       : WORDLE_TOP_LEVEL_SHELL
@@ -33,8 +33,8 @@ Table of Contents
 | Slice LUTs*             |  610 |     0 |     20800 |  2.93 |
 |   LUT as Logic          |  610 |     0 |     20800 |  2.93 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |  773 |     0 |     41600 |  1.86 |
-|   Register as Flip Flop |  773 |     0 |     41600 |  1.86 |
+| Slice Registers         |  772 |     0 |     41600 |  1.86 |
+|   Register as Flip Flop |  772 |     0 |     41600 |  1.86 |
 |   Register as Latch     |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                |    8 |     0 |     16300 |  0.05 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 33    |          Yes |           - |        Reset |
 | 31    |          Yes |         Set |            - |
-| 709   |          Yes |       Reset |            - |
+| 708   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,10 +149,10 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  709 |        Flop & Latch |
-| LUT6     |  241 |                 LUT |
+| FDRE     |  708 |        Flop & Latch |
+| LUT6     |  251 |                 LUT |
 | LUT2     |  179 |                 LUT |
-| LUT5     |  130 |                 LUT |
+| LUT5     |  121 |                 LUT |
 | LUT3     |  107 |                 LUT |
 | CARRY4   |   92 |          CarryLogic |
 | LUT4     |   64 |                 LUT |
