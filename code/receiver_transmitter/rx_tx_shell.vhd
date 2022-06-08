@@ -159,7 +159,7 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 receiver : SCI_RECEIVER 
     generic map (
-        BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
+        BAUD_COUNTER_TOP => 868, -- 115200 baud rate
         BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop
     )
     port map (
@@ -198,7 +198,7 @@ end process New_Data_Stimulus;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 transmitter : SCI_Transmitter
     generic map (
-        BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
+        BAUD_COUNTER_TOP => 868, -- 115200 baud rate
         BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop
     )
     port map (

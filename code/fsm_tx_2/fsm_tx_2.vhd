@@ -78,7 +78,7 @@ end component FSM2;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Transmitter Sub-Component:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-component Transmitter2 IS
+component SCI_Transmitter IS
     -- constants 
     generic(
         BAUD_COUNTER_TOP : integer; 
@@ -94,7 +94,7 @@ component Transmitter2 IS
             -- outputs
             Tx			:	out STD_LOGIC
     );
-end component Transmitter2;
+end component SCI_Transmitter;
 
 
 --=============================================================================
@@ -130,7 +130,7 @@ state_machine : FSM2
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --Wire the transmitter sub-component to the shell:
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-transmitter : Transmitter2
+transmitter : SCI_Transmitter
 generic map (
     BAUD_COUNTER_TOP => 10417, -- 9600 baud rate
     BIT_COUNTER_TOP => 10 -- 10 bits, 1 start, 8 data, 1 stop
