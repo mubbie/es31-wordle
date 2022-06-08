@@ -1,0 +1,159 @@
+## TEST BENCH TESTING PLAN 
+## FOR FSM COMPONENT 
+
+    PORT MAP(
+        -- inputs 
+        clk => clk_signal,
+        Rx_data => Rx_data_signal,
+        Rx_done => Rx_done_signal,
+
+        -- outputs
+        Tx_data => Tx_Data_signal,
+        Tx_data_ready => Tx_data_ready_signal
+    );
+
+-- INITIALLY 
+    -- Rx_data_signal = all 1's; - nothing has been received yet
+    -- Rx_done_signal = 0; - nothing has been received
+    -- Tx_Data_signal = all 1's; - nothing ready to be transmitted 
+    -- Tx_data_ready_signal = 0; - nothing ready to be transmitted
+
+-- TESTING:  
+    -- Attempt a wordle play session 
+       -- the FSM should pick a pseudo-random word from the dictionary as the correct word 
+       -- we try to guess the word 
+    -- Let our guess be "ample", but we enter is as: 
+        -- 'A', first 
+        -- 'm', second 
+        -- backspace 
+        -- backspace 
+        -- 'A' again 
+        -- '2' 
+        -- enter 
+        -- 'M' this time 
+        -- '4' 
+        -- enter 
+        -- enter again 
+        -- 'p' 
+        -- 'L' 
+        -- '!'
+        -- '*'
+        -- backspace 
+        -- enter 
+        -- 'l' 
+        -- 'e'
+        -- '\b'
+        -- 'E'
+        -- enter 
+    -- This will require the ASCII input sequence: 
+        -- 'A'      -> "01000001"
+        -- 'm'      -> "01101101"
+        -- '\b'     -> "00001000"
+        -- '\b'     -> "00001000"
+        -- 'A'      -> "01000001"
+        -- '2'      -> "00110010"
+        -- '\r'     -> "00001101"
+        -- 'M'      -> "01001101"
+        -- '4'      -> "00110100"
+        -- '\r'     -> "00001101"
+        -- '\r'     -> "00001101"
+        -- 'p'      -> "01110000"
+        -- 'L'      -> "01001100"
+        -- '!'      -> "00100001"
+        -- '*'      -> "00101010"
+        -- '\b'     -> "00001000"
+        -- '\r'     -> "00001101"
+        -- 'l'      -> "01101100"
+        -- 'e'      -> "01100101"
+        -- '\b'     -> "00001000"
+        -- 'E'      -> "01000101"
+        -- '\r'     -> "00001101"
+    -- Thus, we are testing with: 
+        -- 22 data packets 
+        -- each data packet has 8 bits 
+
+-- IMPLEMENTATION 
+    -- Store the data packets in a register file: 
+        -- the array will be of size 22
+        -- each elements with be an 8-bit word 
+    -- Iterate over the each packets and send them out accordingly 
+        -- for each character, set the Rx_done signal high for one clock cycle
+
+-- VALIDATION 
+    -- For each character we expect the following outputs 
+        -- 'A' 
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01100001" -- transmit lowercase 'a'
+        -- 'm'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01101101" -- transmit lowercase 'm'
+        -- '\b'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "00001000"
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01111111"  -- transmit backspace i.e. delete last character + backspace character
+        -- '\b'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "00001000"
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01111111" -- transmit backspace i.e. delete last character + backspace character
+        -- 'A'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01100001" -- transmit lowercase 'a'
+        -- '2'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, character is not valid alphabet
+        -- '\r'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, word is not yet full, so cannot transmit an enter
+        -- 'M'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "01001101" -- transmit lowercase 'm'
+        -- '4'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, character is not valid alphabet
+        -- '\r'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, word is not yet full, so cannot transmit an enter
+        -- '\r'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, word is not yet full, so cannot transmit an enter
+        -- 'p'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01110000" -- transmit lowercase 'p'
+        -- 'L'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01001100" -- transmit lowercase 'l'
+        -- '!'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, character is not valid alphabet
+        -- '*'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, character is not valid alphabet
+        -- '\b'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "00001000"
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01111111" -- transmit backspace i.e. delete last character + backspace character 
+        -- '\r'
+            -- Tx_data_ready_signal = 0;
+            -- Tx_Data_signal = "11111111" -- do not transmit anything, word is not yet full, so cannot transmit an enter
+        -- 'l'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01101100" -- transmit lowercase 'l'
+        -- 'e'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01100101" -- transmit lowercase 'e'
+        -- '\b'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "00001000"
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01111111" -- transmit backspace i.e. delete last character + backspace character
+        -- 'E'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "01100101" -- transmit lowercase 'e'
+        -- '\r'
+            -- Tx_data_ready_signal = 1;
+            -- Tx_Data_signal = "00001101" -- transmit enter, word is not full 
+
+            
