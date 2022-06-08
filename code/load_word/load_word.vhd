@@ -216,8 +216,9 @@ begin
     word_ready_out_0 <= is_enter_out and word_full;
     word_ready_out <= not(word_ready_out_1) and word_ready_out_0;
 
-    -- display output signals 
-    char_disp_out_ready_out <= ((is_enter_out and word_full) or is_backspace_out or (new_letter and is_valid_alpha_out)) and new_letter;
+    -- display output signals (logic from truth table / Karnaugh map)
+    char_disp_out_ready_out <= new_letter and not((word_full and not is_enter_out and not is_backspace_out) or (not word_full and not is_valid_alpha_out and not is_backspace_out));
+
 end process Word_Output_Logic;
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
