@@ -2,7 +2,7 @@
 
 ## Ike, Mubbie, Lobna
 
-## [https://drive.google.com/file/d/1ZTbb-LIe1EXs7j2_Yy700LKRH2otJY8A/view?usp=sharing](Final Project Demo), requires Dartmouth account for access
+## [Final Project Demo](https://drive.google.com/file/d/1ZTbb-LIe1EXs7j2_Yy700LKRH2otJY8A/view?usp=sharing), requires Dartmouth account for access
 
 #### INTERNAL APPENDIX:
 
