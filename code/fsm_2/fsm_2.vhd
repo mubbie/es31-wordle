@@ -36,7 +36,7 @@ entity FSM2 is
            Rx_data : in STD_LOGIC_VECTOR (7 downto 0);
            Rx_done : in STD_LOGIC;
 
-        --OUtputs:
+        --Outputs:
            Tx_data : out STD_LOGIC_VECTOR (7 downto 0);
            Tx_data_ready : out STD_LOGIC
         );
@@ -125,15 +125,17 @@ end component game_dict_rom;
 --=============================================================================
 type StateType is (sNewGame, sIdle, sSendUserIn, sSendLetter, sSendDelete, 
                 sDisplayResults, sSendCol1, sSendCol2, sSendCol3, sSendCol4, sSendCol5, sSendEnter,
-                sWin, sLose, sSendSol1, sSendSol2, sSendSol3, sSendSol4, sSendSol5, sSendEndEnter); 
-signal data_to_send_signal : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
+                sWin, sLose, sSendSol1, sSendSol2, sSendSol3, sSendSol4, sSendSol5, 
+                 sSendEndEnter, sSendLastEnter, sDash1, sDash2, sDash3, sDash4, sDash5); 
+signal data_to_send_signal : STD_LOGIC_VECTOR(4 downto 0) := (others => '0');
 
 --=============================================================================
 --Signal Declarations: 
 --=============================================================================
 -- constants 
 constant max_num_tries : integer := 5;
-constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
+--constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
+constant max_dict_word : unsigned(13 downto 0) := "00000000000101";
 constant space : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100000";      -- space
 constant question_mark : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00111111";     -- quesion mark
 constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
@@ -363,6 +365,16 @@ begin
                 next_state <= sIdle; 
             end if;
         when sWin => 
+            next_state <= sDash1;
+        when sDash1 => 
+            next_state <= sDash2;
+        when sDash2 => 
+            next_state <= sDash3;
+        when sDash3 => 
+            next_state <= sDash4;
+        when sDash4 => 
+            next_state <= sDash5;
+        when sDash5 => 
             next_state <= sSendEndEnter;
         when sLose => 
             next_state <= sSendSol1; 
@@ -375,8 +387,10 @@ begin
         when sSendSol4 => 
             next_state <= sSendSol5;
         when sSendSol5 => 
-            next_state <= sSendEndEnter;
+            next_state <= sDash1;
         when sSendEndEnter => 
+            next_state <= sSendLastEnter;
+        when sSendLastEnter => 
             next_state <= sNewGame;
     end case; 
 end process NextStateLogic; 
@@ -396,39 +410,51 @@ begin
         when sSendUserIn => 
             -- nothing 
         when sSendLetter => 
-            data_to_send_signal <= "0001";
+            data_to_send_signal <= "00001";
         when sSendDelete => 
-            data_to_send_signal <= "0010";
+            data_to_send_signal <= "00010";
         when sDisplayResults => 
             -- nothing
         when sSendCol1 => 
-            data_to_send_signal <= "0011";
+            data_to_send_signal <= "00011";
         when sSendCol2 => 
-            data_to_send_signal <= "0100";
+            data_to_send_signal <= "00100";
         when sSendCol3 => 
-            data_to_send_signal <= "0101";
+            data_to_send_signal <= "00101";
         when sSendCol4 => 
-            data_to_send_signal <= "0110";
+            data_to_send_signal <= "00110";
         when sSendCol5 => 
-            data_to_send_signal <= "0111";
+            data_to_send_signal <= "00111";
         when sSendEnter => 
-            data_to_send_signal <= "1000";
+            data_to_send_signal <= "01000";
         when sWin => 
             -- nothing
         when sLose => 
             -- nothing 
         when sSendSol1 => 
-            data_to_send_signal <= "1001";
+            data_to_send_signal <= "01001";
         when sSendSol2 => 
-            data_to_send_signal <= "1010";
+            data_to_send_signal <= "01010";
         when sSendSol3 => 
-            data_to_send_signal <= "1011";  
+            data_to_send_signal <= "01011";  
         when sSendSol4 => 
-            data_to_send_signal <= "1100";
+            data_to_send_signal <= "01100";
         when sSendSol5 => 
-            data_to_send_signal <= "1101";
+            data_to_send_signal <= "01101";
         when sSendEndEnter => 
-            data_to_send_signal <= "1110";
+            data_to_send_signal <= "01110";
+        when sSendLastEnter => 
+            data_to_send_signal <= "01111"; 
+        when sDash1 => 
+            data_to_send_signal <= "10000";
+        when sDash2 => 
+            data_to_send_signal <= "10001";
+        when sDash3 => 
+            data_to_send_signal <= "10010";
+        when sDash4 => 
+            data_to_send_signal <= "10011";
+        when sDash5 => 
+            data_to_send_signal <= "10100";
     end case;   
 end process OutputLogic;  
 
@@ -444,15 +470,15 @@ begin
 
         -- decide data to send out 
         case data_to_send_signal is 
-            when "0001" => -- current
+            when "00001" => -- current
                 -- send the current character
                 Tx_data_sig <= char_disp_out_sig;
                 Tx_data_ready_sig <= '1';
-            when "0010" => -- delete
+            when "00010" => -- delete
                 -- send the delete character
                 Tx_data_sig <= delete;
                 Tx_data_ready_sig <= '1';
-            when "0011" => -- col1
+            when "00011" => -- col1
                 Tx_data_ready_sig <= '1';
                 if cltrs(0) = '0' and cplaces(0) = '0' then
                     Tx_data_sig <= space;
@@ -461,7 +487,7 @@ begin
                 else 
                     Tx_data_sig <= solution_sig(0*byte_size + 7 downto 0*byte_size); 
                 end if;
-            when "0100" => -- col2
+            when "00100" => -- col2
                 Tx_data_ready_sig <= '1';
                 if cltrs(1) = '0' and cplaces(1) = '0' then
                     Tx_data_sig <= space;
@@ -470,7 +496,7 @@ begin
                 else 
                     Tx_data_sig <= solution_sig(1*byte_size + 7 downto 1*byte_size); 
                 end if;
-            when "0101" => -- col3
+            when "00101" => -- col3
                 Tx_data_ready_sig <= '1';
                 if cltrs(2) = '0' and cplaces(2) = '0' then
                     Tx_data_sig <= space;
@@ -479,7 +505,7 @@ begin
                 else 
                     Tx_data_sig <= solution_sig(2*byte_size + 7 downto 2*byte_size); 
                 end if;
-            when "0110" => -- col4
+            when "00110" => -- col4
                 Tx_data_ready_sig <= '1';
                 if cltrs(3) = '0' and cplaces(3) = '0' then
                     Tx_data_sig <= space;
@@ -488,7 +514,7 @@ begin
                 else 
                     Tx_data_sig <= solution_sig(3*byte_size + 7 downto 3*byte_size); 
                 end if;
-            when "0111" => -- col5
+            when "00111" => -- col5
                 Tx_data_ready_sig <= '1';
                 if cltrs(4) = '0' and cplaces(4) = '0' then
                     Tx_data_sig <= space;
@@ -497,34 +523,53 @@ begin
                 else 
                     Tx_data_sig <= solution_sig(4*byte_size + 7 downto 4*byte_size); 
                 end if;
-            when "1000" => -- enter
+            when "01000" => -- enter
                 -- send enter 
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= enter;
-            when "1001" => -- sol1
+            when "01001" => -- sol1
                 -- send solution
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= solution_sig(0*byte_size + 7 downto 0*byte_size);
-            when "1010" => -- sol2
+            when "01010" => -- sol2
                 -- send solution
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= solution_sig(1*byte_size + 7 downto 1*byte_size);
-            when "1011" => -- sol3
+            when "01011" => -- sol3
                 -- send solution
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= solution_sig(2*byte_size + 7 downto 2*byte_size);
-            when "1100" => -- sol4
+            when "01100" => -- sol4
                 -- send solution
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= solution_sig(3*byte_size + 7 downto 3*byte_size);
-            when "1101" => -- sol5
+            when "01101" => -- sol5
                 -- send solution
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= solution_sig(4*byte_size + 7 downto 4*byte_size);
-            when "1110" => -- send last enter
+            when "01110" => -- send end enter
                 -- send enter 
                 Tx_data_ready_sig <= '1';
                 Tx_data_sig <= enter;
+            when "01111" => -- send last enter
+                -- send enter 
+                Tx_data_ready_sig <= '1';
+                Tx_data_sig <= enter;
+            when "10000" => -- send dash 
+                Tx_data_ready_sig <= '1';
+                Tx_data_sig <= dash; 
+            when "10001" => -- send dash 
+                Tx_data_ready_sig <= '1';
+                Tx_data_sig <= dash;
+            when "10010" => -- send dash 
+                Tx_data_ready_sig <= '1';
+                Tx_data_sig <= dash;
+            when "10011" => -- send dash 
+                Tx_data_ready_sig <= '1';
+                Tx_data_sig <= dash;
+            when "10100" => -- send dash 
+                Tx_data_ready_sig <= '1';
+                Tx_data_sig <= dash;
             when others => 
                 Tx_data_ready_sig <= '0';
                 Tx_data_sig <= (others => '1');

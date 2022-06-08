@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"FSM2_tx_tb_func_synth.vhd" \
+"../../../../../../../code/check_guess_logic/check_guess.vhd" \
+"../../../../../../../code/check_letter/check_letter.vhd" \
+"../../../../../../../code/fsm_2/fsm_2.vhd" \
+"../../../../../../../code/fsm_tx_2/fsm_tx_2.vhd" \
+"../../../../../../../code/load_word/load_word.vhd" \
+"../../../../../master_project.srcs/sources_1/imports/transmitter/sci_transmitter.vhd" \
+"../../../../../../../code/word_exists/word_exists.vhd" \
+"../../../../../../../code/fsm_tx_2/fsm_tx_2_tb.vhd" \
+
+# Do not sort compile order
+nosort
