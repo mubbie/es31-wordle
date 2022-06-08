@@ -176,7 +176,7 @@ begin
     -- load a character into the word array 
     if rising_edge(clk) then 
         -- new character that is valid alpha
-        if new_letter = '1' and is_valid_alpha_out = '1' then
+        if new_letter = '1' and is_valid_alpha_out = '1' and word_full /= '1' then
             -- load the character into the word array 
             word_chars_reg(next_char_index) <= normalized_char;
 
