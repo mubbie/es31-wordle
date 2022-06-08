@@ -117,21 +117,24 @@ constant byte_size : integer := 8;
 --constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
 constant max_dict_word : unsigned(13 downto 0) := "00000000000011"; -- 12971
 
-constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100000";      -- space "01011111";--underscore
+constant black_sym  : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100000";      -- space "01011111";--underscore
 constant yellow_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00111111";     -- quesion mark
-constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
-constant delete : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
-constant enter : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001101";
+constant backspace  : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
+constant delete     : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
+constant enter      : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001101";
+constant plus       : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101011";
 
 constant dash : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101101";
 
-constant win_out: STD_LOGIC_VECTOR(95 DOWNTO 0) := (47 downto 0 => '0') & enter & dash & dash & dash & dash & dash;         -- 12 bytes of data
-constant lose_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & black_sym & black_sym & black_sym & black_sym & black_sym;
+constant win_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & dash & plus & dash & plus & dash;         -- 12 bytes of data
+--constant win_out: STD_LOGIC_VECTOR(95 DOWNTO 0) := (47 downto 0 => '0') & enter & dash & dash & dash & dash & dash;         -- 12 bytes of data
+constant lose_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & black_sym & plus & black_sym & plus & black_sym;
 
 --------------------------------------------
 
 --Signals:
 --the solution
+signal solution_sig_flipped : STD_LOGIC_VECTOR(39 DOWNTO 0);
 signal solution_sig : STD_LOGIC_VECTOR(39 DOWNTO 0);
 -- the solution counter
 signal sol_addr : unsigned(13 downto 0) := "00000000000000";
@@ -238,7 +241,7 @@ guess_checker: CheckGuess
     port map(
         clk             => clk,
         guess           => guess_sig,
-        solution        => solution_sig,
+        solution        => solution_sig_flipped,
         is_dict_word    => in_dict_sig,
         
         correct_letters => cltrs,
@@ -278,9 +281,10 @@ end process count;
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 -- Load Guess: 
 --=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
-LoadGuess : process(char_0_signal, char_1_signal, char_2_signal, char_3_signal, char_4_signal)
+LoadGuess : process(char_0_signal, char_1_signal, char_2_signal, char_3_signal, char_4_signal, solution_sig_flipped)
 begin 
     guess_sig <= (char_0_signal & char_1_signal & char_2_signal & char_3_signal & char_4_signal); 
+    solution_sig <= solution_sig_flipped(7 downto 0) & solution_sig_flipped(15 downto 8) & solution_sig_flipped(23 downto 16) & solution_sig_flipped(31 downto 24) & solution_sig_flipped(39 downto 32);
 end process LoadGuess; 
 
 
@@ -315,7 +319,7 @@ begin
         data_ready <= '0';
         case state_flag is
             when 0 =>
-                solution_sig <= dout_sig;
+                solution_sig_flipped <= dout_sig;
             when 1 =>
             when 2 =>
                 if char_disp_out_sig = backspace then 
@@ -339,11 +343,11 @@ begin
                 max_data_to_send <= 5;
                 data_ready <= '1';
             when 4 =>
-                data_to_send <= win_out;
+                data_to_send <= enter & solution_sig & win_out;
                 max_data_to_send <= 5;
                 data_ready <= '1';
             when 5 =>
-                data_to_send <= (7 downto 0 => '0') & solution_sig & lose_out;--enter & solution_sig & lose_out;
+                data_to_send <= enter & solution_sig & lose_out;
                 max_data_to_send <= 11;
                 data_ready <= '1';
             when 6 =>
