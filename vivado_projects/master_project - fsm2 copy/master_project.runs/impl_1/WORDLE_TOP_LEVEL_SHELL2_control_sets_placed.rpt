@@ -1,0 +1,103 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
+| Date         : Tue Jun  7 23:18:03 2022
+| Host         : Mubarak-XPS15 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file WORDLE_TOP_LEVEL_SHELL2_control_sets_placed.rpt
+| Design       : WORDLE_TOP_LEVEL_SHELL2
+| Device       : xc7a35t
+----------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    34 |
+| Unused register locations in slices containing registers |    93 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            5 |
+|      4 |            2 |
+|      8 |            6 |
+|     10 |            5 |
+|     14 |            2 |
+|    16+ |           14 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             106 |           51 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              90 |           25 |
+| Yes          | No                    | No                     |             304 |          114 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             199 |           51 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------+--------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+
+|       Clock Signal      |                            Enable Signal                           |                  Set/Reset Signal                  | Slice Load Count | Bel Load Count |
++-------------------------+--------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+
+|  clk_ext_port_IBUF_BUFG | transmitter/Baud_Counter0                                          |                                                    |                1 |              1 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/guess_count_en                         |                                                    |                1 |              1 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/done                                   |                                                    |                1 |              1 |
+|  clk_ext_port_IBUF_BUFG | transmitter/p_1_out                                                |                                                    |                1 |              1 |
+|  clk_ext_port_IBUF_BUFG | transmitter/tc                                                     | transmitter/Baud_Counter0                          |                1 |              1 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_exist_block/FSM_onehot_current_state[3]_i_1_n_0 |                                                    |                1 |              4 |
+|  clk_ext_port_IBUF_BUFG | receiver/bit_count[3]_i_1_n_0                                      |                                                    |                1 |              4 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[2]_2                      |                                                    |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[3]_1                      |                                                    |                5 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[1]_3                      |                                                    |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[4]_0                      |                                                    |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/Shift_Reg0_in[0]                                       |                                                    |                4 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[0]_4                      |                                                    |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | receiver/baud_reset                                |                3 |             10 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | transmitter/Baud_Counter0                          |                3 |             10 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/guess_checker/reset_ltrs_correct     |                5 |             10 |
+|  clk_ext_port_IBUF_BUFG | receiver/shift_en                                                  | receiver/register_reset                            |                2 |             10 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/enable_outputs                         |                                                    |                5 |             10 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/sol_addr[13]_i_1__0_n_0              |                5 |             14 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/word_exist_block/counter_reset       |                4 |             14 |
+|  clk_ext_port_IBUF_BUFG | receiver/rx_done_output                                            |                                                    |                6 |             16 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/E[0]                                   |                                                    |               10 |             26 |
+|  clk_ext_port_IBUF_BUFG | transmitter/Baud_Counter0                                          | transmitter/r_addr[31]_i_1_n_0                     |                8 |             31 |
+|  clk_ext_port_IBUF_BUFG | transmitter/p_1_out                                                | transmitter/w_addr[31]_i_1_n_0                     |                8 |             31 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/done                                   | state_machine/guess_checker/done_reg_1             |                8 |             31 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/guess_count_en                         | state_machine/guess_checker/guess_addr[31]_i_1_n_0 |                8 |             31 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/guess_checker/sol_addr[31]_i_1_n_0   |                5 |             32 |
+|  clk_ext_port_IBUF_BUFG | transmitter/q_size[0]_i_1_n_0                                      |                                                    |                8 |             32 |
+|  clk_ext_port_IBUF_BUFG | transmitter/num_bits_sent_0                                        | transmitter/num_bits_sent[31]_i_1_n_0              |                8 |             32 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/next_char_index[0]_i_2_n_0               | state_machine/word_loader/next_char_index          |                8 |             32 |
+|  clk_ext_port_IBUF_BUFG | state_machine/load_solution                                        |                                                    |               29 |             40 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_ready_out                           |                                                    |                9 |             40 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_exist_block/Q[0]                                |                                                    |               24 |             80 |
+|  clk_ext_port_IBUF_BUFG |                                                                    |                                                    |               51 |            106 |
++-------------------------+--------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+
+
+

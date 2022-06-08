@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mubar/Documents/ENGS31/es31-wordle/code/check_letter/check_letter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Check_Letter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'load_word'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/mubar/Documents/ENGS31/es31-wordle/code/load_word/load_word_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LOAD_WORD_tb'

@@ -85,7 +85,7 @@ signal Tx_signal : std_logic := '0';
 
 -- constants
 constant clock_period : time := 10 ns; -- 100 MHz clock
-constant BAUD_COUNTER_TOP_constant : integer := 10417; -- 9600 Baud Rate
+constant BAUD_COUNTER_TOP_constant : integer := 868; -- 115200 Baud Rate
 constant BIT_COUNTER_TOP_constant : integer := 10; -- shift in 10 bits: 1 start bit, 8 data bits, 1 stop bit
 
 begin

@@ -1,0 +1,9 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto e178fdf42fb24886994bd89583259cbc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot FSM2_tx_tb_func_synth xil_defaultlib.FSM2_tx_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <clk> does not exist in entity <FSM2>.  Please compare the definition of block <FSM2> to its component declaration and its instantion to detect the mismatch. [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_tx_2/fsm_tx_2.vhd:68]
+ERROR: [VRFC 10-718] formal port <Rx_Data> does not exist in entity <FSM2>.  Please compare the definition of block <FSM2> to its component declaration and its instantion to detect the mismatch. [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_tx_2/fsm_tx_2.vhd:70]
+ERROR: [VRFC 10-718] formal port <Tx_Data> does not exist in entity <FSM2>.  Please compare the definition of block <FSM2> to its component declaration and its instantion to detect the mismatch. [C:/Users/mubar/Documents/ENGS31/es31-wordle/code/fsm_tx_2/fsm_tx_2.vhd:73]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit fsm2_tx_tb in library work failed.

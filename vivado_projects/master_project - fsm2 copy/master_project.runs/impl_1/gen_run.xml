@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654658201">
+  <File Type="BITSTR-BMM" Name="WORDLE_TOP_LEVEL_SHELL2_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="WORDLE_TOP_LEVEL_SHELL2_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="WORDLE_TOP_LEVEL_SHELL2_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="WORDLE_TOP_LEVEL_SHELL2.tcl"/>
+  <File Type="OPT-TIMING" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="WORDLE_TOP_LEVEL_SHELL2_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="WORDLE_TOP_LEVEL_SHELL2_reports.tcl"/>
+  <File Type="OPT-DRC" Name="WORDLE_TOP_LEVEL_SHELL2_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="WORDLE_TOP_LEVEL_SHELL2.hwdef"/>
+  <File Type="PWROPT-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="WORDLE_TOP_LEVEL_SHELL2_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_placed.dcp"/>
+  <File Type="PLACE-IO" Name="WORDLE_TOP_LEVEL_SHELL2_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="WORDLE_TOP_LEVEL_SHELL2_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="WORDLE_TOP_LEVEL_SHELL2_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="WORDLE_TOP_LEVEL_SHELL2_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="WORDLE_TOP_LEVEL_SHELL2_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="WORDLE_TOP_LEVEL_SHELL2_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="WORDLE_TOP_LEVEL_SHELL2_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="WORDLE_TOP_LEVEL_SHELL2.bgn"/>
+  <File Type="PLACE-TIMING" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="WORDLE_TOP_LEVEL_SHELL2.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="WORDLE_TOP_LEVEL_SHELL2_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="WORDLE_TOP_LEVEL_SHELL2.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="WORDLE_TOP_LEVEL_SHELL2_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="WORDLE_TOP_LEVEL_SHELL2_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="WORDLE_TOP_LEVEL_SHELL2.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="WORDLE_TOP_LEVEL_SHELL2_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="WORDLE_TOP_LEVEL_SHELL2.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="WORDLE_TOP_LEVEL_SHELL2_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="WORDLE_TOP_LEVEL_SHELL2_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="WORDLE_TOP_LEVEL_SHELL2.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="WORDLE_TOP_LEVEL_SHELL2_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="WORDLE_TOP_LEVEL_SHELL2_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="WORDLE_TOP_LEVEL_SHELL2_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="WORDLE_TOP_LEVEL_SHELL2_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="WORDLE_TOP_LEVEL_SHELL2_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="WORDLE_TOP_LEVEL_SHELL2_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="WORDLE_TOP_LEVEL_SHELL2_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="WORDLE_TOP_LEVEL_SHELL2_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="WORDLE_TOP_LEVEL_SHELL2_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="WORDLE_TOP_LEVEL_SHELL2_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="WORDLE_TOP_LEVEL_SHELL2_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="WORDLE_TOP_LEVEL_SHELL2_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="WORDLE_TOP_LEVEL_SHELL2_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="WORDLE_TOP_LEVEL_SHELL2.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="WORDLE_TOP_LEVEL_SHELL2_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="WORDLE_TOP_LEVEL_SHELL2.rbt"/>
+  <File Type="BITSTR-NKY" Name="WORDLE_TOP_LEVEL_SHELL2.nky"/>
+  <File Type="BG-DRC" Name="WORDLE_TOP_LEVEL_SHELL2.drc"/>
+  <File Type="RDI-RDI" Name="WORDLE_TOP_LEVEL_SHELL2.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../code/check_guess_logic/check_guess.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/check_letter/check_letter.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/fsm_2/fsm_2.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/load_word/load_word.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/receiver/sci_receiver.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/transmitter/sci_transmitter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../code/transmitter/sci_transmitter.vhd"/>
+        <Attr Name="ImportTime" Val="1654569963"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/word_exists/word_exists.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/top_level_2/top_level_shell_2.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../code/top_level_2/top_level_shell_2.vhd"/>
+        <Attr Name="ImportTime" Val="1654612789"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/transmitter_2/transmitter_2.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/fsm/FSM.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../code/fsm/FSM.vhd"/>
+        <Attr Name="ImportTime" Val="1654568079"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/top_level/top_level_shell.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/receiver_transmitter_2/rx_tx_2.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/receiver_transmitter/rx_tx_shell.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../coe_files/BINARYASCIIDICT.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../code/fsm_tx_2/fsm_tx_2.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="WORDLE_TOP_LEVEL_SHELL2"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../constraint_files/wordle_constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="game_dict_rom"/>
+</GenRun>
