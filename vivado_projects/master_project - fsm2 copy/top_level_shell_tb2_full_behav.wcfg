@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_level_shell_tb2_full_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="top_level_shell_tb2_full" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1513395000001fs"></ZoomEndTime>
+      <Cursor1Time time="602998441000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="300"></NameColumnWidth>
+      <ValueColumnWidth column_width="128"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/top_level_shell_tb2_full/clk_signal" type="logic">
+      <obj_property name="ElementShortName">clk_signal</obj_property>
+      <obj_property name="ObjectShortName">clk_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/Rx_data_signal" type="array">
+      <obj_property name="ElementShortName">Rx_data_signal[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Rx_data_signal[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/RsTx_ext_port" type="logic">
+      <obj_property name="ElementShortName">RsTx_ext_port</obj_property>
+      <obj_property name="ObjectShortName">RsTx_ext_port</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/letter_as_byte" type="array">
+      <obj_property name="ElementShortName">letter_as_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">letter_as_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/new_data_sig" type="logic">
+      <obj_property name="ElementShortName">new_data_sig</obj_property>
+      <obj_property name="ObjectShortName">new_data_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/RsRx_ext_port" type="logic">
+      <obj_property name="ElementShortName">RsRx_ext_port</obj_property>
+      <obj_property name="ObjectShortName">RsRx_ext_port</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/TestInputsArray" type="array">
+      <obj_property name="ElementShortName">TestInputsArray[0:5][7:0]</obj_property>
+      <obj_property name="ObjectShortName">TestInputsArray[0:5][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/clock_period" type="other">
+      <obj_property name="ElementShortName">clock_period</obj_property>
+      <obj_property name="ObjectShortName">clock_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/uut/state_machine/solution_sig" type="array">
+      <obj_property name="ElementShortName">solution_sig[39:0]</obj_property>
+      <obj_property name="ObjectShortName">solution_sig[39:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/uut/state_machine/solution_sig" type="array">
+      <obj_property name="ElementShortName">solution_sig[39:0]</obj_property>
+      <obj_property name="ObjectShortName">solution_sig[39:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_level_shell_tb2_full/uut/state_machine/current_state" type="other">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
+   </wvobject>
+</wave_config>

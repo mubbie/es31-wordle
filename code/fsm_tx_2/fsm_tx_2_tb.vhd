@@ -70,7 +70,7 @@ signal Rx_data_signal : STD_LOGIC_VECTOR (7 downto 0) := (others => '1');
 signal Rx_done_signal : STD_LOGIC := '0';
 
 -- outputs
-signal Tx_signal : STD_LOGIC := '0';
+signal Tx_signal : STD_LOGIC := '1';
 
 -- constants
 constant clock_period : time := 10 ns; -- 100 MHz clock
