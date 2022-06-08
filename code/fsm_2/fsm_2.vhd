@@ -135,7 +135,7 @@ signal data_to_send_signal : STD_LOGIC_VECTOR(4 downto 0) := (others => '0');
 -- constants 
 constant max_num_tries : integer := 5;
 --constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
-constant max_dict_word : unsigned(13 downto 0) := "00000000000101";
+constant max_dict_word : unsigned(13 downto 0) := "00000000010100";
 constant space : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100000";      -- space
 constant question_mark : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00111111";     -- quesion mark
 constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date         : Wed Jun  8 01:35:12 2022
+| Date         : Wed Jun  8 02:37:49 2022
 | Host         : Mubarak-XPS15 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file WORDLE_TOP_LEVEL_SHELL2_control_sets_placed.rpt
 | Design       : WORDLE_TOP_LEVEL_SHELL2
@@ -50,12 +50,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              41 |           22 |
+| No           | No                    | No                     |              41 |           24 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              91 |           26 |
-| Yes          | No                    | No                     |             305 |          102 |
+| Yes          | No                    | No                     |             305 |          100 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             391 |          163 |
+| Yes          | Yes                   | No                     |             391 |          151 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -66,63 +66,63 @@ Table of Contents
 |       Clock Signal      |                            Enable Signal                           |                  Set/Reset Signal                  | Slice Load Count | Bel Load Count |
 +-------------------------+--------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+
 |  clk_ext_port_IBUF_BUFG | transmitter/p_0_in[0]                                              | transmitter/Baud_Counter0                          |                1 |              1 |
-|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/done                                   |                                                    |                1 |              1 |
 |  clk_ext_port_IBUF_BUFG | transmitter/p_1_out                                                |                                                    |                1 |              1 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/done                                   |                                                    |                1 |              1 |
 |  clk_ext_port_IBUF_BUFG | transmitter/Baud_Counter0                                          |                                                    |                1 |              1 |
 |  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/guess_addr[31]_i_2_n_0                 |                                                    |                1 |              1 |
-|  clk_ext_port_IBUF_BUFG | receiver/bit_count[3]_i_1_n_0                                      |                                                    |                2 |              4 |
 |  clk_ext_port_IBUF_BUFG | state_machine/word_exist_block/FSM_onehot_current_state[3]_i_1_n_0 |                                                    |                1 |              4 |
-|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[3]_1                      |                                                    |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | receiver/bit_count[3]_i_1_n_0                                      |                                                    |                2 |              4 |
 |  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[16][7]_i_2_n_0                               | transmitter/queue_reg[16][7]_i_1_n_0               |                2 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[19][7]_i_1_n_0               |                6 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[17][7]_i_1_n_0               |                3 |              8 |
 |  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[18][7]_i_1_n_0               |                4 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[20][7]_i_1_n_0               |                3 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[21][7]_i_1_n_0               |                5 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[17][7]_i_1_n_0               |                4 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[14][7]_i_1_n_0               |                8 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[22][7]_i_1_n_0               |                5 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[23][7]_i_1_n_0               |                4 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[0][7]_i_1_n_0                |                3 |              8 |
-|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[0]_4                      |                                                    |                1 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[21][7]_i_1_n_0               |                4 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[20][7]_i_1_n_0               |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[22][7]_i_1_n_0               |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[10][7]_i_1_n_0               |                5 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[23][7]_i_1_n_0               |                7 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[2][7]_i_2_n_0                                | transmitter/queue_reg[2][7]_i_1_n_0                |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[4][7]_i_2_n_0                                | transmitter/queue_reg[4][7]_i_1_n_0                |                3 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[0][7]_i_1_n_0                |                4 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[3][7]_i_1_n_0                |                5 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[5][7]_i_1_n_0                |                4 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[7][7]_i_1_n_0                |                7 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[0]_4                      |                                                    |                2 |              8 |
 |  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[1]_3                      |                                                    |                1 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[6][7]_i_1_n_0                |                6 |              8 |
-|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[2]_2                      |                                                    |                3 |              8 |
-|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[4]_0                      |                                                    |                1 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[3][7]_i_1_n_0                |                6 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[5][7]_i_1_n_0                |                6 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[2][7]_i_2_n_0                                | transmitter/queue_reg[2][7]_i_1_n_0                |                3 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[8][7]_i_2_n_0                                | transmitter/queue_reg[8][7]_i_1_n_0                |                2 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[4][7]_i_2_n_0                                | transmitter/queue_reg[4][7]_i_1_n_0                |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[2]_2                      |                                                    |                1 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[3]_1                      |                                                    |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_chars_reg[4]_0                      |                                                    |                3 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[6][7]_i_1_n_0                |                7 |              8 |
 |  clk_ext_port_IBUF_BUFG | transmitter/Shift_Reg0_in[0]                                       |                                                    |                3 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[7][7]_i_2_n_0                                | transmitter/queue_reg[7][7]_i_1_n_0                |                3 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[15][7]_i_1_n_0               |                7 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[12][7]_i_1_n_0               |                5 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[11][7]_i_1_n_0               |                7 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[10][7]_i_1_n_0               |                6 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[13][7]_i_1_n_0               |                6 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[9][7]_i_1_n_0                |                4 |              8 |
-|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[1][7]_i_2_n_0                                | transmitter/queue_reg[1][7]_i_1_n_0                |                3 |              8 |
-|  clk_ext_port_IBUF_BUFG |                                                                    | receiver/baud_reset                                |                3 |             10 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[8][7]_i_2_n_0                                | transmitter/queue_reg[8][7]_i_1_n_0                |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[22][7]_i_2_n_0                               | transmitter/queue_reg[19][7]_i_1_n_0               |                5 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[1][7]_i_2_n_0                                | transmitter/queue_reg[1][7]_i_1_n_0                |                2 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[9][7]_i_1_n_0                |                5 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[14][7]_i_1_n_0               |                3 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[13][7]_i_1_n_0               |                5 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[11][7]_i_1_n_0               |                5 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[12][7]_i_1_n_0               |                4 |              8 |
+|  clk_ext_port_IBUF_BUFG | transmitter/queue_reg[15][7]_i_2_n_0                               | transmitter/queue_reg[15][7]_i_1_n_0               |                5 |              8 |
 |  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/guess_checker/reset_ltrs_correct     |                3 |             10 |
-|  clk_ext_port_IBUF_BUFG | receiver/shift_en                                                  | receiver/register_reset                            |                3 |             10 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | receiver/baud_reset                                |                4 |             10 |
 |  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/enable_outputs                         |                                                    |                5 |             10 |
+|  clk_ext_port_IBUF_BUFG | receiver/shift_en                                                  | receiver/register_reset                            |                4 |             10 |
 |  clk_ext_port_IBUF_BUFG |                                                                    | transmitter/Baud_Counter0                          |                4 |             11 |
-|  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/sol_addr[13]_i_1__0_n_0              |                5 |             14 |
+|  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/sol_addr[13]_i_1__0_n_0              |                4 |             14 |
 |  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/word_exist_block/counter_reset       |                4 |             14 |
-|  clk_ext_port_IBUF_BUFG | receiver/rx_done_output                                            |                                                    |                5 |             16 |
-|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/E[0]                                   |                                                    |                6 |             27 |
+|  clk_ext_port_IBUF_BUFG | receiver/rx_done_output                                            |                                                    |                4 |             16 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/E[0]                                   |                                                    |                8 |             27 |
+|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/done                                   | state_machine/guess_checker/done_reg_1             |                8 |             31 |
 |  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/guess_addr[31]_i_2_n_0                 | state_machine/guess_checker/guess_addr[31]_i_1_n_0 |                8 |             31 |
 |  clk_ext_port_IBUF_BUFG | transmitter/Baud_Counter0                                          | transmitter/r_addr[31]_i_1_n_0                     |                8 |             31 |
 |  clk_ext_port_IBUF_BUFG | transmitter/p_1_out                                                | transmitter/w_addr[31]_i_1_n_0                     |                8 |             31 |
-|  clk_ext_port_IBUF_BUFG | state_machine/guess_checker/done                                   | state_machine/guess_checker/done_reg_1             |                8 |             31 |
 |  clk_ext_port_IBUF_BUFG |                                                                    | state_machine/guess_checker/sol_addr[31]_i_1_n_0   |                7 |             32 |
 |  clk_ext_port_IBUF_BUFG | state_machine/word_loader/next_char_index[0]_i_2_n_0               | state_machine/word_loader/next_char_index          |                8 |             32 |
 |  clk_ext_port_IBUF_BUFG | transmitter/q_size[0]_i_1_n_0                                      |                                                    |                8 |             32 |
 |  clk_ext_port_IBUF_BUFG | transmitter/num_bits_sent                                          | transmitter/num_bits_sent[31]_i_1_n_0              |                9 |             32 |
-|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_ready_out                           |                                                    |                9 |             40 |
 |  clk_ext_port_IBUF_BUFG | state_machine/load_solution                                        |                                                    |               23 |             40 |
-|  clk_ext_port_IBUF_BUFG |                                                                    |                                                    |               22 |             41 |
-|  clk_ext_port_IBUF_BUFG | state_machine/word_exist_block/Q[0]                                |                                                    |               28 |             80 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_loader/word_ready_out                           |                                                    |                7 |             40 |
+|  clk_ext_port_IBUF_BUFG |                                                                    |                                                    |               24 |             41 |
+|  clk_ext_port_IBUF_BUFG | state_machine/word_exist_block/Q[0]                                |                                                    |               26 |             80 |
 +-------------------------+--------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+
 
 
