@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date             : Tue Jun  7 19:32:38 2022
+| Date             : Tue Jun  7 20:30:47 2022
 | Host             : mecha-9 running 64-bit major release  (build 9200)
 | Command          : report_power -file WORDLE_TOP_LEVEL_SHELL_power_routed.rpt -pb WORDLE_TOP_LEVEL_SHELL_power_summary_routed.pb -rpx WORDLE_TOP_LEVEL_SHELL_power_routed.rpx
 | Design           : WORDLE_TOP_LEVEL_SHELL
@@ -52,14 +52,14 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     1924 |       --- |             --- |
-|   LUT as Logic |     0.002 |      773 |     20800 |            3.72 |
+| Clocks         |     0.004 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     1938 |       --- |             --- |
+|   LUT as Logic |     0.002 |      765 |     20800 |            3.68 |
 |   CARRY4       |    <0.001 |       92 |      8150 |            1.13 |
 |   Register     |    <0.001 |      797 |     41600 |            1.92 |
-|   F7/F8 Muxes  |    <0.001 |       78 |     32600 |            0.24 |
+|   F7/F8 Muxes  |    <0.001 |       80 |     32600 |            0.25 |
 |   Others       |     0.000 |       76 |       --- |             --- |
-| Signals        |     0.003 |     1572 |       --- |             --- |
+| Signals        |     0.003 |     1557 |       --- |             --- |
 | Block RAM      |     0.020 |       30 |        50 |           60.00 |
 | I/O            |     0.001 |       11 |       106 |           10.38 |
 | Static Power   |     0.073 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.038 |       0.028 |      0.010 |
+| Vccint    |       1.000 |     0.039 |       0.028 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -149,7 +149,7 @@ Table of Contents
 |     guess_checker       |     0.002 |
 |     word_exist_block    |     0.012 |
 |       wordle_dictionary |     0.011 |
-|   transmitter           |     0.002 |
+|   transmitter           |     0.003 |
 +-------------------------+-----------+
 
 

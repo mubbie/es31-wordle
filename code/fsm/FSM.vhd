@@ -116,7 +116,7 @@ constant max_num_tries : integer := 5;
 constant byte_size : integer := 8;
 constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
 
-constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100000";      -- space
+constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01011111";--underscore --"00100000";      -- space
 constant yellow_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00111111";     -- quesion mark
 constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
 constant delete : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
@@ -318,7 +318,7 @@ begin
             when 1 =>
             when 2 =>
                 if char_disp_out_sig = backspace then 
-                    data_to_send <= (79 downto 0 => '0') & backspace & delete;
+                    data_to_send <= (87 downto 0 => '0') & delete;--(79 downto 0 => '0') & backspace & delete;
                     max_data_to_send <= 2;
                 else 
                     data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;

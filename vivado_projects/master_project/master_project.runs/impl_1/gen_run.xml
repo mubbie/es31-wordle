@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654644585">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1654648074">
   <File Type="BITSTR-BMM" Name="WORDLE_TOP_LEVEL_SHELL_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="WORDLE_TOP_LEVEL_SHELL_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="WORDLE_TOP_LEVEL_SHELL_timing_summary_init.rpt"/>
