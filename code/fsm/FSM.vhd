@@ -114,9 +114,10 @@ end component game_dict_rom;
 constant max_ltr_idx : integer := 4;
 constant max_num_tries : integer := 5;
 constant byte_size : integer := 8;
-constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
+--constant max_dict_word : unsigned(13 downto 0) := "11001010101011"; -- 12971
+constant max_dict_word : unsigned(13 downto 0) := "00000000000011"; -- 12971
 
-constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01011111";--underscore --"00100000";      -- space
+constant black_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00100000";      -- space "01011111";--underscore
 constant yellow_sym : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00111111";     -- quesion mark
 constant backspace : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";
 constant delete : STD_LOGIC_VECTOR(7 DOWNTO 0) := "01111111";
@@ -318,7 +319,7 @@ begin
             when 1 =>
             when 2 =>
                 if char_disp_out_sig = backspace then 
-                    data_to_send <= (87 downto 0 => '0') & delete;--(79 downto 0 => '0') & backspace & delete;
+                    data_to_send <= (87 downto 0 => '0') & delete;
                     max_data_to_send <= 2;
                 else 
                     data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
@@ -342,7 +343,7 @@ begin
                 max_data_to_send <= 5;
                 data_ready <= '1';
             when 5 =>
-                data_to_send <= enter & solution_sig & lose_out;
+                data_to_send <= (7 downto 0 => '0') & solution_sig & lose_out;--enter & solution_sig & lose_out;
                 max_data_to_send <= 11;
                 data_ready <= '1';
             when 6 =>
@@ -432,7 +433,7 @@ case current_state is
         if sent = '1' then 
             next_state <= newGame;
         end if; 
-    when others =>  next_state <= newGame;
+    when others =>  next_state <= idle;
     
 end case current_state;
 
