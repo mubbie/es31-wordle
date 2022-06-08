@@ -110,31 +110,36 @@ constant clock_period : time := 10 ns; -- 100 MHz clock
 --=============================================================================
 --Test Signal Declarations:
 --=============================================================================
-type RegisterFile is array (0 to 5) of std_logic_vector(7 downto 0);
+type RegisterFile is array (0 to 23) of std_logic_vector(7 downto 0);
 signal TestInputsArray : RegisterFile := 
     (
         "01000001", -- A
---        "01101101", -- m
---        "00001000", -- \b
---        "00001000", -- \b
---        "01000001", -- A
---        "00110010", -- 2
---        "00001101", -- \r
         "01001101", -- M
---        "00110100", -- 4
---        "00001101", -- \r
---        "00001101", -- \r
         "01110000", -- p
         "01001100", -- L
---        "00100001", -- !
---        "00101010", -- *
---        "00001000", -- \b
---        "00001101", -- \r
---        "01101100", -- l
         "01100101", -- e
---        "00001000", -- \b
---        "01000101", -- E
-        "00001101"  -- \r
+        "00001101",  -- \r
+        
+        "01110011", -- s
+        "01101001", -- i
+        "01110011", -- s
+        "01110011", -- s
+        "01111001", -- y
+        "00001101", -- \r
+        
+        "01110010", -- r
+        "01100101", -- e
+        "01100010", -- b
+        "01110101", -- u
+        "01110100", -- t
+        "00001101", -- \r
+        
+        "01100011", -- c
+        "01101001", -- i
+        "01100111", -- g
+        "01100001", -- a
+        "01110010", -- r
+        "00001101" -- \r
     );
 
 begin 
@@ -191,13 +196,14 @@ begin
     wait for clock_period*4;
 
     -- send the data packets 
-    for i in 0 to 5 loop
+    for i in 0 to 23 loop
         -- send character 
         new_data_sig <= '1';
         letter_as_byte <= TestInputsArray(i);
         wait for clock_period;
         new_data_sig <= '0';
-        wait for clock_period*100;
+--        wait for clock_period*100;
+        wait for 3 ms;
     end loop;
     
     letter_as_byte <= (others => '1'); 

@@ -127,7 +127,6 @@ constant plus       : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101011";
 constant dash : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00101101";
 
 constant win_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & dash & plus & dash & plus & dash;         -- 12 bytes of data
---constant win_out: STD_LOGIC_VECTOR(95 DOWNTO 0) := (47 downto 0 => '0') & enter & dash & dash & dash & dash & dash;         -- 12 bytes of data
 constant lose_out: STD_LOGIC_VECTOR(47 DOWNTO 0) := enter & black_sym & plus & black_sym & plus & black_sym;
 
 --------------------------------------------
@@ -148,12 +147,15 @@ signal guess_sig    : STD_LOGIC_VECTOR(39 DOWNTO 0) := (others => '0');
 
 
 -- data to send register
-signal data_to_send : STD_LOGIC_VECTOR(95 DOWNTO 0);        -- register enough to hold 12 characters (including CR)
+signal max_data_to_send          : integer := 0;
+constant data_max_size           : integer := 13;
+constant data_max_bits           : integer := data_max_size*byte_size - 1;
+signal data_to_send : STD_LOGIC_VECTOR(data_max_bits DOWNTO 0);        -- register enough to hold 13 characters (including CR)
 signal cnt          : integer := 0;
 signal data_ready   : std_logic := '0';
 signal send         : std_logic := '0';
 signal sent         : std_logic := '1';
-signal max_data_to_send          : integer := 0;
+
 
 
 
@@ -323,10 +325,10 @@ begin
             when 1 =>
             when 2 =>
                 if char_disp_out_sig = backspace then 
-                    data_to_send <= (87 downto 0 => '0') & delete;
+                    data_to_send <= (data_max_bits-8 downto 0 => '0') & delete;
                     max_data_to_send <= 2;
                 else 
-                    data_to_send <= (87 downto 0 => '0') & char_disp_out_sig;
+                    data_to_send <= (data_max_bits-8 downto 0 => '0') & char_disp_out_sig;
                     max_data_to_send <= 0;
                 end if;
                 data_ready <= '1';
@@ -339,16 +341,16 @@ begin
                     else data_to_send(ltr_start*byte_size + 7 downto ltr_start*byte_size) <= solution_sig(ltr_start*byte_size + 7 downto ltr_start*byte_size);
                     end if;
                 end loop;
-                data_to_send(95 downto 40) <= (47 downto 0 => '0') & enter;
+                data_to_send(data_max_bits downto 40) <= (data_max_bits-48 downto 0 => '0') & enter;
                 max_data_to_send <= 5;
                 data_ready <= '1';
             when 4 =>
-                data_to_send <= enter & solution_sig & win_out;
-                max_data_to_send <= 5;
+                data_to_send <= enter & enter & solution_sig & win_out;
+                max_data_to_send <= 12;
                 data_ready <= '1';
             when 5 =>
-                data_to_send <= enter & solution_sig & lose_out;
-                max_data_to_send <= 11;
+                data_to_send <= enter & enter & solution_sig & lose_out;
+                max_data_to_send <= 12;
                 data_ready <= '1';
             when 6 =>
             when others =>
@@ -371,18 +373,16 @@ begin
             send <= '1';
             sent <= '0';
         end if;
-        if cnt >= max_data_to_send or cnt >= 11 then
+        if cnt >= max_data_to_send or cnt >= data_max_size then
             cnt <= 0;
             if send = '1' then
                 send <= '0';
                 sent <= '1';
             end if;
         end if;
-        
-        Tx_data_ready <= send;
-        Tx_data <= data_to_send(cnt*byte_size + 7 downto cnt*byte_size);
     end if;
-
+    Tx_data_ready <= send;
+    Tx_data <= data_to_send(cnt*byte_size + 7 downto cnt*byte_size);
 end process sendData;
 
 
