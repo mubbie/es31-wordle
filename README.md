@@ -2,9 +2,11 @@
 
 ## Ike, Mubbie, Lobna
 
-## INTERNAL REAMDE.md for us working on the project
+## [Final Project Demo Video](https://drive.google.com/file/d/1ZTbb-LIe1EXs7j2_Yy700LKRH2otJY8A/view?usp=sharing), requires Dartmouth account for access
 
-## GUIDE TO RESOURCES
+#### INTERNAL APPENDIX:
+
+#### GUIDE TO RESOURCES
 
 - **Logisim**: https://github.com/logisim-evolution/logisim-evolution
   - Notes: 

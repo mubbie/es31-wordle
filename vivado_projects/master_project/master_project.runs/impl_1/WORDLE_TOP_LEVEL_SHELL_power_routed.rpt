@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
-| Date             : Wed Jun  8 01:08:58 2022
+| Date             : Wed Jun  8 02:13:21 2022
 | Host             : mecha-9 running 64-bit major release  (build 9200)
 | Command          : report_power -file WORDLE_TOP_LEVEL_SHELL_power_routed.rpt -pb WORDLE_TOP_LEVEL_SHELL_power_summary_routed.pb -rpx WORDLE_TOP_LEVEL_SHELL_power_routed.rpx
 | Design           : WORDLE_TOP_LEVEL_SHELL
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.108        |
+| Total On-Chip Power (W)  | 0.107        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.034        |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     2296 |       --- |             --- |
-|   LUT as Logic |     0.003 |      966 |     20800 |            4.64 |
+| Slice Logic    |     0.003 |     2279 |       --- |             --- |
+|   LUT as Logic |     0.003 |      968 |     20800 |            4.65 |
 |   CARRY4       |    <0.001 |       92 |      8150 |            1.13 |
-|   Register     |    <0.001 |      925 |     41600 |            2.22 |
-|   F7/F8 Muxes  |    <0.001 |      137 |     32600 |            0.42 |
+|   Register     |    <0.001 |      916 |     41600 |            2.20 |
+|   F7/F8 Muxes  |    <0.001 |      133 |     32600 |            0.41 |
 |   Others       |     0.000 |       76 |       --- |             --- |
-| Signals        |     0.004 |     1741 |       --- |             --- |
+| Signals        |     0.004 |     1742 |       --- |             --- |
 | Block RAM      |     0.020 |       30 |        50 |           60.00 |
 | I/O            |     0.001 |       11 |       106 |           10.38 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.108 |          |           |                 |
+| Total          |     0.107 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.042 |       0.032 |      0.010 |
+| Vccint    |       1.000 |     0.042 |       0.031 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -149,7 +149,7 @@ Table of Contents
 |     guess_checker       |     0.002 |
 |     word_exist_block    |     0.012 |
 |       wordle_dictionary |     0.011 |
-|   transmitter           |     0.006 |
+|   transmitter           |     0.005 |
 +-------------------------+-----------+
 
 
