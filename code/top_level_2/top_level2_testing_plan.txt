@@ -1,0 +1,1 @@
+See the FSM testing plan described in ./code/fsm_2/fsm2_testbench_testing_plan.txt for descriptions.
